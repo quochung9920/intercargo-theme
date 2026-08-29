@@ -36,7 +36,7 @@ def main() -> None:
     release_dir.mkdir(parents=True, exist_ok=True)
     archive = release_dir / f"{project['id']}-theme-{project['version']}.zip"
     theme_directory = project["themeDirectory"]
-    excluded_roots = {"tests", "tools"}
+    excluded_roots = {"tests", "tools", "src"}
 
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for path in sorted(output_root.rglob("*")):
