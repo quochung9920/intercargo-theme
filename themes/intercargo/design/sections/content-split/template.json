@@ -1,0 +1,96 @@
+{
+  "_comment": "Reusable editorial split. The About Who We Are section is the geometry authority; empty optional paragraphs remain editable in Gutenberg and disappear on the frontend.",
+  "section": {
+    "id": "who-we-are",
+    "className": "wp-block-intercargo-content-split content-split-section intercargo-native intercargo-native-content-split",
+    "ariaLabel": "Company introduction"
+  },
+  "editorTemplateLock": "all",
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container content-split-layout",
+        "templateLock": "all",
+        "metadata": {"name": "Content Split layout"}
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "content-split-heading",
+            "placeholder": "Section statement",
+            "content": "An Australian freight forwarder, licensed customs broker and 3PL. Five cities, all our own.",
+            "metadata": {"name": "Section statement"}
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "content-split-copy",
+            "templateLock": "all",
+            "metadata": {"name": "Supporting copy"}
+          },
+          [
+            [
+              "core/paragraph",
+              {
+                "className": "content-split-lead",
+                "placeholder": "Primary supporting paragraph",
+                "content": "Intercargo Connect moves freight for businesses importing into Australia. By sea and by air, cleared by our own licensed brokers, carted off the wharf on our own trucks, and held in our own warehouses until you want it.",
+                "metadata": {"name": "Primary supporting paragraph"}
+              }
+            ],
+            [
+              "core/paragraph",
+              {
+                "className": "content-split-body",
+                "placeholder": "Secondary supporting paragraph (optional)",
+                "content": "Importers told us the same three stories again and again: fees that appeared after the deal was done, updates that never came unless you chased them, and problems handballed between companies until they became yours. Every one of those is a failure of care, not of capability.",
+                "metadata": {"name": "Secondary supporting paragraph"}
+              }
+            ],
+            [
+              "core/paragraph",
+              {
+                "className": "content-split-emphasis",
+                "placeholder": "Emphasised conclusion (optional)",
+                "content": "We built Intercargo Connect to be big-forwarder capability with a direct line to your team.",
+                "metadata": {"name": "Emphasised conclusion"}
+              }
+            ],
+            [
+              "core/group",
+              {
+                "className": "content-split-note",
+                "templateLock": "all",
+                "metadata": {"name": "Optional bordered note"}
+              },
+              [
+                [
+                  "core/paragraph",
+                  {
+                    "className": "content-split-note-label",
+                    "placeholder": "Note label (optional)",
+                    "content": "THE GROUP BEHIND US — AWAITING YOUR APPROVED WORDING",
+                    "metadata": {"name": "Note label"}
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "content-split-note-body",
+                    "placeholder": "Note body (optional)",
+                    "content": "Intercargo launched with the warehouses, systems and people of an established logistics group behind it. Your approved public wording goes here. Until then everything above stands on its own.",
+                    "metadata": {"name": "Note body"}
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "_comment": "Generic definition list with editable heading, introduction and repeatable term/definition rows.",
+  "section": {
+    "className": "wp-block-intercargo-definition-list definition-list-section section-pad intercargo-native intercargo-native-definition-list",
+    "ariaLabel": "Definition list",
+    "id": "definition-list"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "definition-list-grid",
+      "allows": "intercargo/definition-row",
+      "label": "Definition rows — add, duplicate, delete or reorder"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {"className": "container definition-list-content", "templateLock": "all", "metadata": {"name": "Definition List content"}},
+      [
+        ["core/heading", {"level": 2, "className": "definition-list-heading", "content": "The things you can check.", "placeholder": "Section title", "metadata": {"name": "Section title"}}],
+        ["core/paragraph", {"className": "definition-list-intro", "content": "Everything here is verifiable before you send us a single carton.", "placeholder": "Section introduction", "metadata": {"name": "Section introduction"}}],
+        [
+          "core/group",
+          {"className": "definition-list-grid", "templateLock": false, "allowedBlocks": ["intercargo/definition-row"], "metadata": {"name": "Definition rows — add, duplicate, delete or reorder"}},
+          [
+            ["intercargo/definition-row", {"metadata": {"name": "Registered addresses"}}, [["core/paragraph", {"className": "definition-row-term", "content": "Registered addresses", "metadata": {"name": "Term"}}], ["core/paragraph", {"className": "definition-row-description", "content": "Five, all ours: Regency Park, Loganlea, Dandenong South, Welshpool and Moorebank. You can walk into any of them.", "metadata": {"name": "Definition"}}]]],
+            ["intercargo/definition-row", {"metadata": {"name": "ABN"}}, [["core/paragraph", {"className": "definition-row-term", "content": "ABN", "metadata": {"name": "Term"}}], ["core/paragraph", {"className": "definition-row-description", "content": "Publishes at launch, in the footer of every page.", "metadata": {"name": "Definition"}}]]],
+            ["intercargo/definition-row", {"metadata": {"name": "Customs brokerage licence"}}, [["core/paragraph", {"className": "definition-row-term", "content": "Customs brokerage licence", "metadata": {"name": "Term"}}], ["core/paragraph", {"className": "definition-row-description", "content": "Awaiting the licence number from Intercargo.", "metadata": {"name": "Definition"}}]]],
+            ["intercargo/definition-row", {"metadata": {"name": "Industry memberships"}}, [["core/paragraph", {"className": "definition-row-term", "content": "Industry memberships", "metadata": {"name": "Term"}}], ["core/paragraph", {"className": "definition-row-description", "content": "Awaiting confirmation. IFCBAA and AFIF are the two importers look for.", "metadata": {"name": "Definition"}}]]],
+            ["intercargo/definition-row", {"metadata": {"name": "Marine and liability insurance"}}, [["core/paragraph", {"className": "definition-row-term", "content": "Marine and liability insurance", "metadata": {"name": "Term"}}], ["core/paragraph", {"className": "definition-row-description", "content": "Awaiting the certificate details.", "metadata": {"name": "Definition"}}]]]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

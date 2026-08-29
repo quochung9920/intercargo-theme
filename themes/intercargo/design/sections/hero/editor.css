@@ -1,0 +1,66 @@
+/* Hero-only Gutenberg canvas geometry.
+ * This file is loaded only by editorStyle, so selectors deliberately do not depend
+ * on .editor-styles-wrapper / iframe wrapper classes that WordPress may change.
+ * Frontend styling remains entirely in style.css.
+ */
+
+.wp-block-intercargo-hero.intercargo-native-hero {
+  position: relative !important;
+  height: var(--hero-height) !important;
+  min-height: 576px !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+
+/* Gutenberg adds flow geometry to nested block wrappers. The Hero media layer must
+ * remain a full-bleed absolute layer behind all editable content. */
+.wp-block-intercargo-hero.intercargo-native-hero > .hero-media,
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media > .wp-block-image,
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media .wp-block-image,
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media figure.wp-block-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media .wp-block-image img,
+.wp-block-intercargo-hero.intercargo-native-hero .hero-media figure.wp-block-image img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 100% !important;
+  min-height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* Keep the editable composition above the media/scrim layers. */
+.wp-block-intercargo-hero.intercargo-native-hero > .hero-content,
+.wp-block-intercargo-hero.intercargo-native-hero .hero-content {
+  z-index: 2 !important;
+}

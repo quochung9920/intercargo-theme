@@ -1,0 +1,184 @@
+/**
+ * Service Comparison
+ *
+ * The section owns page rhythm and the Air Consolidation comparison treatment.
+ * The shared Comparison Table keeps the semantic/responsive renderer; the
+ * source-design geometry below is intentionally scoped to this section only.
+ */
+
+.service-comparison-section {
+  background: #fff;
+}
+
+.service-comparison-content,
+.service-comparison-content > * {
+  min-width: 0;
+}
+
+.service-comparison-content > * {
+  margin-block: 0;
+}
+
+.service-comparison-heading {
+  max-width: 900px;
+  color: #131417;
+  font-family: var(--font-heading);
+  font-size: clamp(26px, calc(23.02857px + 0.761905vw), 34px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+}
+
+.service-comparison-intro {
+  max-width: 760px;
+  margin-top: 16px;
+  color: #5b5955;
+  font-size: clamp(14.5px, calc(13.942857px + 0.142857vw), 16px);
+  line-height: 1.72;
+}
+
+.service-comparison-section .comparison-table {
+  margin-top: 44px;
+}
+
+.service-comparison-section .comparison-table__table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.service-comparison-section .comparison-table__service-column { width: 250px; }
+.service-comparison-section .comparison-table__cost-column { width: 190px; }
+.service-comparison-section .comparison-table__speed-column { width: 260px; }
+.service-comparison-section .comparison-table__best-column { width: auto; }
+
+.service-comparison-section .comparison-table__table th,
+.service-comparison-section .comparison-table__table td {
+  padding: 22px 20px;
+  vertical-align: middle;
+}
+
+.service-comparison-section .comparison-table__table thead th {
+  height: 26px;
+  padding: 0 20px 14px;
+  border-bottom: 1px solid #131417;
+  color: #8a877f;
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+
+.service-comparison-section .comparison-table__table tbody th,
+.service-comparison-section .comparison-table__table tbody td {
+  height: 66px;
+  border-bottom: 1px solid #e4e2dc;
+  transition:
+    background-color var(--ic-motion-base) var(--ic-ease-out),
+    color var(--ic-motion-fast) ease;
+}
+
+.service-comparison-section .comparison-table__table tbody th {
+  color: #131417;
+  font-family: var(--font-body);
+  font-size: 15.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.service-comparison-section .comparison-table__table tbody td {
+  color: #5b5955;
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  font-weight: 400;
+  line-height: 1.45;
+}
+
+.service-comparison-section .comparison-table__table tbody td span {
+  transition: color var(--ic-motion-fast) ease;
+}
+
+.service-comparison-section .comparison-table__table tbody tr.is-highlighted th,
+.service-comparison-section .comparison-table__table tbody tr.is-highlighted td {
+  background: #f4f3f0;
+}
+
+.service-comparison-note {
+  max-width: 700px;
+  margin-top: 26px;
+  color: #5b5955;
+  font-size: 14.5px;
+  line-height: 1.68;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* Reuse the shared Card interaction language without making rows behave like
+   * links: dark surface, white title and softened supporting copy. */
+  .service-comparison-section .comparison-table__table tbody tr:hover th,
+  .service-comparison-section .comparison-table__table tbody tr:hover td {
+    background: #242528;
+  }
+
+  .service-comparison-section .comparison-table__table tbody tr:hover th {
+    color: #fff;
+  }
+
+  .service-comparison-section .comparison-table__table tbody tr:hover td,
+  .service-comparison-section .comparison-table__table tbody tr:hover td span {
+    color: rgba(255,255,255,.70);
+  }
+}
+
+@media (min-width: 960px) {
+  .service-comparison-section {
+    padding-block: 110px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .service-comparison-heading {
+    font-size: 34px;
+    letter-spacing: -2.2px;
+  }
+}
+
+@media (max-width: 959px) {
+  .service-comparison-section .comparison-table {
+    margin-top: clamp(32px, calc(27.542857px + 1.142857vw), 44px);
+  }
+}
+
+@media (max-width: 767px) {
+  .service-comparison-section .comparison-table__table tbody th,
+  .service-comparison-section .comparison-table__table tbody td {
+    height: auto;
+  }
+
+  .service-comparison-section .comparison-table__table tbody th {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    line-height: 1.35;
+  }
+
+  .service-comparison-section .comparison-table__table tbody td,
+  .service-comparison-section .comparison-table__table tbody td span {
+    font-size: 13.5px;
+    line-height: 1.55;
+  }
+
+  .service-comparison-note {
+    max-width: 100%;
+    font-size: 13.5px;
+    line-height: 1.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-comparison-section .comparison-table__table tbody th,
+  .service-comparison-section .comparison-table__table tbody td,
+  .service-comparison-section .comparison-table__table tbody td span {
+    transition-duration: 1ms !important;
+  }
+}

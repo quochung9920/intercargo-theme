@@ -1,0 +1,13 @@
+{
+  "_comment": "About Us warehouse-floor variant. Reuses Media Split with an approved existing PNG asset.",
+  "template": [
+    [
+      "core/group",
+      {"className": "container media-split-layout media-split-layout--about-floor", "templateLock": "all", "metadata": {"name": "The floor"}},
+      [
+        ["core/image", {"className": "media-split-media", "alt": "Intercargo warehouse floor", "url": "@theme/01fe034c8270ad81b014007611c673e085a9effd.png", "metadata": {"name": "Warehouse floor image"}}],
+        ["core/group", {"className": "media-split-copy", "templateLock": "all"}, [["core/heading", {"level": 2, "className": "media-split-title", "content": "The floor, not the boardroom.", "metadata": {"name": "Section title"}}], ["core/paragraph", {"className": "media-split-body", "content": "Our people are operators and licensed brokers who came up through the industry. The person who quotes your freight has probably unpacked a container at some point, which is why the advice tends to be practical.", "metadata": {"name": "Supporting copy"}}]]]
+      ]
+    ]
+  ]
+}

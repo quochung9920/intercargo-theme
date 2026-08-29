@@ -1,0 +1,99 @@
+{
+  "_comment": "Generic service-family options section. The section owns heading/intro; each Service Option owns exactly one destination and its own structured copy.",
+  "section": {
+    "className": "wp-block-intercargo-service-options service-options-section section-pad intercargo-native intercargo-native-service-options",
+    "ariaLabel": "Service options",
+    "id": "service-options"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "service-options-panel",
+      "allows": "intercargo/service-option",
+      "label": "Service options"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container service-options-content",
+        "templateLock": "all",
+        "metadata": {"name": "Service options content"}
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "service-options-heading",
+            "placeholder": "Section title",
+            "content": "Which service you need.",
+            "metadata": {"name": "Section title"}
+          }
+        ],
+        [
+          "core/paragraph",
+          {
+            "className": "service-options-intro",
+            "placeholder": "Short section introduction",
+            "content": "Choose the service that best matches the freight, timing and handling you need.",
+            "metadata": {"name": "Section introduction"}
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "service-options-panel",
+            "templateLock": false,
+            "metadata": {"name": "Service options — duplicate, delete, reorder or add"}
+          },
+          [
+            [
+              "intercargo/service-option",
+              {"url": "#enquiry", "target": "_self", "metadata": {"name": "Option 1 — Air Consolidation"}},
+              [
+                ["core/group", {"className": "service-option-service", "templateLock": "all", "metadata": {"name": "Service"}}, [
+                  ["core/heading", {"level": 3, "className": "service-option-title", "placeholder": "Service name", "content": "Air Consolidation", "metadata": {"name": "Service name"}}],
+                  ["core/paragraph", {"className": "service-option-description", "placeholder": "Service description", "content": "Share the aircraft and pay for the space you use.", "metadata": {"name": "Service description"}}]
+                ]],
+                ["core/group", {"className": "service-option-condition", "templateLock": "all", "metadata": {"name": "When to choose it"}}, [
+                  ["core/paragraph", {"className": "service-option-condition-label", "content": "CHOOSE THIS WHEN", "metadata": {"name": "Condition label"}}],
+                  ["core/paragraph", {"className": "service-option-condition-text", "placeholder": "When this service is the right fit", "content": "It fits a standard air pallet and can wait a few days", "metadata": {"name": "Condition"}}]
+                ]]
+              ]
+            ],
+            [
+              "intercargo/service-option",
+              {"url": "#enquiry", "target": "_self", "metadata": {"name": "Option 2 — Oversize and OOG"}},
+              [
+                ["core/group", {"className": "service-option-service", "templateLock": "all", "metadata": {"name": "Service"}}, [
+                  ["core/heading", {"level": 3, "className": "service-option-title", "placeholder": "Service name", "content": "Oversize and OOG", "metadata": {"name": "Service name"}}],
+                  ["core/paragraph", {"className": "service-option-description", "placeholder": "Service description", "content": "Charter and part-charter where it is needed.", "metadata": {"name": "Service description"}}]
+                ]],
+                ["core/group", {"className": "service-option-condition", "templateLock": "all", "metadata": {"name": "When to choose it"}}, [
+                  ["core/paragraph", {"className": "service-option-condition-label", "content": "CHOOSE THIS WHEN", "metadata": {"name": "Condition label"}}],
+                  ["core/paragraph", {"className": "service-option-condition-text", "placeholder": "When this service is the right fit", "content": "It will not fit a standard pallet or door", "metadata": {"name": "Condition"}}]
+                ]]
+              ]
+            ],
+            [
+              "intercargo/service-option",
+              {"url": "#enquiry", "target": "_self", "metadata": {"name": "Option 3 — Time Critical"}},
+              [
+                ["core/group", {"className": "service-option-service", "templateLock": "all", "metadata": {"name": "Service"}}, [
+                  ["core/heading", {"level": 3, "className": "service-option-title", "placeholder": "Service name", "content": "Time Critical", "metadata": {"name": "Service name"}}],
+                  ["core/paragraph", {"className": "service-option-description", "placeholder": "Service description", "content": "Next available flight, watched end to end.", "metadata": {"name": "Service description"}}]
+                ]],
+                ["core/group", {"className": "service-option-condition", "templateLock": "all", "metadata": {"name": "When to choose it"}}, [
+                  ["core/paragraph", {"className": "service-option-condition-label", "content": "CHOOSE THIS WHEN", "metadata": {"name": "Condition label"}}],
+                  ["core/paragraph", {"className": "service-option-condition-text", "placeholder": "When this service is the right fit", "content": "A day matters more than the rate", "metadata": {"name": "Condition"}}]
+                ]]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

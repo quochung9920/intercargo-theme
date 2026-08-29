@@ -1,0 +1,142 @@
+/*
+ * Content Split
+ *
+ * Reusable editorial statement + copy composition. The supplied About page is
+ * the geometry authority; global container, typography families and colours
+ * remain owned by the design core.
+ */
+.content-split-section {
+  --content-split-pad-y: clamp(64px, calc(46.914287px + 4.380952vw), 110px);
+  --content-split-gap: clamp(24px, calc(3.200001px + 5.333333vw), 80px);
+  --content-split-heading: clamp(24px, calc(21.028571px + 0.761905vw), 32px);
+  --content-split-heading-track: clamp(-1.9px, calc(-1.214286px - 0.047619vw), -1.4px);
+  --content-split-copy-gap: clamp(14px, calc(12.514287px + 0.380952vw), 18px);
+  --content-split-lead: clamp(14.5px, calc(13.942858px + 0.142857vw), 16px);
+  --content-split-body: clamp(14px, calc(13.628572px + 0.095238vw), 15px);
+  --content-split-note-pad-x: clamp(18px, calc(15.771427px + 0.571429vw), 24px);
+  --content-split-note-pad-top: clamp(18px, calc(17.257144px + 0.190476vw), 20px);
+  --content-split-note-pad-bottom: clamp(20px, calc(19.257144px + 0.190476vw), 22px);
+  --content-split-note-gap: clamp(6px, calc(5.257143px + 0.190476vw), 8px);
+  --content-split-note-label: clamp(10px, calc(9.628572px + 0.095238vw), 11px);
+  --content-split-note-body: clamp(12.5px, calc(12.314286px + 0.047619vw), 13px);
+
+  padding-block: var(--content-split-pad-y);
+  background: #fff;
+}
+
+.content-split-section :where(
+  .content-split-layout,
+  .content-split-heading,
+  .content-split-copy,
+  .content-split-lead,
+  .content-split-body,
+  .content-split-emphasis,
+  .content-split-note,
+  .content-split-note-label,
+  .content-split-note-body
+) {
+  margin-block: 0;
+}
+
+.content-split-layout,
+.content-split-copy,
+.content-split-note {
+  min-width: 0;
+}
+
+.content-split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--content-split-gap);
+  align-items: start;
+}
+
+.content-split-heading {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--content-split-heading);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: var(--content-split-heading-track);
+}
+
+.content-split-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-split-copy-gap);
+}
+
+.content-split-copy > :where(p, .content-split-note) {
+  margin-block: 0;
+}
+
+.content-split-lead,
+.content-split-body,
+.content-split-emphasis,
+.content-split-note-body {
+  color: #5b5955;
+  font-family: var(--font-body);
+  line-height: 1.72;
+}
+
+.content-split-lead {
+  font-size: var(--content-split-lead);
+}
+
+.content-split-body,
+.content-split-emphasis {
+  font-size: var(--content-split-body);
+}
+
+.content-split-emphasis {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.content-split-copy > :where(.content-split-body, .content-split-emphasis):empty:not([contenteditable="true"]) {
+  display: none;
+}
+
+.content-split-note {
+  border: 1px dashed #c9c6bf;
+  border-radius: 12px;
+  padding: var(--content-split-note-pad-top) var(--content-split-note-pad-x) var(--content-split-note-pad-bottom);
+  display: flex;
+  flex-direction: column;
+  gap: var(--content-split-note-gap);
+}
+
+.content-split-note-label {
+  color: #8a877f;
+  font-family: var(--font-body);
+  font-size: var(--content-split-note-label);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 1.3px;
+}
+
+.content-split-note-body {
+  font-size: var(--content-split-note-body);
+  line-height: 1.66;
+}
+
+@media (min-width: 900px) {
+  .content-split-layout {
+    grid-template-columns: minmax(0, 470fr) minmax(0, 634fr);
+  }
+}
+
+/* About Us deferred-profile variant. */
+.content-split-layout--about-deal {
+  grid-template-columns: minmax(0, 1fr);
+  gap: clamp(14px, calc(12.514287px + 0.380952vw), 18px);
+}
+
+.content-split-layout--about-deal .content-split-copy {
+  gap: clamp(24px, calc(16.571428px + 1.904762vw), 44px);
+}
+
+.content-split-layout--about-deal .content-split-lead {
+  max-width: 760px;
+}

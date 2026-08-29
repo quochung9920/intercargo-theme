@@ -1,0 +1,76 @@
+/* Global announcement / live world clocks. Mirrors the approved Air Freight shell. */
+.announce {
+  width: 100%;
+  background: var(--ink);
+}
+
+/* The announcement surface spans the viewport, but its content follows the exact
+   same horizontal gutter as the primary header navigation. This keeps clocks,
+   logo and nav aligned as one page-shell system. */
+.announce-inner {
+  width: calc(100% - (var(--nav-gutter) * 2));
+  margin-inline: auto;
+  padding-block: clamp(9px, calc(8.257143px + 0.190476vw), 11px);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.announce-inner::-webkit-scrollbar { display: none; }
+
+.announce-label {
+  margin: 0;
+  flex: 0 0 auto;
+  color: var(--yellow);
+  font-size: clamp(11px, calc(10.628571px + 0.095238vw), 12px);
+  font-weight: 600;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.announce-item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, calc(5.257143px + 0.190476vw), 8px);
+}
+
+.announce-item img {
+  width: clamp(11px, calc(10.442857px + 0.142857vw), 12.5px);
+  height: clamp(11px, calc(10.442857px + 0.142857vw), 12.5px);
+  flex: 0 0 auto;
+}
+
+.announce-time {
+  display: flex;
+  align-items: center;
+  gap: clamp(5px, calc(4.628571px + 0.095238vw), 6px);
+  font-size: clamp(11px, calc(10.628571px + 0.095238vw), 12px);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.announce-city {
+  color: #fff;
+  font-weight: 600;
+}
+
+.announce-clock {
+  color: #b9bcc5;
+  font-variant-numeric: tabular-nums;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .announce-inner { scroll-behavior: auto; }
+}
+
+/* If a page intentionally combines the announcement with a transparent header,
+   the overlay nav begins below the announcement instead of painting over it. */
+.intercargo-announcement-visible.intercargo-header-transparent .site-nav {
+  top: calc(var(--wp-admin--admin-bar--height, 0px) + var(--intercargo-announcement-height, 38px));
+}

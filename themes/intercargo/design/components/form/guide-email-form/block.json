@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/guide-email-form",
+  "title": "Guide Form",
+  "category": "intercargo-sections",
+  "icon": "email",
+  "parent": [
+    "intercargo/guide"
+  ],
+  "textdomain": "intercargo-vite",
+  "attributes": {
+    "shortcode": {
+      "type": "string",
+      "default": ""
+    },
+    "provider": {
+      "type": "string",
+      "default": ""
+    },
+    "formId": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "intercargo-form-editor",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false,
+    "inserter": false,
+    "reusable": false
+  },
+  "style": "intercargo-form-adapter",
+  "editorStyle": "intercargo-form-editor-preview"
+}

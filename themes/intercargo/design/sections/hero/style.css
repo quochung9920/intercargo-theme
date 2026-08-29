@@ -1,0 +1,566 @@
+/* Presence-scoped styles for hero */
+
+      .hero {
+        position: relative;
+        height: var(--hero-height);
+        min-height: 576px;
+        overflow: hidden;
+        color: #fff;
+        background: var(--ink);
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .hero-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(8, 11, 16, 0.94) 0%, rgba(8, 11, 16, 0.72) 45%, rgba(8, 11, 16, 0.42) 100%);
+      }
+
+      .hero-content {
+        position: absolute;
+        z-index: 2;
+        top: var(--hero-top);
+        left: 50%;
+        width: calc(100% - (var(--page-gutter) * 2));
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .hero-title {
+        margin: 0;
+        font-family: var(--font-heading);
+        font-size: var(--h1);
+        font-weight: 600;
+        line-height: 0.98;
+        letter-spacing: clamp(-3.745px, calc(-0.364px - 0.235vw), -1.28px);
+      }
+
+      .hero-title .line {
+        display: block;
+      }
+
+      .hero-title-desktop {
+        display: none;
+      }
+
+      .hero-fold {
+        min-width: 0;
+      }
+
+      .service-index {
+        display: none;
+      }
+
+      .hero-intro {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+      }
+
+      .hero-intro-copy {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.96);
+        font-size: clamp(13.5px, calc(12.757px + 0.19vw), 15.5px);
+        line-height: 1.65;
+      }
+
+      .accent {
+        color: var(--yellow);
+      }
+
+      .hero-starter {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-input {
+        width: 100%;
+        min-width: 0;
+        border-radius: 6px;
+        outline: none;
+      }
+
+      .hero-input {
+        height: 48px;
+        border: 1px solid rgba(255, 255, 255, 0.32);
+        padding: 0 15px;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.12);
+        font-size: 13.5px;
+      }
+
+      .hero-input::placeholder {
+        color: rgba(255, 255, 255, 0.62);
+        opacity: 1;
+      }
+
+      .hero-starter .button {
+        width: 100%;
+        min-height: 50px;
+      }
+
+      .hero-note {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.66);
+        font-size: clamp(11.5px, calc(11.129px + 0.095vw), 12.5px);
+        line-height: 1.45;
+      }
+
+      .hero-baseline {
+        border-top: 1px solid rgba(255, 255, 255, 0.22);
+        padding-top: 16px;
+      }
+
+      .hero-baseline p {
+        margin: 0;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: clamp(11.5px, calc(10.943px + 0.143vw), 13px);
+        font-weight: 500;
+        line-height: 1.45;
+        letter-spacing: 0.01em;
+      }
+      @media (min-width: 768px) {
+        .hero-title-mobile {
+          display: none;
+        }
+      }
+      @media (min-width: 768px) {
+
+        .hero-title-desktop {
+          display: block;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-content {
+          gap: clamp(34px, calc(7.886px + 2.857vw), 48px);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-fold {
+          display: flex;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: clamp(48px, 8vw, 96px);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index {
+          width: min(40%, 440px);
+          flex: 0 1 440px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index-row {
+          min-height: 56px;
+          padding: 15px 0;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          border-top: 1px solid rgba(255, 255, 255, 0.22);
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index-row:last-child {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index-name {
+          display: inline-flex;
+          align-items: center;
+          gap: 9px;
+          font-family: var(--font-heading);
+          font-size: clamp(17px, calc(8.571px + 0.794vw), 20px);
+          font-weight: 600;
+          line-height: 1.3;
+          white-space: nowrap;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index-name img {
+          width: 12px;
+          height: 12px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-index-meta {
+          color: rgba(255, 255, 255, 0.85);
+          font-size: 12.5px;
+          line-height: 1.45;
+          text-align: right;
+          white-space: nowrap;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-intro {
+          width: min(44%, 500px);
+          flex: 0 1 500px;
+          gap: 16px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-starter {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          row-gap: 16px;
+          column-gap: 8px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-starter .button {
+          width: auto;
+          min-width: 160px;
+          min-height: 48px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-note {
+          grid-column: 1 / -1;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .hero-baseline {
+          padding-top: 18px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+        .hero {
+          height: 900px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .hero-content {
+          top: 304px;
+          width: calc(100% - (var(--page-gutter) * 2));
+          gap: 48px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .hero-title {
+          font-size: 107px;
+          line-height: 0.95;
+          letter-spacing: -3.745px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .hero-fold {
+          min-height: 224px;
+          gap: 96px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .hero-intro {
+          width: 500px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .hero-intro-copy {
+          font-size: 15.5px;
+          line-height: 1.62;
+        }
+      }
+
+      /* Native Hero composition (ADR D1/D2/D3/D4) */
+
+      .intercargo-native-hero { padding: 0; }
+
+      /* The editable core/image is the single visual source of truth for the Hero.
+   Do not paint the same asset again as a CSS background: if Core's image styles
+   temporarily win with height:auto, the fallback becomes visible underneath and
+   looks like a second stacked background image. */
+      .intercargo-native-hero .hero-media {
+  background: var(--ink);
+}
+
+      /* D2: the scrim is a pseudo-element, not a block, so it never appears in List View
+   as a structural item the client cannot use. */
+
+      .intercargo-native-hero .hero-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(8, 11, 16, 0.94) 0%, rgba(8, 11, 16, 0.72) 45%, rgba(8, 11, 16, 0.42) 100%);
+}
+
+      /* WordPress core/image may apply height:auto after the section stylesheet.
+   Use a section-scoped, higher-specificity rule so the editable image always fills
+   the absolute media layer on both frontend and editor canvas. */
+      .intercargo-native-hero .hero-media .wp-block-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+      .intercargo-native-hero .hero-media .wp-block-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+      /* Core blocks carry their own vertical rhythm; the design supplies its own. */
+
+      .intercargo-native-hero .hero-content > *,
+.intercargo-native-hero .hero-fold > *,
+.intercargo-native-hero .hero-intro > *,
+.intercargo-native-hero .hero-starter > *,
+.intercargo-native-hero .service-index > *,
+.intercargo-native-hero .service-index-row > *,
+.intercargo-native-hero .hero-baseline > * { margin-block: 0; }
+
+      .intercargo-native-hero .hero-fold { display: block; }
+
+      /* D3a: one editable heading. The client types both breaks with Shift+Enter; the first
+   is suppressed above the breakpoint, reproducing the 3-line mobile / 2-line desktop
+   title without carrying five separate strings. */
+
+      /* Preserve real manual line breaks entered in the Gutenberg heading.
+   The first break is intentionally hidden on desktop below, leaving the second
+   break as the authoritative desktop split. */
+      .intercargo-native-hero .hero-title br {
+        display: block;
+      }
+
+      /* D3b: the two intro variants are paragraphs here, not spans, so the global
+   .copy-mobile / .copy-desktop inline toggles need block display in this context. */
+
+      .intercargo-native-hero .hero-intro-copy.copy-mobile { display: block; }
+
+      .intercargo-native-hero .hero-intro-copy.copy-desktop { display: none; }
+
+      .intercargo-native-hero .hero-form { min-width: 0; width: 100%; grid-column: 1 / -1; }
+
+      .intercargo-native-hero .hero-form .wpcf7 { width: 100%; }
+
+      .intercargo-native-hero .hero-form .wpcf7-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  margin: 0;
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-form > p { margin: 0; }
+
+      .intercargo-native-hero .hero-form label { display: block; margin: 0; }
+
+      .intercargo-native-hero .hero-form label > br { display: none; }
+
+      .intercargo-native-hero .hero-form label > span:first-child:not(.wpcf7-form-control-wrap) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-form-control-wrap { display: block; width: 100%; }
+
+      .intercargo-native-hero .hero-form input[type="email"] {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 6px;
+  padding: 0 15px;
+  outline: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  font: inherit;
+  font-size: 13.5px;
+}
+
+      .intercargo-native-hero .hero-form input[type="email"]::placeholder { color: rgba(255, 255, 255, 0.72); opacity: 1; }
+
+      .intercargo-native-hero .hero-form input[type="email"]:focus {
+  border-color: #fff;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.18);
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-submit {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  border: 1px solid var(--yellow);
+  border-radius: 6px;
+  padding: 13px 24px;
+  color: var(--ink);
+  background: var(--yellow);
+  font: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-submit:disabled { opacity: 1; cursor: default; }
+
+      .intercargo-native-hero .hero-form .wpcf7-not-valid-tip {
+  margin-top: 5px;
+  color: #fff;
+  font-size: 11.5px;
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-response-output {
+  grid-column: 1 / -1;
+  margin: 0;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #fff;
+  font-size: 11.5px;
+}
+
+      .intercargo-native-hero .hero-form .wpcf7-spinner { position: absolute; }
+
+      /* D4: stretched link. The row is a group, because editable blocks cannot be nested
+   inside an anchor, so the link overlays the row to keep the whole-row click target. */
+
+      .intercargo-native-hero .service-index-row { position: relative; }
+
+      .intercargo-native-hero .service-index-row .wp-block-button__link::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+      .intercargo-native-hero .service-index-row .wp-block-buttons,
+.intercargo-native-hero .service-index-row .wp-block-button { margin: 0; }
+
+      .intercargo-native-hero .service-index-row .wp-block-button__link {
+  min-height: 0;
+  padding: 0;
+  color: #fff;
+  background: transparent;
+  font-family: var(--font-heading);
+  font-size: clamp(17px, calc(8.571px + 0.794vw), 20px);
+  font-weight: 600;
+  line-height: 1.3;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+      .intercargo-native-hero .service-index-meta { margin: 0; }
+
+      @media (min-width: 768px) {
+  /* New templates may contain two manual breaks for the 3-line mobile heading.
+     Hide the first one on desktop only when another BR also exists. Existing
+     page content with a single intentional BR must keep that break. */
+  .intercargo-native-hero .hero-title br:first-of-type:not(:last-of-type) { display: none; }
+}
+
+      @media (min-width: 960px) {
+  /* The desktop fold adds the four-row service index. Between 960px and 1439px
+     the fluid height used to remain only 752–900px while the editable H1 can
+     legitimately wrap to three lines. The CTA, response note and baseline then
+     crossed the clipping edge. Reserve the desktop authority height as soon as
+     that fold becomes visible so every editable role remains on-canvas. */
+  .intercargo-native-hero { height: 900px; }
+  .intercargo-native-hero .hero-fold { display: flex; }
+  .intercargo-native-hero .hero-intro-copy.copy-mobile { display: none; }
+  .intercargo-native-hero .hero-intro-copy.copy-desktop { display: block; }
+  .intercargo-native-hero .hero-form .wpcf7-form { grid-template-columns: minmax(0, 1fr) auto; gap: 8px; }
+  .intercargo-native-hero .hero-form .wpcf7-submit { width: auto; min-width: 160px; min-height: 48px; }
+}
+/* Provider adapter: Gravity Forms receives the exact Hero geometry used by CF7. */
+.intercargo-native-hero .hero-form .gform_wrapper { width: 100%; margin: 0; }
+.intercargo-native-hero .hero-form .gform_wrapper form { margin: 0; }
+.intercargo-native-hero .hero-form .gform_wrapper .gform-body,
+.intercargo-native-hero .hero-form .gform_wrapper .gform_fields { width: 100%; }
+.intercargo-native-hero .hero-form .gform_wrapper .gform_fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+}
+.intercargo-native-hero .hero-form .gform_wrapper .gfield { margin: 0; }
+.intercargo-native-hero .hero-form .gform_wrapper .gfield_label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.intercargo-native-hero .hero-form .gform_wrapper input[type="email"] {
+  width: 100%; min-width: 0; height: 48px; margin: 0;
+  border: 1px solid rgba(255,255,255,.32); border-radius: 6px; padding: 0 15px;
+  outline: none; color: #fff; background: rgba(255,255,255,.12);
+  font: inherit; font-size: 13.5px;
+}
+.intercargo-native-hero .hero-form .gform_wrapper input[type="email"]::placeholder { color: rgba(255,255,255,.72); opacity: 1; }
+.intercargo-native-hero .hero-form .gform_wrapper .gform_footer { margin: 0; padding: 0; }
+.intercargo-native-hero .hero-form .gform_wrapper .gform_button {
+  width: 100%; min-height: 50px; margin: 0; border: 1px solid var(--yellow);
+  border-radius: 6px; padding: 13px 24px; color: var(--ink); background: var(--yellow);
+  font: inherit; font-size: 13.5px; font-weight: 600; line-height: 1.45; cursor: pointer;
+}
+@media (min-width: 960px) {
+  .intercargo-native-hero .hero-form .gform_wrapper form { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 8px; align-items: end; }
+  .intercargo-native-hero .hero-form .gform_wrapper .gform_footer { align-self: end; }
+  .intercargo-native-hero .hero-form .gform_wrapper .gform_button { width: auto; min-width: 160px; min-height: 48px; }
+}

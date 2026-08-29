@@ -1,0 +1,325 @@
+/* Presence-scoped styles for faq */
+
+      .faq-section {
+        background: var(--mobile-paper);
+      }
+
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .faq-intro {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .faq-copy {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(12.5px, calc(11.757px + 0.19vw), 14.5px);
+        line-height: 1.68;
+      }
+
+      .faq-layout .faq-cta-desktop,
+.faq-more {
+        display: none;
+      }
+
+      .faq-list {
+        min-width: 0;
+      }
+
+      .faq-item {
+        border-top: 1px solid var(--mobile-line);
+      }
+
+      .faq-item:last-child {
+        border-bottom: 1px solid var(--mobile-line);
+      }
+
+      .faq-question {
+        width: 100%;
+        min-height: 50px;
+        border: 0;
+        padding: 15px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        color: #26272b;
+        background: transparent;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .faq-question-text {
+        font-family: var(--font-heading);
+        font-size: clamp(14px, calc(11.771px + 0.571vw), 20px);
+        font-weight: 600;
+        line-height: 1.35;
+        letter-spacing: clamp(-0.3px, calc(-0.119px - 0.013vw), -0.168px);
+      }
+
+      .faq-plus {
+        color: var(--muted);
+        font-size: clamp(17px, calc(15.143px + 0.476vw), 22px);
+        font-weight: 400;
+        line-height: 1;
+      }
+
+      .faq-answer {
+        display: none;
+        margin: -2px 36px 16px 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+      }
+
+      .faq-item.is-open .faq-answer {
+        display: block;
+      }
+
+      .faq-layout .faq-cta-mobile {
+        width: 100%;
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-section {
+          background: var(--paper);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-layout {
+          grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+          gap: clamp(48px, calc(-27.429px + 7.143vw), 80px);
+          align-items: start;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-intro {
+          width: 100%;
+          gap: 16px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-layout .faq-cta-desktop {
+          display: inline-flex;
+          align-self: flex-start;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-more {
+          padding-top: 4px;
+          display: inline-flex;
+          align-items: center;
+          gap: 7px;
+          color: var(--ink);
+          font-size: 13px;
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-more img {
+          width: 11px;
+          height: 11px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-item {
+          border-top-color: var(--line);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-item:last-child {
+          border-bottom-color: var(--line);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-question {
+          min-height: 77px;
+          padding: 22px 0;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .faq-layout .faq-cta-mobile {
+          display: none;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .faq-layout {
+          /* Intro column caps at its Figma width; the question list keeps
+             filling the remaining width instead of freezing at 704px. */
+          min-height: 308px;
+          grid-template-columns: minmax(320px, 400px) minmax(0, 1fr);
+          gap: 80px;
+        }
+      }
+
+      /* Native FAQ composition (ADR D11: core/accordion, core since WordPress 6.9) */
+
+      /*
+ * core/accordion renders:
+ *   .wp-block-accordion > .wp-block-accordion-item(.is-open)
+ *     > h3.wp-block-accordion-heading
+ *         > button.wp-block-accordion-heading__toggle
+ *             > span...__toggle-title + span...__toggle-icon
+ *     > .wp-block-accordion-panel
+ *
+ * The design's own markup maps onto it almost element for element, so this is a
+ * restyle rather than a reimplementation. Core keeps the ARIA, the keyboard
+ * behaviour and the open/close state; the hand-written toggle script is deleted.
+ */
+
+      .intercargo-native-faq .wp-block-accordion { display: block; }
+
+      .intercargo-native-faq .wp-block-accordion-item { border-top: 1px solid var(--mobile-line); }
+
+      .intercargo-native-faq .wp-block-accordion-item:last-child { border-bottom: 1px solid var(--mobile-line); }
+
+      .intercargo-native-faq .wp-block-accordion-heading { margin: 0; }
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle {
+  width: 100%;
+  min-height: 50px;
+  border: 0;
+  padding: 15px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  color: #26272b;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: clamp(14px, calc(11.771px + 0.571vw), 20px);
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: clamp(-0.3px, calc(-0.119px - 0.013vw), -0.168px);
+}
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle-title {
+  min-width: 0;
+  text-decoration: none;
+}
+
+      /* Gutenberg underlines accordion titles on hover by default. The approved HTML
+   keeps the question text visually unchanged, so explicitly preserve that behaviour. */
+      .intercargo-native-faq .wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title {
+  text-decoration: none;
+}
+
+      /* Core may render its own accordion indicator inside the icon span. Hide that
+   element completely and draw the approved indicator on the toggle itself so only
+   one icon can ever be visible, regardless of the WordPress Core implementation. */
+      .intercargo-native-faq .wp-block-accordion-heading__toggle {
+  position: relative;
+  padding-right: 34px;
+}
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle-icon {
+  display: none !important;
+}
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle::before,
+.intercargo-native-faq .wp-block-accordion-heading__toggle::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 4px;
+  width: clamp(12px, calc(10.886px + 0.286vw), 15px);
+  height: 1.5px;
+  background: var(--muted);
+  border-radius: 999px;
+  pointer-events: none;
+  transform-origin: center;
+  transition: transform 180ms ease, opacity 180ms ease, background-color 180ms ease;
+}
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle::before {
+  transform: translateY(-50%);
+}
+
+      .intercargo-native-faq .wp-block-accordion-heading__toggle::after {
+  transform: translateY(-50%) rotate(90deg);
+}
+
+      .intercargo-native-faq .wp-block-accordion-item.is-open .wp-block-accordion-heading__toggle::after {
+  opacity: 0;
+  transform: translateY(-50%) rotate(0deg);
+}
+
+      .intercargo-native-faq .wp-block-accordion-panel { margin: -2px 36px 16px 0; }
+
+      .intercargo-native-faq .wp-block-accordion-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+      .intercargo-native-faq .faq-more .wp-block-button__link {
+  min-height: 0;
+  padding: 4px 0 0;
+  color: var(--ink);
+  background: transparent;
+  gap: 7px;
+}
+
+      @media (min-width: 768px) {
+  .intercargo-native-faq .wp-block-accordion-item { border-top-color: var(--line); }
+  .intercargo-native-faq .wp-block-accordion-item:last-child { border-bottom-color: var(--line); }
+  .intercargo-native-faq .wp-block-accordion-heading__toggle { min-height: 77px; padding: 22px 0; }
+}
+/* 4.14.1 — keep the custom +/- indicator clear of long question titles.
+   The previous desktop shorthand `padding: 22px 0` reset the reserved right
+   padding to zero, allowing text to run underneath the icon. */
+.intercargo-native-faq .wp-block-accordion-heading__toggle {
+  padding: 15px 48px 15px 0;
+  gap: 24px;
+}
+
+.intercargo-native-faq .wp-block-accordion-heading__toggle-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.intercargo-native-faq .wp-block-accordion-heading__toggle::before,
+.intercargo-native-faq .wp-block-accordion-heading__toggle::after {
+  right: 8px;
+}
+
+@media (min-width: 768px) {
+  .intercargo-native-faq .wp-block-accordion-heading__toggle {
+    min-height: 77px;
+    padding: 22px 52px 22px 0;
+  }
+}

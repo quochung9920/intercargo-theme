@@ -1,0 +1,25 @@
+{
+  "_comment": "A semantic whole-card link owner. The card URL and target are block attributes; editable descendants contain no URL state.",
+  "item": {
+    "element": "a",
+    "className": "service-card",
+    "parent": "intercargo/services",
+    "linkOwner": true
+  },
+  "mediaControls": [
+    {
+      "label": "Replace service icon",
+      "className": "service-icon",
+      "allowedTypes": ["image"]
+    }
+  ],
+  "template": [
+    ["core/group", {"className": "service-icon-row", "templateLock": "all", "metadata": {"name": "Service media"}}, [
+      ["core/image", {"className": "service-icon", "alt": "", "metadata": {"name": "Service icon"}}]
+    ]],
+    ["core/heading", {"level": 3, "className": "service-name", "placeholder": "Service name", "content": "Service", "metadata": {"name": "Service title"}}],
+    ["core/paragraph", {"className": "service-description copy-mobile", "placeholder": "Short description shown on phones", "content": "Short description.", "metadata": {"name": "Short description"}}],
+    ["core/paragraph", {"className": "service-description copy-desktop", "placeholder": "Full description shown on larger screens", "content": "Full description.", "metadata": {"name": "Full description"}}],
+    ["core/paragraph", {"className": "service-link", "placeholder": "Card call to action", "content": "See service", "metadata": {"name": "Card call to action text"}}]
+  ]
+}

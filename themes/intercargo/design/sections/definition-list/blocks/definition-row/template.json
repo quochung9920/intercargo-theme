@@ -1,0 +1,13 @@
+{
+  "_comment": "One structured Definition Row item. It is not a top-level section.",
+  "item": {
+    "element": "div",
+    "className": "definition-row",
+    "parent": "intercargo/definition-list"
+  },
+  "templateLock": "all",
+  "template": [
+    ["core/paragraph", {"className": "definition-row-term", "content": "Term", "placeholder": "Term", "metadata": {"name": "Term"}}],
+    ["core/paragraph", {"className": "definition-row-description", "content": "Definition", "placeholder": "Definition", "metadata": {"name": "Definition"}}]
+  ]
+}

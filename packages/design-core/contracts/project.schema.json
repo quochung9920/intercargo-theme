@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-platform.local/schemas/project.schema.json",
+  "title": "Design Project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "version", "themeDirectory", "blockNamespace", "paths"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "name": { "type": "string", "minLength": 1 },
+    "version": { "type": "string", "minLength": 1 },
+    "themeDirectory": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "blockNamespace": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "textDomain": { "type": "string", "minLength": 1 },
+    "paths": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["design", "assets", "theme", "src", "qa"],
+      "properties": {
+        "design": { "type": "string", "minLength": 1 },
+        "assets": { "type": "string", "minLength": 1 },
+        "theme": { "type": "string", "minLength": 1 },
+        "src": { "type": "string", "minLength": 1 },
+        "qa": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

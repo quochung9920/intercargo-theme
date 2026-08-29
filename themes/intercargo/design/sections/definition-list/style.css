@@ -1,0 +1,81 @@
+/**
+ * Definition List
+ *
+ * Reusable term/definition rows. Geometry follows the About Us verification
+ * section while shared theme tokens remain authoritative.
+ */
+.definition-list-section {
+  background: #fff;
+}
+
+.definition-list-content,
+.definition-list-grid,
+.definition-row {
+  min-width: 0;
+}
+
+.definition-list-content > *,
+.definition-list-grid > *,
+.definition-row > * {
+  margin-block: 0;
+}
+
+.definition-list-heading {
+  margin: 0;
+  max-width: 900px;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: clamp(26px, calc(23.028571px + 0.761905vw), 34px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+}
+
+.definition-list-intro {
+  margin: clamp(14px, calc(13.257144px + 0.190476vw), 16px) 0 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: clamp(14.5px, calc(13.942858px + 0.142857vw), 16px);
+  line-height: 1.72;
+}
+
+.definition-list-grid {
+  margin-top: clamp(32px, calc(27.542858px + 1.142857vw), 44px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  overflow: hidden;
+}
+
+.definition-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 7px;
+  padding: clamp(16px, calc(14.514287px + 0.380952vw), 20px) clamp(18px, calc(15.028571px + 0.761905vw), 26px);
+}
+
+.definition-row + .definition-row {
+  border-top: 1px solid var(--line);
+}
+
+.definition-row-term {
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: clamp(15px, calc(14.628572px + 0.095238vw), 16px);
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.definition-row-description {
+  color: var(--muted);
+  font-size: clamp(12.5px, calc(12.128572px + 0.095238vw), 13.5px);
+  line-height: 1.62;
+}
+
+@media (min-width: 768px) {
+  .definition-row {
+    grid-template-columns: minmax(180px, 0.35fr) minmax(0, 0.65fr);
+    gap: clamp(28px, 4vw, 64px);
+    align-items: start;
+  }
+}

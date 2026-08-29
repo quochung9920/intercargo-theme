@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/metric",
+  "title": "Metric",
+  "description": "One repeatable value-and-description item inside Metrics Band.",
+  "category": "intercargo-section-items",
+  "icon": "chart-bar",
+  "keywords": ["intercargo", "metric", "stat", "number", "item"],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "metric"
+  },
+  "ancestor": ["intercargo/metrics-band"]
+}

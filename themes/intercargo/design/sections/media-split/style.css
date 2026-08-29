@@ -1,0 +1,107 @@
+/**
+ * Media Split
+ *
+ * Generic image + copy layout. The Air Freight terminal frame is the geometry
+ * authority for this first use; shared theme container, colour and section
+ * rhythm remain authoritative globally.
+ */
+
+.media-split-section {
+  --media-split-gap: clamp(24px, calc(9.142856px + 3.809524vw), 64px);
+  --media-split-image-height: clamp(230px, calc(159.428571px + 18.095238vw), 420px);
+  --media-split-title: clamp(26px, calc(23.771426px + 0.571429vw), 32px);
+  --media-split-body: clamp(13.5px, calc(12.942857px + 0.142857vw), 15px);
+  --media-split-copy-gap: clamp(14px, calc(13.257143px + 0.190476vw), 16px);
+  background: #fff;
+}
+
+.media-split-layout,
+.media-split-copy,
+.media-split-media {
+  min-width: 0;
+}
+
+.media-split-layout > *,
+.media-split-copy > * {
+  margin-block: 0;
+}
+
+.media-split-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--media-split-gap);
+  align-items: center;
+}
+
+.media-split-media {
+  width: 100%;
+  margin: 0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.media-split-media img {
+  display: block;
+  width: 100%;
+  height: var(--media-split-image-height);
+  object-fit: cover;
+}
+
+.media-split-copy {
+  flex: 1 1 0;
+}
+
+.media-split-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--media-split-title);
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+.media-split-body {
+  margin: var(--media-split-copy-gap) 0 0;
+  color: var(--muted);
+  font-size: var(--media-split-body);
+  line-height: 1.75;
+}
+
+@media (min-width: 960px) {
+  .media-split-layout {
+    flex-direction: row;
+  }
+
+  .media-split-media {
+    flex: 0 0 auto;
+    width: min(50%, 600px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .media-split-media {
+    width: 600px;
+  }
+
+  .media-split-media img {
+    height: 420px;
+  }
+}
+
+/* About Us warehouse-floor variant. */
+.media-split-layout--about-floor {
+  --media-split-image-height: clamp(236px, calc(178.057142px + 14.857143vw), 392px);
+}
+
+@media (min-width: 960px) {
+  .media-split-layout--about-floor .media-split-media {
+    width: min(55%, 620px);
+  }
+}
+
+@media (min-width: 1280px) {
+  .media-split-layout--about-floor .media-split-media img {
+    height: 392px;
+  }
+}

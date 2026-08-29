@@ -1,0 +1,3 @@
+.editor-styles-wrapper .wp-block-acf-intercargo-process { max-width:none; }
+.editor-styles-wrapper .wp-block-acf-intercargo-process [contenteditable="true"]:focus { outline:none; }
+.intercargo-editor-row-actions { margin-top:12px; display:flex; gap:8px; }

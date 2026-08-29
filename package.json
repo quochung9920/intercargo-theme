@@ -4,14 +4,16 @@
   "version": "4.14.2",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite",
-    "validate": "python tools/validate-architecture.py && python tools/validate-theme.py && php tests/runtime-contract.php && node tests/editor-safety.mjs && python tests/visual-contract.py",
-    "test:architecture": "python tools/validate-architecture.py",
-    "test:structure": "python tools/validate-theme.py",
-    "test:runtime": "php tests/runtime-contract.php",
-    "test:editor": "node tests/editor-safety.mjs",
-    "test:visual": "python tests/visual-contract.py"
+    "sync": "python3 tools/export-theme.py --project intercargo",
+    "build": "python3 tools/export-theme.py --project intercargo && vite build --config projects/intercargo/vite.config.js",
+    "dev": "python3 tools/export-theme.py --project intercargo && vite --config projects/intercargo/vite.config.js",
+    "validate:architecture": "python3 tools/validate-architecture.py",
+    "validate": "python3 tools/validate-architecture.py && python3 themes/intercargo/tools/validate-theme.py && php themes/intercargo/tests/runtime-contract.php && node themes/intercargo/tests/editor-safety.mjs && python3 themes/intercargo/tests/visual-contract.py",
+    "test:structure": "python3 themes/intercargo/tools/validate-theme.py",
+    "test:runtime": "php themes/intercargo/tests/runtime-contract.php",
+    "test:editor": "node themes/intercargo/tests/editor-safety.mjs",
+    "test:visual": "python3 themes/intercargo/tests/visual-contract.py",
+    "release": "npm run build && npm run validate && python3 tools/package-theme.py --project intercargo"
   },
   "devDependencies": {
     "vite": "^7.3.6"

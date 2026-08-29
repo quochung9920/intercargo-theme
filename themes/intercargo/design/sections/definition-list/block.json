@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/definition-list",
+  "title": "Definition List",
+  "description": "Reusable section for verifiable facts, terms and supporting definitions.",
+  "category": "intercargo-sections",
+  "icon": "editor-ul",
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "style": "file:./style.css",
+  "render": "file:./render.php",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "definition-list",
+    "sectionPackage": true,
+    "syncable": true,
+    "defaultAnchor": "definition-list"
+  }
+}

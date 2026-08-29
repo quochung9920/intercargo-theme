@@ -1,11 +1,12 @@
-# Intercargo Design Project
+# Intercargo design project
 
-This directory will become the source of truth for Intercargo-specific design data and implementation.
+This directory is the source of truth for Intercargo-specific presentation and theme composition.
 
-Target contents include brand tokens, global presentation, components, sections, patterns, shell markup and project assets. None of those belong in the portable Design Core.
+- `design/` — visual system, components, sections, patterns, header/footer and interactions.
+- `assets/` — stable project assets and backwards-compatible media URLs.
+- `src/` — Vite bridge entries for global CSS/JS.
+- `theme/` — handwritten WordPress shell files that are copied into the generated theme.
+- `qa/` — project-specific contracts, visual/runtime tests and validation tools.
+- `vite.config.js` — builds global assets directly into `themes/intercargo/dist`.
 
-## Migration phase 1
-
-The existing `/design` directory remains the visual authority so this architectural change produces zero frontend differences. Files will move into this project in later phases only after the compiler/adapter boundaries are in place and regression tests protect the current output.
-
-Do not duplicate or rewrite current section implementations here during phase 1.
+Do not edit generated files under `themes/intercargo` directly. Run `npm run sync` after source changes and `npm run build` before release.

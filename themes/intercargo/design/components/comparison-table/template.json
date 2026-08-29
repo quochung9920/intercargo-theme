@@ -1,0 +1,72 @@
+{
+  "_comment": "Shared comparison data source. The renderer derives both desktop table and mobile card presentation from these editable headings and rows.",
+  "section": {
+    "className": "comparison-table comparison-table-editor",
+    "ariaLabel": "Comparison table",
+    "id": ""
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "comparison-table-rows",
+      "allows": "intercargo/comparison-row",
+      "label": "Comparison rows"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "comparison-table-structure",
+        "templateLock": "all",
+        "metadata": {"name": "Comparison table data"}
+      },
+      [
+        [
+          "core/group",
+          {
+            "className": "comparison-table-headers",
+            "templateLock": "all",
+            "metadata": {"name": "Column headings"}
+          },
+          [
+            ["core/paragraph", {"className": "comparison-table-header comparison-table-header--cost", "placeholder": "First column heading", "content": "Cost", "metadata": {"name": "Column 1 heading"}}],
+            ["core/paragraph", {"className": "comparison-table-header comparison-table-header--speed", "placeholder": "Second column heading", "content": "Timing", "metadata": {"name": "Column 2 heading"}}],
+            ["core/paragraph", {"className": "comparison-table-header comparison-table-header--best", "placeholder": "Third column heading", "content": "Best for", "metadata": {"name": "Column 3 heading"}}]
+          ]
+        ],
+        [
+          "core/group",
+          {
+            "className": "comparison-table-rows",
+            "templateLock": false,
+            "allowedBlocks": ["intercargo/comparison-row"],
+            "metadata": {"name": "Comparison rows — add, duplicate, delete or reorder"}
+          },
+          [
+            [
+              "intercargo/comparison-row",
+              {"metadata": {"name": "Option A"}},
+              [
+                ["core/heading", {"level": 3, "className": "comparison-row-name", "placeholder": "Option or service name", "content": "Option A", "metadata": {"name": "Option name"}}],
+                ["core/paragraph", {"className": "comparison-row-cost", "placeholder": "Cost or first comparison value", "content": "First value", "metadata": {"name": "Column 1 value"}}],
+                ["core/paragraph", {"className": "comparison-row-speed", "placeholder": "Timing or second comparison value", "content": "Second value", "metadata": {"name": "Column 2 value"}}],
+                ["core/paragraph", {"className": "comparison-row-best", "placeholder": "Best use or third comparison value", "content": "Third value", "metadata": {"name": "Column 3 value"}}]
+              ]
+            ],
+            [
+              "intercargo/comparison-row",
+              {"className": "is-style-highlighted", "metadata": {"name": "Option B — highlighted"}},
+              [
+                ["core/heading", {"level": 3, "className": "comparison-row-name", "placeholder": "Option or service name", "content": "Option B", "metadata": {"name": "Option name"}}],
+                ["core/paragraph", {"className": "comparison-row-cost", "placeholder": "Cost or first comparison value", "content": "First value", "metadata": {"name": "Column 1 value"}}],
+                ["core/paragraph", {"className": "comparison-row-speed", "placeholder": "Timing or second comparison value", "content": "Second value", "metadata": {"name": "Column 2 value"}}],
+                ["core/paragraph", {"className": "comparison-row-best", "placeholder": "Best use or third comparison value", "content": "Third value", "metadata": {"name": "Column 3 value"}}]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

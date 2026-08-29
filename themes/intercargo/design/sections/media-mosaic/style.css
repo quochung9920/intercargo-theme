@@ -1,0 +1,122 @@
+/*
+ * Media Mosaic
+ *
+ * Reusable asymmetric image collection. It never synthesizes substitute
+ * artwork: tiles use PNG/WebP assets or the shared WebP placeholder.
+ */
+.media-mosaic-section {
+  --media-mosaic-top: clamp(32px, calc(27.542858px + 1.142857vw), 44px);
+  --media-mosaic-gap: clamp(18px, calc(15.771427px + 0.571429vw), 24px);
+  --media-mosaic-height: clamp(190px, calc(149.142859px + 10.47619vw), 300px);
+  --media-mosaic-caption: clamp(12.5px, calc(12.314286px + 0.047619vw), 13px);
+
+  padding-block: clamp(64px, calc(46.914287px + 4.380952vw), 110px);
+  background: #fff;
+}
+
+.media-mosaic-content,
+.media-mosaic-grid,
+.media-mosaic-tile {
+  min-width: 0;
+}
+
+.media-mosaic-content > *,
+.media-mosaic-grid > *,
+.media-mosaic-tile > * {
+  margin-block: 0;
+}
+
+.media-mosaic-heading {
+  margin: 0;
+  max-width: 980px;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: clamp(26px, calc(23.028571px + 0.761905vw), 34px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+}
+
+.media-mosaic-intro {
+  margin: clamp(14px, calc(13.257143px + 0.190476vw), 16px) 0 0;
+  max-width: 880px;
+  color: #5b5955;
+  font-size: clamp(14.5px, calc(13.942858px + 0.142857vw), 16px);
+  line-height: 1.72;
+}
+
+.media-mosaic-section .media-mosaic-grid.is-layout-grid {
+  margin-top: var(--media-mosaic-top);
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--media-mosaic-gap);
+}
+
+.media-mosaic-tile {
+  grid-column: auto / span var(--media-mosaic-span-mobile, 12);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.media-mosaic-image,
+.media-mosaic-image.wp-block-image {
+  width: 100%;
+  height: var(--media-mosaic-height);
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.media-mosaic-image img,
+.media-mosaic-image.wp-block-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.media-mosaic-caption {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--media-mosaic-caption);
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.4px;
+}
+
+@media (min-width: 768px) {
+  .media-mosaic-tile {
+    grid-column: auto / span var(--media-mosaic-span-tablet, 4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .media-mosaic-tile {
+    grid-column: auto / span var(--media-mosaic-span-desktop, 3);
+  }
+}
+
+/* Gutenberg inserts wrappers around items; keep its preview on the same 12-column grid. */
+.editor-styles-wrapper .media-mosaic-grid > .block-editor-inner-blocks > .block-editor-block-list__layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--media-mosaic-gap);
+}
+
+.editor-styles-wrapper .media-mosaic-grid > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-media-mosaic-tile] {
+  grid-column: auto / span var(--media-mosaic-span-mobile, 12);
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .editor-styles-wrapper .media-mosaic-grid > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-media-mosaic-tile] {
+    grid-column: auto / span var(--media-mosaic-span-tablet, 4);
+  }
+}
+
+@media (min-width: 1024px) {
+  .editor-styles-wrapper .media-mosaic-grid > .block-editor-inner-blocks > .block-editor-block-list__layout > [data-media-mosaic-tile] {
+    grid-column: auto / span var(--media-mosaic-span-desktop, 3);
+  }
+}

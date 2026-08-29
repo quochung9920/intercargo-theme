@@ -1,0 +1,648 @@
+/*
+ * Service Hero
+ *
+ * Visual authority: Air Freight / Desktop 118:2 @ 1440 and
+ * Air Freight / Mobile 118:127 @ 390 from the supplied static source.
+ *
+ * System authority: the current Intercargo theme. In particular, this section
+ * deliberately reuses .container, --page-gutter, typography families, colours
+ * and the provider-neutral Form component instead of introducing parallel
+ * layout primitives.
+ */
+
+.intercargo-native-service-hero {
+  --service-hero-band: clamp(444px, calc(609.942859px - 11.523810vw), 565px);
+  --service-hero-media-height: clamp(230px, calc(203.999998px + 6.666667vw), 300px);
+  --service-hero-grid-gap: clamp(24px, calc(12.114285px + 3.047619vw), 56px);
+  --service-hero-crumb-size: clamp(10.5px, calc(10.128571px + 0.095238vw), 11.5px);
+  --service-hero-crumb-top: clamp(18px, calc(15.771426px + 0.571429vw), 24px);
+  --service-hero-card-top: clamp(134px, calc(116.171426px + 4.571429vw), 182px);
+  --service-hero-card-bottom: clamp(27.5px, calc(86.156px - 4.073333vw), 70.27px);
+  --service-hero-card-pad-x: clamp(22px, calc(9.371429px + 3.238095vw), 56px);
+  --service-hero-card-pad-top: clamp(26px, calc(20.057141px + 1.523810vw), 42px);
+  --service-hero-card-pad-bottom: clamp(28px, calc(22.057141px + 1.523810vw), 44px);
+  --service-hero-title-size: clamp(30px, calc(24.800000px + 1.333333vw), 44px);
+  --service-hero-title-track: clamp(-1.232px, calc(-0.694400px - 0.037333vw), -0.84px);
+  --service-hero-lead-size: clamp(14px, calc(12.885714px + 0.285714vw), 17px);
+  --service-hero-copy-gap: clamp(14px, calc(13.257143px + 0.190476vw), 16px);
+  --service-hero-starter-title-size: clamp(19px, calc(18.257143px + 0.190476vw), 21px);
+  --service-hero-input-pad-x: clamp(18px, calc(17.257143px + 0.190476vw), 20px);
+  --service-hero-input-pad-y: clamp(14px, calc(13.628571px + 0.095238vw), 15px);
+  --service-hero-button-pad-x: 26px;
+
+  position: relative;
+  min-height: var(--service-hero-band);
+  display: flow-root;
+  padding: 0;
+  background: #fff;
+}
+
+/* Core blocks ship their own block margins. Section geometry owns the rhythm. */
+.intercargo-native-service-hero :where(
+  .service-hero-media,
+  .service-hero-breadcrumb-wrap,
+  .service-hero-breadcrumb,
+  .service-hero-card,
+  .service-hero-grid,
+  .service-hero-copy,
+  .service-hero-title,
+  .service-hero-lead,
+  .service-hero-starter,
+  .service-hero-starter-title,
+  .service-hero-starter-note
+) {
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.intercargo-native-service-hero .service-hero-media {
+  position: absolute;
+  inset: 0 0 auto;
+  height: var(--service-hero-media-height);
+  overflow: hidden;
+  background: #5b5955;
+}
+
+.intercargo-native-service-hero .service-hero-media .wp-block-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.intercargo-native-service-hero .service-hero-media .wp-block-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+/* The wrapper uses the theme's global .container. No local max-width or
+ * duplicate page-gutter formula is allowed here. */
+.intercargo-native-service-hero .service-hero-breadcrumb-wrap {
+  position: absolute;
+  z-index: 2;
+  inset-inline: 0;
+  top: var(--service-hero-crumb-top);
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: var(--service-hero-crumb-size);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-native-service-hero .service-hero-breadcrumb a:hover {
+    color: #fff;
+  }
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb a:focus-visible {
+  color: #fff;
+}
+
+.intercargo-native-service-hero .service-hero-card {
+  position: relative;
+  z-index: 2;
+  margin-top: var(--service-hero-card-top);
+  margin-bottom: var(--service-hero-card-bottom);
+  padding: var(--service-hero-card-pad-top) var(--service-hero-card-pad-x) var(--service-hero-card-pad-bottom);
+  border: 1px solid #e2e0db;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.intercargo-native-service-hero .service-hero-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--service-hero-grid-gap);
+}
+
+.intercargo-native-service-hero .service-hero-copy,
+.intercargo-native-service-hero .service-hero-starter {
+  min-width: 0;
+}
+
+.intercargo-native-service-hero .service-hero-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-hero-title-size);
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: var(--service-hero-title-track);
+}
+
+.intercargo-native-service-hero .service-hero-lead {
+  margin: var(--service-hero-copy-gap) 0 0;
+  color: #5b5955;
+  font-size: var(--service-hero-lead-size);
+  line-height: 1.68;
+}
+
+.intercargo-native-service-hero .service-hero-starter {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.intercargo-native-service-hero .service-hero-starter-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-hero-starter-title-size);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.intercargo-native-service-hero .service-hero-starter-note {
+  margin: 0;
+  color: #77746e;
+  font-size: 12.5px;
+}
+
+/* Provider-neutral form integration. Geometry matches the static one-field
+ * starter when a compact CF7/Gravity form is selected. If a larger form is
+ * selected, the card stays in normal flow and grows safely instead of clipping. */
+.intercargo-native-service-hero .service-hero-starter :where(
+  .intercargo-form-shell,
+  .hero-form,
+  .guide-capture
+) {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.intercargo-native-service-hero .service-hero-starter .intercargo-form-shell__placeholder {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  border: 1px dashed #c8c5be;
+  border-radius: 6px;
+  padding: 0 var(--service-hero-input-pad-x);
+  color: #77746e;
+  background: #f2f1ef;
+  font-size: 12.5px;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7-form,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: end;
+  margin: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7-form > p,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gform_footer {
+  margin: 0;
+  padding: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7-form label {
+  display: block;
+  margin: 0;
+  font-size: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7-form label > br {
+  display: none;
+}
+
+.intercargo-native-service-hero .service-hero-starter .wpcf7-form-control-wrap,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gform-body,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gform_fields,
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gfield {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gform_fields {
+  display: grid;
+  gap: 8px;
+}
+
+.intercargo-native-service-hero .service-hero-starter .gform_wrapper .gfield_label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.intercargo-native-service-hero .service-hero-starter :where(
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"]
+) {
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  border: 1px solid #e2e0db;
+  border-radius: 6px;
+  padding: var(--service-hero-input-pad-y) var(--service-hero-input-pad-x);
+  outline: none;
+  color: var(--ink);
+  background: #f2f1ef;
+  font: inherit;
+  font-size: 13.5px;
+}
+
+.intercargo-native-service-hero .service-hero-starter :where(
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"]
+)::placeholder {
+  color: #77746e;
+  opacity: 1;
+}
+
+.intercargo-native-service-hero .service-hero-starter :where(
+  button[type="submit"],
+  input[type="submit"],
+  .wpcf7-submit,
+  .gform_button
+) {
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 6px;
+  padding: var(--service-hero-input-pad-y) var(--service-hero-button-pad-x);
+  color: var(--ink);
+  background: var(--yellow);
+  font: inherit;
+  font-size: clamp(13px, calc(12.814px + 0.048vw), 13.5px);
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.intercargo-native-service-hero .service-hero-starter :where(
+  .wpcf7-not-valid-tip,
+  .gfield_validation_message,
+  .validation_message
+) {
+  margin-top: 5px;
+  color: #8f2020;
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+.intercargo-native-service-hero .service-hero-starter :where(
+  .wpcf7-response-output,
+  .gform_validation_errors,
+  .gform_confirmation_message,
+  .validation_error
+) {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 11.5px;
+}
+
+/* The desktop split intentionally begins at 1100px, not the site's normal
+ * 960px structural breakpoint. This is source-authority behaviour: a 530px
+ * starter column makes the copy column too narrow below 1100px. */
+@media (min-width: 1100px) {
+  .intercargo-native-service-hero .service-hero-grid {
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .intercargo-native-service-hero .service-hero-copy {
+    flex: 1 1 0;
+  }
+
+  .intercargo-native-service-hero .service-hero-starter {
+    flex: 0 1 530px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1440px) {
+  .intercargo-native-service-hero {
+    min-height: 444px;
+  }
+
+  .intercargo-native-service-hero .service-hero-media {
+    height: 300px;
+  }
+
+  .intercargo-native-service-hero .service-hero-breadcrumb-wrap {
+    top: 24px;
+  }
+
+  .intercargo-native-service-hero .service-hero-card {
+    margin-top: 182px;
+    margin-bottom: 27.5px;
+    padding: 42px 56px 44px;
+  }
+
+  .intercargo-native-service-hero .service-hero-grid {
+    gap: 56px;
+  }
+
+  .intercargo-native-service-hero .service-hero-starter {
+    flex: 0 0 530px;
+  }
+
+  .intercargo-native-service-hero .service-hero-title {
+    font-size: 44px;
+    letter-spacing: -1.232px;
+  }
+}
+
+/* Hover-only alignment with the site's existing light form-field treatment.
+ * Normal, focus, invalid and validation states remain owned by the Form component. */
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-native-service-hero .service-hero-starter :where(
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="url"],
+    input[type="search"]
+  ):hover:not(:disabled):not([aria-invalid="true"]) {
+    border-color: #aaa79f;
+    background: #f2f1ef;
+    box-shadow: none;
+  }
+}
+
+/*
+ * About Hero variant
+ *
+ * The About page reuses the canonical Service Hero composition, dynamic
+ * breadcrumb, media control and provider-neutral Form component. Extra classes
+ * on the saved inner blocks select this measured layout without creating a
+ * second hero block or changing existing service pages.
+ */
+.intercargo-native-service-hero:has(.about-hero-grid) {
+  --about-hero-pad-x: clamp(20px, calc(3.657144px + 4.190476vw), 64px);
+  --about-hero-pad-top: clamp(28px, calc(19.085715px + 2.285714vw), 52px);
+  --about-hero-pad-bottom: clamp(32px, calc(23.085715px + 2.285714vw), 56px);
+  --about-hero-column-gap: clamp(20px, calc(3.657144px + 4.190476vw), 64px);
+  --about-hero-copy-gap: clamp(14px, calc(12.514287px + 0.380952vw), 18px);
+  --about-hero-title-size: clamp(32px, calc(24.571428px + 1.904762vw), 52px);
+  --about-hero-title-track: clamp(-1.56px, calc(-0.737142px - 0.057143vw), -0.96px);
+  --about-hero-lead-size: clamp(13.5px, calc(12.385715px + 0.285714vw), 16.5px);
+  --about-hero-starter-pad-top: clamp(20px, calc(18.514287px + 0.380952vw), 24px);
+  --about-hero-starter-gap: clamp(10px, calc(9.257144px + 0.190476vw), 12px);
+  --about-hero-starter-size: clamp(19px, calc(17.142859px + 0.476190vw), 24px);
+
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "breadcrumb"
+    "card"
+    "media";
+  row-gap: var(--about-hero-copy-gap);
+  padding: var(--about-hero-pad-top) var(--about-hero-pad-x) var(--about-hero-pad-bottom);
+  border-bottom: 1px solid var(--mobile-line);
+  background: var(--paper);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-media {
+  position: relative;
+  inset: auto;
+  grid-area: media;
+  width: auto;
+  height: auto;
+  min-height: 200px;
+  margin-top: calc(var(--about-hero-column-gap) - var(--about-hero-copy-gap));
+  border-radius: 10px;
+  background: #d8d5cf;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-media .wp-block-image,
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-media .wp-block-image img {
+  border-radius: inherit;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-breadcrumb-wrap,
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-card {
+  position: relative;
+  inset: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-breadcrumb-wrap {
+  z-index: auto;
+  grid-area: breadcrumb;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-breadcrumb {
+  overflow: visible;
+  color: var(--muted-light);
+  font-size: clamp(10px, calc(9.442858px + 0.142857vw), 11.5px);
+  letter-spacing: clamp(0.2px, calc(0.188858px + 0.002857vw), 0.23px);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-card {
+  z-index: auto;
+  grid-area: card;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--about-hero-copy-gap);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-copy,
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter {
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--about-hero-copy-gap);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-title {
+  color: #26272b;
+  font-size: var(--about-hero-title-size);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: var(--about-hero-title-track);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-lead {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--about-hero-lead-size);
+  line-height: 1.68;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--about-hero-starter-gap);
+  padding-top: var(--about-hero-starter-pad-top);
+  border-top: 2px solid #26272b;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter-title {
+  color: #26272b;
+  font-size: var(--about-hero-starter-size);
+  letter-spacing: -0.018em;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter-note {
+  color: var(--muted-light);
+  font-size: clamp(11.5px, calc(11.128572px + 0.095238vw), 12.5px);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter :where(
+  .intercargo-form-shell,
+  .wpcf7,
+  .wpcf7-form
+) {
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter .intercargo-form-shell {
+  display: block;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter .wpcf7-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter :where(
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"]
+) {
+  min-height: 0;
+  border-color: var(--mobile-line);
+  padding: clamp(12px, calc(11.257144px + 0.190476vw), 14px)
+    clamp(13px, calc(11.885715px + 0.285714vw), 16px);
+  color: #26272b;
+  background: #fff;
+  font-size: clamp(12.5px, calc(12.128572px + 0.095238vw), 13.5px);
+  line-height: clamp(19px, calc(18.628572px + 0.095238vw), 20px);
+}
+
+.intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter :where(
+  button[type="submit"],
+  input[type="submit"],
+  .wpcf7-submit
+) {
+  width: 100%;
+  padding: clamp(13px, calc(12.628572px + 0.095238vw), 14px)
+    clamp(20px, calc(19.257144px + 0.190476vw), 22px);
+}
+
+@media (min-width: 1000px) {
+  .intercargo-native-service-hero:has(.about-hero-grid) {
+    grid-template-columns: minmax(0, 778fr) minmax(0, 470fr);
+    grid-template-areas:
+      "breadcrumb media"
+      "card media";
+    column-gap: var(--about-hero-column-gap);
+  }
+
+  .intercargo-native-service-hero:has(.about-hero-grid) .about-hero-media {
+    min-height: 0;
+    margin-top: 0;
+  }
+
+  .intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter .wpcf7-form {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  .intercargo-native-service-hero:has(.about-hero-grid) .about-hero-starter :where(
+    button[type="submit"],
+    input[type="submit"],
+    .wpcf7-submit
+  ) {
+    width: auto;
+    white-space: nowrap;
+  }
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb-list {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb-item {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.intercargo-native-service-hero .service-hero-breadcrumb-item + .service-hero-breadcrumb-item::before {
+  content: "/";
+  margin-inline: 8px;
+  color: inherit;
+}

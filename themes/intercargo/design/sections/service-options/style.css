@@ -1,0 +1,175 @@
+/**
+ * Service Options
+ *
+ * Composition follows the Air Freight source panel. Shared theme authorities win
+ * for the outer container, section rhythm, colours and font families. Only the
+ * geometry unique to this component is scoped here.
+ */
+
+.service-options-section {
+  --service-options-heading: clamp(26px, calc(23.02857px + 0.761905vw), 34px);
+  --service-options-heading-track: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+  --service-options-intro: clamp(14.5px, calc(13.942857px + 0.142857vw), 16px);
+  --service-options-intro-gap: clamp(14px, calc(13.257143px + 0.190476vw), 16px);
+  --service-options-panel-gap: clamp(32px, calc(27.542857px + 1.142857vw), 44px);
+  --service-options-panel-x: clamp(20px, calc(14.057141px + 1.52381vw), 36px);
+  --service-options-panel-y: clamp(6px, calc(5.257143px + 0.190476vw), 8px);
+  --service-options-row-y: clamp(22px, calc(19.771426px + 0.571429vw), 28px);
+  --service-options-title: clamp(19px, calc(17.885714px + 0.285714vw), 22px);
+  --service-options-description: clamp(13px, calc(12.814285px + 0.047619vw), 13.5px);
+  --service-options-condition-label: clamp(9.5px, calc(9.314285px + 0.047619vw), 10px);
+  --service-options-condition: clamp(12.5px, calc(11.942857px + 0.142857vw), 14px);
+  background: #fff;
+}
+
+.service-options-content,
+.service-options-service,
+.service-option-condition {
+  min-width: 0;
+}
+
+.service-options-content > *,
+.service-options-panel > *,
+.service-option-row > *,
+.service-options-service > *,
+.service-option-condition > * {
+  margin-block: 0;
+}
+
+.service-options-heading {
+  margin: 0;
+  max-width: 900px;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-options-heading);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: var(--service-options-heading-track);
+}
+
+.service-options-intro {
+  margin: var(--service-options-intro-gap) 0 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: var(--service-options-intro);
+  line-height: 1.72;
+}
+
+.service-options-panel {
+  margin-top: var(--service-options-panel-gap);
+  padding: var(--service-options-panel-y) var(--service-options-panel-x);
+  border-radius: 12px;
+  background: var(--paper);
+}
+
+.service-option-row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-block: var(--service-options-row-y);
+  color: inherit;
+  text-decoration: none;
+}
+
+.service-option-row + .service-option-row {
+  border-top: 1px solid var(--line);
+}
+
+.service-option-service,
+.service-option-condition {
+  display: flex;
+  flex-direction: column;
+}
+
+.service-option-service {
+  gap: 6px;
+}
+
+.service-option-condition {
+  gap: 5px;
+}
+
+.service-option-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-options-title);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.055em;
+}
+
+.service-option-description {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--service-options-description);
+  line-height: 1.6;
+}
+
+.service-option-condition-label {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--service-options-condition-label);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.14em;
+}
+
+.service-option-condition-text {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--service-options-condition);
+  line-height: 1.55;
+}
+
+.service-option-row::after {
+  content: "";
+  display: none;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  background: center / 20px 20px no-repeat url("assets/chevron-right.png");
+  pointer-events: none;
+}
+
+@media (min-width: 960px) {
+  .service-option-row {
+    flex-direction: row;
+    align-items: center;
+    gap: clamp(24px, calc(6.286px + 4.571vw), 48px);
+  }
+
+  .service-option-service {
+    flex: 1 1 0;
+  }
+
+  .service-option-condition {
+    flex: 0 0 auto;
+    width: min(34%, 360px);
+  }
+
+  .service-option-row::after {
+    display: block;
+  }
+}
+
+@media (min-width: 1440px) {
+  .service-options-heading {
+    font-size: 34px;
+    letter-spacing: -2.2px;
+  }
+
+  .service-option-condition {
+    width: 360px;
+  }
+}
+
+/* About Us owned-operation variant. */
+.service-options-section:has(.service-options-content--about-run) {
+  background: var(--paper);
+}
+
+.service-options-content--about-run .service-options-panel {
+  background: #fff;
+}

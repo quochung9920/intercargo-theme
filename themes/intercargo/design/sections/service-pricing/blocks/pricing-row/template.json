@@ -1,0 +1,32 @@
+{
+  "_comment": "One key-value line inside the worked example. The final row in the collection is highlighted automatically as the total.",
+  "item": {
+    "element": "div",
+    "className": "service-pricing-row",
+    "parent": "intercargo/service-pricing"
+  },
+  "template": [
+    [
+      "core/paragraph",
+      {
+        "className": "service-pricing-calc-label",
+        "placeholder": "Row label",
+        "content": "Label",
+        "metadata": {
+          "name": "Row label"
+        }
+      }
+    ],
+    [
+      "core/paragraph",
+      {
+        "className": "service-pricing-calc-value",
+        "placeholder": "Row value",
+        "content": "Value",
+        "metadata": {
+          "name": "Row value"
+        }
+      }
+    ]
+  ]
+}

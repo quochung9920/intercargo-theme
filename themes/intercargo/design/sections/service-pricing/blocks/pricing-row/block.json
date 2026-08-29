@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/pricing-row",
+  "title": "Pricing Row",
+  "description": "One key-value row inside the worked example. The last row is highlighted as the total.",
+  "category": "intercargo-section-items",
+  "icon": "editor-table",
+  "keywords": ["intercargo", "pricing", "row", "example"],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "pricing-row"
+  },
+  "ancestor": [
+    "intercargo/service-pricing"
+  ]
+}

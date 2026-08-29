@@ -1,0 +1,57 @@
+{
+  "_comment": "Reusable asymmetric captioned-media collection. Existing PNG assets are used where semantically correct; missing Air and Road photography intentionally retain the shared WebP placeholder.",
+  "section": {
+    "id": "operation",
+    "className": "wp-block-intercargo-media-mosaic media-mosaic-section intercargo-native intercargo-native-media-mosaic",
+    "ariaLabel": "Operations media"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "media-mosaic-grid",
+      "allows": "intercargo/media-tile",
+      "label": "Media tiles — add, duplicate, delete or reorder"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container media-mosaic-content",
+        "templateLock": "all",
+        "metadata": {"name": "Media Mosaic content"}
+      },
+      [
+        ["core/heading", {"level": 2, "className": "media-mosaic-heading", "content": "The operation.", "metadata": {"name": "Section title"}}],
+        ["core/paragraph", {"className": "media-mosaic-intro", "content": "Four modes, run by the same team out of the same buildings.", "metadata": {"name": "Section introduction"}}],
+        [
+          "core/group",
+          {
+            "className": "media-mosaic-grid",
+            "templateLock": false,
+            "allowedBlocks": ["intercargo/media-tile"],
+            "metadata": {"name": "Media tiles — add, duplicate, delete or reorder"}
+          },
+          [
+            ["intercargo/media-tile", {"metadata": {"name": "Tile 1 — Air"}}, [
+              ["core/image", {"className": "media-mosaic-image", "alt": "Air freight operations placeholder", "url": "@theme/placeholders/media-placeholder.webp", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Air image — replace placeholder"}}],
+              ["core/paragraph", {"className": "media-mosaic-caption", "content": "Air", "metadata": {"name": "Media caption"}}]
+            ]],
+            ["intercargo/media-tile", {"metadata": {"name": "Tile 2 — Sea"}}, [
+              ["core/image", {"className": "media-mosaic-image", "alt": "Container ship at sea", "url": "@theme/6ea7bb3c143f74e411d5b49ab617c6acb1fdbfea.png", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Sea image"}}],
+              ["core/paragraph", {"className": "media-mosaic-caption", "content": "Sea", "metadata": {"name": "Media caption"}}]
+            ]],
+            ["intercargo/media-tile", {"metadata": {"name": "Tile 3 — Warehouse"}}, [
+              ["core/image", {"className": "media-mosaic-image", "alt": "Warehouse operations", "url": "@theme/01fe034c8270ad81b014007611c673e085a9effd.png", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Warehouse image"}}],
+              ["core/paragraph", {"className": "media-mosaic-caption", "content": "Warehouse", "metadata": {"name": "Media caption"}}]
+            ]],
+            ["intercargo/media-tile", {"metadata": {"name": "Tile 4 — Road"}}, [
+              ["core/image", {"className": "media-mosaic-image", "alt": "Road transport operations placeholder", "url": "@theme/placeholders/media-placeholder.webp", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Road image — replace placeholder"}}],
+              ["core/paragraph", {"className": "media-mosaic-caption", "content": "Road", "metadata": {"name": "Media caption"}}]
+            ]]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

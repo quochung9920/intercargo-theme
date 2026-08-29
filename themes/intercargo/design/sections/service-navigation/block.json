@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/service-navigation",
+  "title": "Service Navigation",
+  "description": "Dynamic sticky in-page navigation generated from following page sections, with compact inline title, order and visibility controls. Targets are automatic.",
+  "category": "intercargo-sections",
+  "icon": "menu-alt3",
+  "keywords": [
+    "intercargo",
+    "section",
+    "service",
+    "navigation",
+    "table of contents"
+  ],
+  "textdomain": "intercargo-vite",
+  "usesContext": [
+    "postId",
+    "postType"
+  ],
+  "attributes": {
+    "primaryCtaLabel": {
+      "type": "string",
+      "default": "Talk to our team"
+    },
+    "primaryCtaUrl": {
+      "type": "string",
+      "default": "#enquiry"
+    },
+    "secondaryCtaLabel": {
+      "type": "string",
+      "default": "Get the guide"
+    },
+    "secondaryCtaUrl": {
+      "type": "string",
+      "default": "#guide"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "Service page navigation"
+    },
+    "tabOrder": {
+      "type": "array",
+      "default": []
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "style": "file:./style.css",
+  "editorStyle": "intercargo-editor",
+  "viewScript": "file:./view.js",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": false
+  },
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  },
+  "intercargo": {
+    "sectionPackage": true,
+    "syncable": false,
+    "serviceNavigation": false
+  }
+}

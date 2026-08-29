@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "legacy": "acf/intercargo-reasons",
+      "canonical": "intercargo/reasons",
+      "attributes": {"data":{"title":"SAVED REASONS — DO NOT LOSE","reasons_0_title":"Custom saved card"},"mode":"preview"}
+    },
+    {
+      "legacy": "acf/intercargo-statement",
+      "canonical": "intercargo/statement",
+      "attributes": {"data":{"line_one":"SAVED LINE ONE — DO NOT LOSE"},"lineOne":"SAVED NATIVE LINE ONE"}
+    },
+    {
+      "legacy": "acf/intercargo-process",
+      "canonical": "intercargo/process",
+      "attributes": {"data":{"heading":"SAVED PROCESS — DO NOT LOSE","steps_0_title":"Saved step"},"heading":"SAVED PROCESS NATIVE"}
+    },
+    {
+      "legacy": "acf/intercargo-enquiry",
+      "canonical": "intercargo/enquiry",
+      "attributes": {"data":{"title":"SAVED ENQUIRY — DO NOT LOSE","form_shortcode":"[contact-form-7 id=\"777\"]"},"title":"SAVED ENQUIRY NATIVE"}
+    }
+  ]
+}

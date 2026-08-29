@@ -1,0 +1,29 @@
+{
+  "_comment": "One locked illustrated step. The collection controls add, duplicate, delete and reorder; the item keeps a replaceable image, H3 and copy in the approved order.",
+  "item": {
+    "element": "article",
+    "className": "service-flow-step",
+    "parent": "intercargo/service-flow"
+  },
+  "mediaControls": [
+    {
+      "className": "service-flow-step-visual",
+      "label": "Replace step image",
+      "allowedTypes": ["image"]
+    }
+  ],
+  "template": [
+    [
+      "core/image",
+      {
+        "className": "service-flow-step-visual",
+        "alt": "",
+        "sizeSlug": "full",
+        "linkDestination": "none",
+        "metadata": {"name": "Step visual"}
+      }
+    ],
+    ["core/heading", {"level": 3, "className": "service-flow-step-title", "placeholder": "Step title", "content": "Service step", "metadata": {"name": "Step title"}}],
+    ["core/paragraph", {"className": "service-flow-step-copy", "placeholder": "Step description", "content": "Describe what happens at this stage.", "metadata": {"name": "Step description"}}]
+  ]
+}

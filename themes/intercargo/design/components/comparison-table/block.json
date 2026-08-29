@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/comparison-table",
+  "title": "Comparison Table",
+  "description": "Reusable accessible comparison matrix with editable headings, repeatable rows, configurable emphasis and responsive card presentation.",
+  "category": "intercargo-sections",
+  "icon": "editor-table",
+  "keywords": ["comparison", "table", "matrix", "options", "plans", "services"],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "style": "file:./style.css",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "comparison-table",
+    "sectionPackage": false,
+    "syncable": true
+  }
+}

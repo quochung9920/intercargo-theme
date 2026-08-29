@@ -1,0 +1,72 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/reasons",
+  "title": "Content Columns",
+  "description": "Reusable heading, optional introduction and repeatable content columns. Use Theme to match homepage or service-page treatments.",
+  "category": "intercargo-sections",
+  "icon": "columns",
+  "keywords": [
+    "intercargo",
+    "section",
+    "columns",
+    "reasons",
+    "criteria",
+    "benefits",
+    "includes"
+  ],
+  "textdomain": "intercargo-vite",
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "reasons",
+    "sectionPackage": true,
+    "syncable": true,
+    "legacyNames": [
+      "acf/intercargo-reasons"
+    ],
+    "defaultAnchor": "about"
+  },
+  "attributes": {
+    "theme": {
+      "type": "string",
+      "default": "homepage"
+    },
+    "data": {
+      "type": "object"
+    },
+    "title": {
+      "type": "string"
+    },
+    "reasons": {
+      "type": "array"
+    },
+    "intro": {
+      "type": "string"
+    },
+    "sectionAnchor": {
+      "type": "string"
+    },
+    "backgroundImageId": {
+      "type": "number"
+    },
+    "backgroundImageUrl": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css",
+  "render": "file:./render.php",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  }
+}

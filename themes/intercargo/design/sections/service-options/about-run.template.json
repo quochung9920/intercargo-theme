@@ -1,0 +1,22 @@
+{
+  "_comment": "About Us variant for owned facilities, services and accountable team. Reuses the canonical Service Options composition.",
+  "template": [
+    [
+      "core/group",
+      {"className": "container service-options-content service-options-content--about-run", "templateLock": "all", "metadata": {"name": "What we actually run"}},
+      [
+        ["core/heading", {"level": 2, "className": "service-options-heading", "content": "What we actually run.", "metadata": {"name": "Section title"}}],
+        ["core/paragraph", {"className": "service-options-intro", "content": "Owned, not brokered. Everything under one roof and one invoice.", "metadata": {"name": "Section introduction"}}],
+        [
+          "core/group",
+          {"className": "service-options-panel", "templateLock": false, "allowedBlocks": ["intercargo/service-option"], "metadata": {"name": "Operational facts — add, duplicate, delete or reorder"}},
+          [
+            ["intercargo/service-option", {"url": "/locations", "target": "_self", "metadata": {"name": "Five own facilities"}}, [["core/group", {"className": "service-option-service", "templateLock": "all"}, [["core/heading", {"level": 3, "className": "service-option-title", "content": "Five own facilities"}], ["core/paragraph", {"className": "service-option-description", "content": "Adelaide, Brisbane, Melbourne, Perth and Sydney. Warehousing, cartage and clearance at every site, in buildings we run ourselves."}]]], ["core/group", {"className": "service-option-condition", "templateLock": "all"}, [["core/paragraph", {"className": "service-option-condition-label", "content": "ACROSS"}], ["core/paragraph", {"className": "service-option-condition-text", "content": "Five Australian cities"}]]]]],
+            ["intercargo/service-option", {"url": "/services", "target": "_self", "metadata": {"name": "Thirteen services"}}, [["core/group", {"className": "service-option-service", "templateLock": "all"}, [["core/heading", {"level": 3, "className": "service-option-title", "content": "Thirteen services"}], ["core/paragraph", {"className": "service-option-description", "content": "Air, sea, customs and warehousing, all under one roof and one invoice."}]]], ["core/group", {"className": "service-option-condition", "templateLock": "all"}, [["core/paragraph", {"className": "service-option-condition-label", "content": "BILLED AS"}], ["core/paragraph", {"className": "service-option-condition-text", "content": "One invoice"}]]]]],
+            ["intercargo/service-option", {"url": "#enquiry", "target": "_self", "metadata": {"name": "One accountable team"}}, [["core/group", {"className": "service-option-service", "templateLock": "all"}, [["core/heading", {"level": 3, "className": "service-option-title", "content": "One accountable team"}], ["core/paragraph", {"className": "service-option-description", "content": "Senior operators and licensed brokers on every account, not a shared inbox."}]]], ["core/group", {"className": "service-option-condition", "templateLock": "all"}, [["core/paragraph", {"className": "service-option-condition-label", "content": "YOU GET"}], ["core/paragraph", {"className": "service-option-condition-text", "content": "A named senior operator"}]]]]]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

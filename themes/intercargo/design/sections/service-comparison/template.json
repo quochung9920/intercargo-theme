@@ -1,0 +1,25 @@
+{
+  "_comment": "Generic service comparison composition. The nested Comparison Table remains the single source of responsive comparison data.",
+  "section": {
+    "className": "wp-block-intercargo-service-comparison service-comparison-section section-pad intercargo-native intercargo-native-service-comparison",
+    "ariaLabel": "Service comparison",
+    "id": "compare"
+  },
+  "editorTemplateLock": "all",
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container service-comparison-content",
+        "templateLock": "all",
+        "metadata": {"name": "Service comparison content"}
+      },
+      [
+        ["core/heading", {"level": 2, "className": "service-comparison-heading", "placeholder": "Section title", "content": "How it compares.", "metadata": {"name": "Section title"}}],
+        ["core/paragraph", {"className": "service-comparison-intro", "placeholder": "Section introduction", "content": "Four ways to bring freight into Australia. The right one depends on how much you are moving and how soon you need it.", "metadata": {"name": "Section introduction"}}],
+        ["intercargo/comparison-table", {"metadata": {"name": "Comparison Table"}}],
+        ["core/paragraph", {"className": "service-comparison-note", "placeholder": "Supporting note", "content": "Close to the line? Send us the weight and the deadline. We price consolidation and a direct uplift, and recommend the cheaper one.", "metadata": {"name": "Supporting note"}}]
+      ]
+    ]
+  ]
+}

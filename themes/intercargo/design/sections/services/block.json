@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/services",
+  "title": "Services",
+  "description": "Service grid with native Service Card items. Cards can be duplicated, deleted, reordered or added; each card keeps its internal field structure locked.",
+  "category": "intercargo-sections",
+  "icon": "grid-view",
+  "keywords": [
+    "intercargo",
+    "section",
+    "services"
+  ],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "style": "file:./style.css",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  },
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "services",
+    "sectionPackage": true,
+    "syncable": true
+  }
+}

@@ -1,0 +1,28 @@
+/*
+ * Form preview hygiene for the Gutenberg canvas.
+ * Provider styles are not guaranteed to be present inside ServerSideRender,
+ * so hide provider-internal nodes that must never consume visual space.
+ */
+.editor-styles-wrapper .intercargo-form-editor :where(
+  .hidden-fields-container,
+  .screen-reader-response,
+  .wpcf7-spinner,
+  .gform_anchor,
+  .gform_validation_container,
+  .gform_hidden
+) {
+  display: none !important;
+}
+
+.editor-styles-wrapper .intercargo-form-editor .wpcf7-response-output[aria-hidden="true"]:empty {
+  display: none !important;
+}
+
+/* Provider-generated hidden fieldsets should stay hidden even if their plugin
+ * editor stylesheet is unavailable. */
+.editor-styles-wrapper .intercargo-form-editor fieldset.hidden-fields-container {
+  border: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  min-width: 0 !important;
+}
