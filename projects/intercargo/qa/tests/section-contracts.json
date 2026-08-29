@@ -41,11 +41,53 @@
       "packagePath": "design/sections/service-cta",
       "multiple": true
     },
+    "intercargo/content-split": {
+      "editor": "composition",
+      "compositionSlug": "content-split",
+      "syncable": true,
+      "packagePath": "design/sections/content-split",
+      "multiple": true
+    },
+    "intercargo/definition-list": {
+      "editor": "composition",
+      "compositionSlug": "definition-list",
+      "syncable": true,
+      "packagePath": "design/sections/definition-list",
+      "multiple": true
+    },
+    "intercargo/media-mosaic": {
+      "editor": "composition",
+      "compositionSlug": "media-mosaic",
+      "syncable": true,
+      "packagePath": "design/sections/media-mosaic",
+      "multiple": true
+    },
     "intercargo/media-split": {
       "editor": "composition",
       "compositionSlug": "media-split",
       "syncable": true,
       "packagePath": "design/sections/media-split",
+      "multiple": true
+    },
+    "intercargo/metrics-band": {
+      "editor": "composition",
+      "compositionSlug": "metrics-band",
+      "syncable": true,
+      "packagePath": "design/sections/metrics-band",
+      "multiple": true
+    },
+    "intercargo/service-comparison": {
+      "editor": "composition",
+      "compositionSlug": "service-comparison",
+      "syncable": true,
+      "packagePath": "design/sections/service-comparison",
+      "multiple": true
+    },
+    "intercargo/service-flow": {
+      "editor": "composition",
+      "compositionSlug": "service-flow",
+      "syncable": true,
+      "packagePath": "design/sections/service-flow",
       "multiple": true
     },
     "intercargo/services": {
@@ -149,6 +191,41 @@
       "ancestor": "intercargo/service-pricing",
       "category": "intercargo-section-items",
       "inserter": true
+    },
+    "intercargo/definition-row": {
+      "compositionSlug": "definition-row",
+      "packagePath": "design/sections/definition-list/blocks/definition-row",
+      "ancestor": "intercargo/definition-list",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/media-tile": {
+      "compositionSlug": "media-tile",
+      "packagePath": "design/sections/media-mosaic/blocks/media-tile",
+      "ancestor": "intercargo/media-mosaic",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/metric": {
+      "compositionSlug": "metric",
+      "packagePath": "design/sections/metrics-band/blocks/metric",
+      "ancestor": "intercargo/metrics-band",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/service-flow-step": {
+      "compositionSlug": "service-flow-step",
+      "packagePath": "design/sections/service-flow/blocks/service-flow-step",
+      "ancestor": "intercargo/service-flow",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/comparison-row": {
+      "compositionSlug": "comparison-row",
+      "packagePath": "design/components/comparison-table/blocks/comparison-row",
+      "ancestor": "intercargo/comparison-table",
+      "category": "intercargo-section-items",
+      "inserter": true
     }
   },
   "nonReusableComponents": [
@@ -159,6 +236,11 @@
     "intercargo/location",
     "intercargo/service-option",
     "intercargo/content-column",
-    "intercargo/pricing-row"
+    "intercargo/pricing-row",
+    "intercargo/definition-row",
+    "intercargo/media-tile",
+    "intercargo/metric",
+    "intercargo/service-flow-step",
+    "intercargo/comparison-row"
   ]
 }
