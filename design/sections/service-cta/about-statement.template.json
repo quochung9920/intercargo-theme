@@ -1,0 +1,13 @@
+{
+  "_comment": "About Us dark conversion band. Reuses Service CTA and the shared Form component.",
+  "template": [
+    [
+      "core/group",
+      {"className": "container service-cta-inner service-cta-inner--about-statement", "templateLock": "all", "metadata": {"name": "About statement CTA"}},
+      [
+        ["core/group", {"className": "service-cta-copy", "templateLock": "all"}, [["core/heading", {"level": 2, "className": "service-cta-title", "content": "Operators and brokers. Not a sales office.", "metadata": {"name": "CTA headline"}}], ["core/paragraph", {"className": "service-cta-description", "content": "Tell us what you are importing and a senior person answers, not a triage queue.", "metadata": {"name": "Supporting copy"}}]]],
+        ["core/group", {"className": "service-cta-form", "templateLock": "all"}, [["intercargo/form", {"variant": "quick-enquiry", "label": "Quick import enquiry", "note": "", "metadata": {"name": "Quick import enquiry"}}]]]
+      ]
+    ]
+  ]
+}

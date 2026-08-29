@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/comparison-row",
+  "title": "Comparison Row",
+  "description": "One reusable option row with a name and three comparison values. Apply the Highlighted style to emphasize it.",
+  "category": "intercargo-section-items",
+  "icon": "editor-table",
+  "keywords": ["comparison", "row", "option", "service", "highlight"],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": true,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "styles": [
+    {"name": "default", "label": "Default", "isDefault": true},
+    {"name": "highlighted", "label": "Highlighted"}
+  ],
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "comparison-row"
+  },
+  "ancestor": ["intercargo/comparison-table"]
+}

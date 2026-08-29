@@ -1,0 +1,70 @@
+/*
+ * Metrics Band
+ *
+ * Reusable dark value-and-label collection. The About page's By the Numbers
+ * band is the geometry authority; global container and type families remain
+ * owned by the design core.
+ */
+.metrics-band-section {
+  --metrics-band-pad-y: clamp(36px, calc(31.542858px + 1.142857vw), 48px);
+  --metrics-band-value: clamp(32px, calc(27.542858px + 1.142857vw), 44px);
+  --metrics-band-value-track: clamp(-2.4px, calc(-1.577142px - 0.057143vw), -1.8px);
+  --metrics-band-item-gap: clamp(2px, calc(1.257144px + 0.190476vw), 4px);
+  --metrics-band-label: clamp(13px, calc(12.628572px + 0.095238vw), 14px);
+
+  padding-block: var(--metrics-band-pad-y);
+  background: var(--ink);
+}
+
+.metrics-band-grid,
+.metrics-band-section .metric-item {
+  min-width: 0;
+}
+
+.metrics-band-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.metrics-band-section .metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--metrics-band-item-gap);
+}
+
+.metrics-band-section :where(.metric-value, .metric-label) {
+  margin-block: 0;
+}
+
+.metrics-band-section .metric-value {
+  color: var(--yellow);
+  font-family: var(--font-heading);
+  font-size: var(--metrics-band-value);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: var(--metrics-band-value-track);
+}
+
+.metrics-band-section .metric-label {
+  color: #b9bcc5;
+  font-family: var(--font-body);
+  font-size: var(--metrics-band-label);
+  line-height: 1.5;
+}
+
+@media (min-width: 900px) {
+  .metrics-band-grid {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .metrics-band-section .metric-item {
+    flex: 0 1 auto;
+  }
+
+  .metrics-band-section .metric-label {
+    max-width: 230px;
+  }
+}

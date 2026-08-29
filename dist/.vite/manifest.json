@@ -1,0 +1,48 @@
+{
+  "src/css/editor.css": {
+    "file": "assets/editor-cd27c6b9e0.css",
+    "src": "src/css/editor.css",
+    "isEntry": true,
+    "name": "editor",
+    "names": [
+      "editor.css"
+    ]
+  },
+  "src/css/global.css": {
+    "file": "assets/global-45c0dc6de7.css",
+    "src": "src/css/global.css",
+    "isEntry": true,
+    "name": "global",
+    "names": [
+      "global.css"
+    ]
+  },
+  "src/fonts/geist-latin-wght-normal.woff2": {
+    "file": "assets/geist-latin-wght-normal-BgDaEnEv.woff2",
+    "src": "src/fonts/geist-latin-wght-normal.woff2"
+  },
+  "src/fonts/poppins-latin-400-normal.woff2": {
+    "file": "assets/poppins-latin-400-normal-cpxAROuN.woff2",
+    "src": "src/fonts/poppins-latin-400-normal.woff2"
+  },
+  "src/fonts/poppins-latin-500-normal.woff2": {
+    "file": "assets/poppins-latin-500-normal-C8OXljZJ.woff2",
+    "src": "src/fonts/poppins-latin-500-normal.woff2"
+  },
+  "src/fonts/poppins-latin-600-normal.woff2": {
+    "file": "assets/poppins-latin-600-normal-zEkxB9Mr.woff2",
+    "src": "src/fonts/poppins-latin-600-normal.woff2"
+  },
+  "src/js/editor.js": {
+    "file": "assets/editor-b41ee7d532.js",
+    "name": "editor",
+    "src": "src/js/editor.js",
+    "isEntry": true
+  },
+  "src/js/site.js": {
+    "file": "assets/site-TD9tBF5s.js",
+    "name": "site",
+    "src": "src/js/site.js",
+    "isEntry": true
+  }
+}

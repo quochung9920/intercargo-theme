@@ -1,0 +1,18 @@
+{
+  "name": "intercargo-vite-theme",
+  "private": true,
+  "version": "4.14.2",
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "validate": "python tools/validate-theme.py && php tests/runtime-contract.php && node tests/editor-safety.mjs && python tests/visual-contract.py",
+    "test:structure": "python tools/validate-theme.py",
+    "test:runtime": "php tests/runtime-contract.php",
+    "test:editor": "node tests/editor-safety.mjs",
+    "test:visual": "python tests/visual-contract.py"
+  },
+  "devDependencies": {
+    "vite": "^7.3.6"
+  }
+}

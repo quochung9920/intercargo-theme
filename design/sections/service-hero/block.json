@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/service-hero",
+  "title": "Service Hero",
+  "description": "Reusable inner-page service hero with editable media, dynamic WordPress hierarchy breadcrumb, headline, lead copy and provider-neutral form placement.",
+  "category": "intercargo-sections",
+  "icon": "cover-image",
+  "keywords": [
+    "intercargo",
+    "section",
+    "service",
+    "hero"
+  ],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "style": "file:./style.css",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  },
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "service-hero",
+    "sectionPackage": true,
+    "syncable": true,
+    "serviceNavigation": false
+  }
+}

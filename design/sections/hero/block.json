@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/hero",
+  "title": "Hero",
+  "description": "The Hero section. Text, links and the background image are edited on the canvas; the layout is fixed by the design system.",
+  "category": "intercargo-sections",
+  "icon": "cover-image",
+  "keywords": [
+    "intercargo",
+    "section",
+    "hero"
+  ],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "style": "file:./style.css",
+  "editorStyle": [
+    "intercargo-editor",
+    "file:./editor.css"
+  ],
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  },
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "hero",
+    "sectionPackage": true,
+    "syncable": true,
+    "serviceNavigation": false
+  }
+}

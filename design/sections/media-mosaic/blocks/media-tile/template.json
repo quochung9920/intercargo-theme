@@ -1,0 +1,19 @@
+{
+  "_comment": "One structured Media Tile item. Replace the placeholder with PNG/WebP when suitable photography exists.",
+  "item": {
+    "element": "figure",
+    "className": "media-mosaic-tile",
+    "parent": "intercargo/media-mosaic"
+  },
+  "mediaControls": [
+    {
+      "className": "media-mosaic-image",
+      "label": "Replace tile image",
+      "allowedTypes": ["image"]
+    }
+  ],
+  "template": [
+    ["core/image", {"className": "media-mosaic-image", "alt": "", "url": "@theme/placeholders/media-placeholder.webp", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Tile image"}}],
+    ["core/paragraph", {"className": "media-mosaic-caption", "content": "Media caption", "metadata": {"name": "Media caption"}}]
+  ]
+}

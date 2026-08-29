@@ -1,0 +1,46 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/service-option",
+  "title": "Service Option",
+  "description": "One linked service choice inside Service Options. The whole row owns the destination.",
+  "category": "intercargo-section-items",
+  "icon": "arrow-right-alt2",
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "attributes": {
+    "url": {
+      "type": "string",
+      "default": "#enquiry"
+    },
+    "target": {
+      "type": "string",
+      "enum": [
+        "_self",
+        "_blank"
+      ],
+      "default": "_self"
+    }
+  },
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "service-option"
+  },
+  "ancestor": [
+    "intercargo/service-options"
+  ]
+}

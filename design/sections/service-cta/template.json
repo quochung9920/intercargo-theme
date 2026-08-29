@@ -1,0 +1,77 @@
+{
+  "_comment": "Service CTA band from the Air Freight source. Theme globals remain authoritative for container, page gutter, fonts, colours and shared form infrastructure.",
+  "section": {
+    "id": "service-cta",
+    "className": "wp-block-intercargo-service-cta service-cta-band intercargo-native intercargo-native-service-cta",
+    "ariaLabel": "Service enquiry call to action"
+  },
+  "editorTemplateLock": "all",
+  "formControl": {
+    "title": "Service CTA form",
+    "blockNames": ["intercargo/form"],
+    "label": "Service CTA form",
+    "showAccessibleLabel": true
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container service-cta-inner",
+        "templateLock": "all",
+        "metadata": {"name": "Service CTA content"}
+      },
+      [
+        [
+          "core/group",
+          {
+            "className": "service-cta-copy",
+            "templateLock": "all",
+            "metadata": {"name": "CTA copy"}
+          },
+          [
+            [
+              "core/heading",
+              {
+                "level": 2,
+                "className": "service-cta-title",
+                "placeholder": "CTA headline",
+                "content": "Not sure this is the right fit?",
+                "metadata": {"name": "CTA headline"}
+              }
+            ],
+            [
+              "core/paragraph",
+              {
+                "className": "service-cta-description",
+                "placeholder": "Supporting copy",
+                "content": "Tell us what you are moving and how often. If something else suits you better, we will say so.",
+                "metadata": {"name": "Supporting copy"}
+              }
+            ]
+          ]
+        ],
+        [
+          "core/group",
+          {
+            "className": "service-cta-form",
+            "templateLock": "all",
+            "metadata": {"name": "Compact enquiry form"}
+          },
+          [
+            [
+              "intercargo/form",
+              {
+                "provider": "",
+                "formId": "",
+                "variant": "default",
+                "label": "Service quick enquiry",
+                "note": "",
+                "metadata": {"name": "Service CTA form"}
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

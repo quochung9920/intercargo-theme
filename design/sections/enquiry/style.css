@@ -1,0 +1,310 @@
+/* Presence-scoped styles for enquiry */
+
+      .enquiry-section {
+        background: #fff;
+      }
+
+      .enquiry-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .enquiry-copy {
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .enquiry-lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(13px, calc(12.257px + 0.19vw), 15px);
+        line-height: 1.68;
+      }
+
+      .enquiry-steps {
+        display: none;
+      }
+
+      /* About Us keeps its two proof points visible on small screens. */
+      #about-enquiry .enquiry-steps {
+        display: flex;
+        flex-direction: column;
+      }
+
+      #about-enquiry .enquiry-step {
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+
+      #about-enquiry .enquiry-step h3,
+      #about-enquiry .enquiry-step p {
+        margin: 0;
+      }
+
+      #about-enquiry .enquiry-step h3 {
+        font-family: var(--font-heading);
+        font-size: 17px;
+        line-height: 1.32;
+      }
+
+      #about-enquiry .enquiry-step p {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12.5px;
+        line-height: 1.6;
+      }
+
+      .enquiry-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(11.5px, calc(11.129px + 0.095vw), 12.5px);
+        font-weight: 500;
+        line-height: 1.45;
+      }
+      .enquiry-note--desktop {
+        display: none;
+      }
+
+      .form-note {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(11.5px, calc(11.129px + 0.095vw), 12.5px);
+        line-height: 1.45;
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-layout {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: clamp(48px, calc(-27.429px + 7.143vw), 80px);
+          align-items: start;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-copy {
+          gap: 18px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-note--desktop {
+          display: block;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-note--mobile {
+          display: none;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-steps {
+          padding-top: 10px;
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-step {
+          min-height: 85px;
+          padding: 16px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+          border-top: 1px solid var(--line);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-step h3 {
+          margin: 0;
+          font-family: var(--font-heading);
+          font-size: 19px;
+          font-weight: 600;
+          line-height: 1.32;
+          letter-spacing: -0.266px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .enquiry-step p {
+          margin: 0;
+          color: var(--muted);
+          font-size: 13.5px;
+          line-height: 1.65;
+        }
+      }
+
+      @media (min-width: 960px) {
+      }
+
+      @media (min-width: 960px) {
+      }
+
+      @media (min-width: 960px) {
+      }
+
+      @media (min-width: 960px) {
+      }
+
+      @media (min-width: 1440px) {
+
+        .enquiry-layout {
+          /* Figma has both columns as flex-[1_0_0] (equal, fully flexible) --
+             match ground truth rather than capping the form column. */
+          min-height: 491px;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 80px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+      }
+
+      /* Provider-neutral shortcode form shell */
+
+      .intercargo-form-shell {
+  min-width: 0;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  border: 1px solid var(--mobile-line);
+  border-radius: 10px;
+  background: var(--mobile-paper);
+}
+
+      .intercargo-form-shell :where(.wpcf7, .gform_wrapper, .wpforms-container, .frm_forms, .nf-form-cont),
+.intercargo-form-shell :where(form) { width: 100%; margin: 0; }
+
+      .intercargo-form-shell :where(form, .gform_fields, .wpforms-field-container, .frm_fields_container, .nf-form-content) {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+      .intercargo-form-shell :where(p, .gfield, .wpforms-field, .frm_form_field, .nf-field-container) { margin: 0; }
+
+      .intercargo-form-shell :where(fieldset) { min-width: 0; margin: 0; padding: 0; border: 0; }
+
+      .intercargo-form-shell :where(label, legend, .gfield_label, .wpforms-field-label, .frm_primary_label, .nf-field-label label) {
+  display: block;
+  margin: 0 0 6px;
+  color: #26272b;
+  font-size: clamp(11.5px, calc(11.314px + 0.048vw), 12px);
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+      .intercargo-form-shell :where(.wpcf7-form-control-wrap, .ginput_container) { display: block; width: 100%; }
+
+      .intercargo-form-shell :where(input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]), select, textarea) {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  margin: 0;
+  border: 1px solid var(--mobile-line);
+  border-radius: 6px;
+  padding: 0 13px;
+  outline: none;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  font-size: 13px;
+}
+
+      .intercargo-form-shell :where(textarea) { min-height: 112px; padding-block: 12px; resize: vertical; }
+
+      .intercargo-form-shell :where(select) { appearance: auto; }
+
+      .intercargo-form-shell :where(input, select, textarea):focus,
+.intercargo-form-shell :where(input, select, textarea):focus-visible {
+  border-color: var(--ink);
+  box-shadow: 0 0 0 3px rgb(23 27 29 / 12%);
+}
+
+      .intercargo-form-shell :where(input, textarea)::placeholder { color: var(--muted); opacity: 1; }
+
+      .intercargo-form-shell :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button, .wpforms-submit, .frm_button_submit, .nf-form-content button) {
+  width: 100%;
+  min-height: 48px;
+  margin: 0;
+  border: 1px solid var(--yellow);
+  border-radius: 6px;
+  padding: 12px 18px;
+  color: var(--ink);
+  background: var(--yellow);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+}
+
+      .intercargo-form-shell :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button, .wpforms-submit, .frm_button_submit):hover { filter: brightness(0.96); }
+
+      .intercargo-form-shell :where(button, input, select, textarea):disabled { cursor: not-allowed; opacity: 0.62; }
+
+      .intercargo-form-shell :where(.wpcf7-not-valid-tip, .gfield_validation_message, .validation_message, .wpforms-error, .frm_error, .nf-error-msg) {
+  display: block;
+  margin-top: 5px;
+  color: #a32121;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+      .intercargo-form-shell :where(.wpcf7-response-output, .gform_validation_errors, .gform_confirmation_message, .wpforms-confirmation-container, .frm_message, .nf-response-msg) {
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+      .intercargo-form-shell :where(.wpcf7-spinner, .gform_ajax_spinner, .wpforms-submit-spinner) { margin: 8px 0 0; }
+
+      .intercargo-form-shell__placeholder {
+  min-height: 180px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+      @media (min-width: 960px) {
+  .intercargo-form-shell {
+    min-height: clamp(455px, calc(368.571px + 8.095vw), 491px);
+    padding: clamp(28px, calc(13.714px + 1.429vw), 34px);
+    border: 0;
+    border-radius: 12px;
+    background: var(--paper);
+  }
+  .intercargo-form-shell :where(input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]), select) {
+    min-height: 46px;
+    padding-inline: 15px;
+    border-color: var(--line);
+    font-size: 13.5px;
+  }
+}
+
+      @media (min-width: 1440px) {
+  .intercargo-form-shell { min-height: 491px; padding: 34px; }
+}

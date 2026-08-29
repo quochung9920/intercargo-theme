@@ -1,0 +1,368 @@
+/*
+ * Provider-neutral form fallbacks.
+ * Section styles remain the visual authority for the normal resting form.
+ * This file only normalises provider internals and transient states such as
+ * validation, submission errors and confirmation messages.
+ */
+
+/* CF7 normally ships this rule itself. Keep it here as a fail-safe because
+ * ServerSideRender and aggressive CSS optimisation can omit provider CSS. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7-form > .hidden-fields-container {
+  display: none !important;
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) :where(
+  .wpcf7-not-valid-tip,
+  .gfield_validation_message,
+  .validation_message,
+  .wpforms-error,
+  .frm_error,
+  .nf-error-msg
+) {
+  display: block;
+  margin: 5px 0 0;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+:where(.guide-capture, .intercargo-form-shell) :where(
+  .wpcf7-not-valid-tip,
+  .gfield_validation_message,
+  .validation_message,
+  .wpforms-error,
+  .frm_error,
+  .nf-error-msg
+) {
+  color: #8f2020;
+}
+
+.hero-form :where(
+  .wpcf7-not-valid-tip,
+  .gfield_validation_message,
+  .validation_message
+) {
+  color: #ffd7d7;
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) :where(
+  .wpcf7-response-output,
+  .gform_validation_errors,
+  .gform_confirmation_message,
+  .validation_error,
+  .wpforms-confirmation-container,
+  .frm_message,
+  .nf-response-msg
+) {
+  box-sizing: border-box;
+  margin: 8px 0 0;
+  border: 1px solid;
+  border-radius: 6px;
+  padding: 9px 11px;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+:where(.guide-capture, .intercargo-form-shell) :where(
+  .wpcf7-response-output,
+  .gform_validation_errors,
+  .validation_error
+) {
+  border-color: #d6a1a1;
+  color: #731b1b;
+  background: #fff5f5;
+}
+
+:where(.guide-capture, .intercargo-form-shell) :where(
+  .gform_confirmation_message,
+  .wpforms-confirmation-container,
+  .frm_message,
+  .nf-response-msg
+),
+:where(.guide-capture, .intercargo-form-shell) .wpcf7-form.sent .wpcf7-response-output {
+  border-color: #a7c6a4;
+  color: #244b27;
+  background: #f2f8f1;
+}
+
+.hero-form :where(
+  .wpcf7-response-output,
+  .gform_validation_errors,
+  .validation_error,
+  .gform_confirmation_message
+) {
+  border-color: rgba(255, 255, 255, 0.38);
+  color: #fff;
+  background: rgba(14, 18, 20, 0.58);
+}
+
+.hero-form :where(.wpcf7-form.invalid, .wpcf7-form.failed, .wpcf7-form.spam, .wpcf7-form.unaccepted) .wpcf7-response-output,
+.hero-form :where(.gform_validation_errors, .validation_error) {
+  border-color: rgba(255, 176, 176, 0.65);
+  background: rgba(115, 20, 20, 0.58);
+}
+
+.hero-form .wpcf7-form.sent .wpcf7-response-output,
+.hero-form .gform_confirmation_message {
+  border-color: rgba(174, 231, 174, 0.68);
+  background: rgba(31, 91, 42, 0.62);
+}
+
+/* Gravity Forms validation summary can otherwise arrive with large theme/plugin
+ * typography that overwhelms compact inline captures. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .gform_validation_errors > h2 {
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .gform_validation_errors > ol,
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .gform_validation_errors > ul {
+  margin: 6px 0 0;
+  padding-left: 18px;
+}
+
+:where(.guide-capture, .intercargo-form-shell) :where(
+  input[aria-invalid="true"],
+  textarea[aria-invalid="true"],
+  select[aria-invalid="true"],
+  .gfield_error input,
+  .gfield_error textarea,
+  .gfield_error select
+) {
+  border-color: #b34141 !important;
+}
+
+.hero-form :where(
+  input[aria-invalid="true"],
+  .gfield_error input
+) {
+  border-color: rgba(255, 190, 190, 0.9) !important;
+  box-shadow: 0 0 0 2px rgba(164, 37, 37, 0.28);
+}
+
+/* Keep provider spinners from opening a new grid/flex track. */
+:where(.hero-form, .guide-capture) :where(.wpcf7-spinner, .gform_ajax_spinner, .wpforms-submit-spinner) {
+  width: 18px;
+  height: 18px;
+  margin: 0 0 0 8px;
+  vertical-align: middle;
+}
+
+/* --------------------------------------------------------------------------
+ * 4.3.1 interaction polish
+ * Strong provider selectors intentionally override CF7/Gravity defaults while
+ * leaving each section's resting geometry intact.
+ * -------------------------------------------------------------------------- */
+
+/* CF7 ships margin: 2em .5em 1em and a 2px status border. In compact design
+ * system forms that creates a large artificial hole beneath the submit button. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form .wpcf7-response-output {
+  margin: 0 !important;
+  border-width: 0 !important;
+  border-left: 3px solid #c44848 !important;
+  border-radius: 6px;
+  padding: 9px 11px !important;
+  color: #731b1b;
+  background: #fff5f5;
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form.sent .wpcf7-response-output {
+  border-left-color: #4b8450 !important;
+  color: #244b27;
+  background: #f2f8f1;
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form.invalid .wpcf7-response-output,
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form.unaccepted .wpcf7-response-output,
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form.failed .wpcf7-response-output,
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form.spam .wpcf7-response-output {
+  border-left-color: #c44848 !important;
+  color: #731b1b;
+  background: #fff5f5;
+}
+
+.hero-form .wpcf7 form .wpcf7-response-output {
+  color: rgba(255,255,255,.92);
+  background: rgba(14,18,20,.66);
+  border-left-color: rgba(255,196,196,.82) !important;
+}
+.hero-form .wpcf7 form.sent .wpcf7-response-output {
+  color: #fff;
+  background: rgba(35,92,48,.72);
+  border-left-color: rgba(178,235,185,.9) !important;
+}
+
+/* Inputs: remove the global blue browser-like ring and replace it with a calm,
+ * neutral design-system focus state. Invalid focus remains clearly red. */
+.intercargo-form-shell :where(
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea
+),
+.guide-capture :where(input[type="email"], textarea, select),
+.hero-form :where(input[type="email"], textarea, select) {
+  transition:
+    border-color var(--ic-motion-fast, 180ms) ease,
+    box-shadow var(--ic-motion-fast, 180ms) ease,
+    background-color var(--ic-motion-fast, 180ms) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-form-shell :where(
+    input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea
+  ):hover:not(:disabled):not([aria-invalid="true"]),
+  .guide-capture :where(input[type="email"], textarea, select):hover:not(:disabled):not([aria-invalid="true"]) {
+    border-color: #aaa79f;
+  }
+  .hero-form :where(input[type="email"], textarea, select):hover:not(:disabled):not([aria-invalid="true"]) {
+    border-color: rgba(255,255,255,.58);
+    background: rgba(255,255,255,.15);
+  }
+}
+
+.intercargo-form-shell :where(
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea
+):focus,
+.intercargo-form-shell :where(
+  input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+  select,
+  textarea
+):focus-visible,
+.guide-capture :where(input[type="email"], textarea, select):focus,
+.guide-capture :where(input[type="email"], textarea, select):focus-visible {
+  outline: none !important;
+  border-color: #3c3d40 !important;
+  box-shadow: 0 0 0 3px rgba(19,20,23,.10) !important;
+}
+
+.hero-form :where(input[type="email"], textarea, select):focus,
+.hero-form :where(input[type="email"], textarea, select):focus-visible {
+  outline: none !important;
+  border-color: rgba(255,255,255,.78) !important;
+  box-shadow: 0 0 0 3px rgba(255,255,255,.13) !important;
+}
+
+.intercargo-form-shell :where(
+  input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"],
+  .gfield_error input, .gfield_error textarea, .gfield_error select
+):focus,
+.intercargo-form-shell :where(
+  input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"],
+  .gfield_error input, .gfield_error textarea, .gfield_error select
+):focus-visible,
+.guide-capture :where(input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"]):focus,
+.guide-capture :where(input[aria-invalid="true"], textarea[aria-invalid="true"], select[aria-invalid="true"]):focus-visible {
+  border-color: #bd4545 !important;
+  box-shadow: 0 0 0 3px rgba(189,69,69,.12) !important;
+}
+
+/* Submit controls share the same tactile behaviour as the Button component. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) :where(
+  button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button,
+  .wpforms-submit, .frm_button_submit, .nf-form-content button
+) {
+  transition:
+    transform var(--ic-motion-base, 280ms) var(--ic-ease-out, cubic-bezier(.16,1,.3,1)),
+    box-shadow var(--ic-motion-base, 280ms) var(--ic-ease-out, cubic-bezier(.16,1,.3,1)),
+    background-color var(--ic-motion-fast, 180ms) ease,
+    border-color var(--ic-motion-fast, 180ms) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-form-shell :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):hover,
+  .hero-form :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):hover {
+    transform: translateY(-1px);
+    background: #ffd239;
+    border-color: #ffd239;
+    box-shadow: 0 9px 20px rgba(19,20,23,.12);
+    filter: none;
+  }
+  .guide-capture :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):hover {
+    transform: translateY(-1px);
+    background: #17181b;
+    border-color: #17181b;
+    box-shadow: 0 9px 20px rgba(19,20,23,.18);
+    filter: none;
+  }
+}
+
+:where(.hero-form, .guide-capture, .intercargo-form-shell) :where(
+  button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button
+):active {
+  transform: translateY(0) scale(.99);
+  box-shadow: none;
+}
+
+.intercargo-form-shell :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):focus-visible,
+.guide-capture :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):focus-visible {
+  outline: 2px solid #26272b !important;
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+.hero-form :where(button[type="submit"], input[type="submit"], .wpcf7-submit, .gform_button):focus-visible {
+  outline: 2px solid rgba(255,255,255,.9) !important;
+  outline-offset: 3px;
+  box-shadow: none !important;
+}
+
+/* Put CF7's spinner inside the submit-control footprint instead of letting its
+ * default 24px margins create a floating dot below the button. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form p:has(.wpcf7-submit) {
+  position: relative;
+}
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form .wpcf7-spinner {
+  position: absolute !important;
+  top: 50% !important;
+  right: 14px !important;
+  left: auto !important;
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 !important;
+  border: 2px solid rgba(19,20,23,.22) !important;
+  border-top-color: #26272b !important;
+  border-radius: 50% !important;
+  background: transparent !important;
+  opacity: 1 !important;
+  transform: translateY(-50%);
+  animation: intercargo-form-spin .68s linear infinite;
+}
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form .wpcf7-spinner::before {
+  display: none !important;
+  content: none !important;
+}
+.guide-capture .wpcf7 form .wpcf7-spinner {
+  border-color: rgba(255,255,255,.35) !important;
+  border-top-color: #fff !important;
+}
+:where(.hero-form, .intercargo-form-shell) .wpcf7 form.submitting .wpcf7-submit,
+.guide-capture .wpcf7 form.submitting .wpcf7-submit {
+  padding-right: 42px;
+}
+
+/* Gravity's AJAX spinner is an image, so constrain it and tuck it next to the
+ * button rather than allowing provider dimensions/margins to disturb layout. */
+:where(.hero-form, .guide-capture, .intercargo-form-shell) .gform_ajax_spinner {
+  width: 16px !important;
+  height: 16px !important;
+  margin: 0 0 0 8px !important;
+  object-fit: contain;
+  opacity: .72;
+  vertical-align: middle;
+}
+
+@keyframes intercargo-form-spin {
+  to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :where(.hero-form, .guide-capture, .intercargo-form-shell) .wpcf7 form .wpcf7-spinner {
+    animation-duration: 1.2s;
+  }
+}

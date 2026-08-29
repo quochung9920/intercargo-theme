@@ -1,0 +1,31 @@
+.ic-link,
+.intercargo-native .service-link,
+.intercargo-native .location-link .wp-block-button__link,
+.intercargo-native .faq-more .wp-block-button__link {
+  transition: color var(--ic-motion-fast) ease, transform var(--ic-motion-base) var(--ic-ease-out);
+}
+
+.intercargo-native .service-link::after,
+.intercargo-native .service-icon-row::after {
+  transition: transform var(--ic-motion-base) var(--ic-ease-out), opacity var(--ic-motion-fast) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .ic-link:hover,
+  .intercargo-native .location-link .wp-block-button__link:hover,
+  .intercargo-native .faq-more .wp-block-button__link:hover {
+    color: var(--blue);
+  }
+  .intercargo-native .service-card:hover .service-link::after,
+  .intercargo-native .service-card:focus-visible .service-link::after {
+    transform: translate(4px, -4px);
+  }
+  .intercargo-native .service-card:hover .service-icon-row::after,
+  .intercargo-native .service-card:focus-visible .service-icon-row::after {
+    transform: translate(4px, -4px) scale(1.06);
+  }
+  .intercargo-native .location-link .wp-block-button__link:hover,
+  .intercargo-native .faq-more .wp-block-button__link:hover {
+    transform: translateX(3px);
+  }
+}

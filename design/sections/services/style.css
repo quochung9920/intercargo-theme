@@ -1,0 +1,220 @@
+/* Presence-scoped styles for services */
+      .services-section .section-head-gap {
+        gap: clamp(22px, calc(16.8px + 1.333vw), 36px);
+      }
+      .services-section {
+        background: var(--mobile-paper);
+      }
+
+      .services-panel {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr;
+        border: 1px solid var(--mobile-line);
+        border-radius: var(--card-radius);
+        background: #fff;
+      }
+
+      .service-card {
+        min-width: 0;
+        padding: var(--card-padding-y) var(--card-padding);
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .service-card:not(:last-child) {
+        border-bottom: 1px solid var(--mobile-line);
+      }
+
+      .service-card:hover .service-name,
+.service-card:focus-visible .service-name {
+        color: var(--blue);
+      }
+
+      .service-icon-row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .service-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .corner-arrow {
+        width: 13px;
+        height: 13px;
+      }
+
+      .service-name {
+        margin: 0;
+        padding-top: clamp(0px, calc(-5.942px + 1.524vw), 16px);
+        color: #26272b;
+        font-family: var(--font-heading);
+        font-size: var(--service-title);
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: clamp(-0.468px, calc(-0.238px - 0.016vw), -0.3px);
+      }
+
+      .service-description {
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(12.5px, calc(11.943px + 0.143vw), 14px);
+        line-height: 1.6;
+      }
+
+      .service-link {
+        margin-top: auto;
+        padding-top: clamp(0px, calc(-5.942px + 1.524vw), 16px);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #26272b;
+        font-size: clamp(12.5px, calc(12.129px + 0.095vw), 13.5px);
+        font-weight: 600;
+      }
+
+      .service-link img {
+        width: 11px;
+        height: 11px;
+      }
+
+      @media (min-width: 960px) {
+
+        .services-section {
+          background: var(--paper);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .services-panel {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          border-color: var(--line);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-card {
+          min-height: clamp(230px, calc(127.143px + 9.524vw), 270px);
+          border-bottom: 0 !important;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-card:nth-child(1),
+.service-card:nth-child(2) {
+          border-bottom: 1px solid var(--line) !important;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .service-card:nth-child(odd) {
+          border-right: 1px solid var(--line);
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .services-panel {
+          min-height: 540px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .service-card {
+          min-height: 270px;
+          padding: 42px;
+        }
+      }
+
+      /* Native Services composition */
+
+      .intercargo-native-services { display: block; }
+
+      .intercargo-native-services .section-head-gap > *,
+.intercargo-native-services .services-panel > *,
+.intercargo-native-services .service-card > *,
+.intercargo-native-services .service-icon-row > * { margin-block: 0; }
+
+      .intercargo-native-services .service-card { position: relative; }
+
+      .intercargo-native-services .service-icon-row figure,
+.intercargo-native-services .service-icon-row .wp-block-image { margin: 0; }
+
+      .intercargo-native-services .service-icon-row .wp-block-image img { width: 26px; height: 26px; object-fit: contain; }
+
+      .intercargo-native-services .service-icon-row:not(:has(img))::before {
+  content: "";
+  flex: 0 0 26px;
+  width: 26px;
+  height: 26px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+}
+
+      .intercargo-native-services .service-card:nth-child(1) .service-icon-row:not(:has(img))::before {
+  background-image: url("../../../assets/60734c8e3da1caaba156c13d722261ad6f47b462.svg");
+}
+
+      .intercargo-native-services .service-card:nth-child(2) .service-icon-row:not(:has(img))::before {
+  background-image: url("../../../assets/38cd3250fd155a1f1365e5314a334bd62d58ae7b.svg");
+}
+
+      .intercargo-native-services .service-card:nth-child(3) .service-icon-row:not(:has(img))::before {
+  background-image: url("../../../assets/ed2573d6ba2465ae48d29bce1fa842dfd663b976.svg");
+}
+
+      .intercargo-native-services .service-card:nth-child(4) .service-icon-row:not(:has(img))::before {
+  background-image: url("../../../assets/6f1aaea1d242868c2537bc6dc29c9d57719d2afa.svg");
+}
+
+      .intercargo-native-services .service-icon-row::after {
+  content: "";
+  flex: 0 0 13px;
+  width: 13px;
+  height: 13px;
+  background: center / contain no-repeat url("../../../assets/4f627157e3b95f6137626839530b9fe7e945cbae.svg");
+  pointer-events: none;
+}
+
+      .intercargo-native-services .service-description.copy-mobile { display: block; }
+
+      .intercargo-native-services .service-description.copy-desktop { display: none; }
+
+      .intercargo-native-services .service-link {
+  margin: 0;
+  min-height: 0;
+  color: #26272b;
+  background: transparent;
+  font-size: clamp(12.5px, calc(12.129px + 0.095vw), 13.5px);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+      .intercargo-native-services .service-link::after {
+  content: "";
+  flex: 0 0 11px;
+  width: 11px;
+  height: 11px;
+  background: center / contain no-repeat url("../../../assets/e31beb2f4377687505ac2192780b085008f17fca.svg");
+  pointer-events: none;
+}
+
+      @media (min-width: 960px) {
+  .intercargo-native-services .service-icon-row::after {
+    background-image: url("../../../assets/e2023c9f890759edfda12a5f1b24d76cc78fecc5.svg");
+  }
+  .intercargo-native-services .service-description.copy-mobile { display: none; }
+  .intercargo-native-services .service-description.copy-desktop { display: block; }
+}

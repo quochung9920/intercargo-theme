@@ -1,0 +1,2 @@
+/* Stable build bridge. Website global CSS lives in design/global/css/global.css. */
+@import "../../design/global/css/global.css";

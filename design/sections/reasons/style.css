@@ -1,0 +1,309 @@
+/*
+ * Content Columns
+ *
+ * One reusable composition covers homepage Reasons and service-page criteria /
+ * inclusion columns. Theme presets change colour treatment only; service-paper
+ * and service-white share the same typography and structural rhythm.
+ */
+
+.why-section {
+  background: var(--mobile-paper);
+}
+
+.content-columns {
+  --content-columns-intro-gap: clamp(14px, calc(13.257143px + 0.190476vw), 16px);
+  --content-columns-grid-top: var(--section-gap);
+}
+
+.content-columns-content,
+.content-columns-layout,
+.content-columns-grid,
+.content-columns .three-cols,
+.content-columns .reason-card,
+.content-columns .content-column {
+  min-width: 0;
+}
+
+/* WordPress core/group may inject flow-layout margins. Content Columns owns its
+ * vertical rhythm explicitly so optional intro copy cannot leave a ghost gap or
+ * double the intended spacing. The direct-child selectors intentionally beat
+ * global block-layout margins without affecting any other section. */
+/* Backward-safe cleanup: pre-4.11.3 saved core/group markup can still carry
+ * the global `section-head-gap` utility. Scope beats the global utility even
+ * when global.css loads later, so old saved pages stop creating a flex gap
+ * immediately, before the editor has a chance to persist the cleaned class. */
+.content-columns .content-columns-layout {
+  display: block;
+  gap: 0;
+}
+
+.content-columns-layout > .section-title {
+  margin: 0 !important;
+}
+
+.content-columns-layout > .content-columns-intro {
+  margin: var(--content-columns-intro-gap) 0 0 !important;
+}
+
+.content-columns-layout > .content-columns-grid,
+.content-columns-layout > .three-cols {
+  margin: var(--content-columns-grid-top) 0 0 !important;
+}
+
+.content-columns .reason-card > *,
+.content-columns .content-column > * {
+  margin-block: 0;
+}
+
+.content-columns-intro {
+  max-width: 760px;
+  color: #5b5955;
+  font-size: clamp(14.5px, calc(13.942857px + 0.142857vw), 16px);
+  line-height: 1.72;
+}
+
+.content-columns-intro:empty:not([contenteditable="true"]) {
+  display: none;
+}
+
+.content-columns-grid,
+.content-columns .three-cols {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.content-columns .reason-card,
+.content-columns .content-column {
+  min-width: 0;
+  border-top: 2px solid var(--mobile-line);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.content-columns .reason-card h3,
+.content-columns .content-column h3,
+.content-columns .content-column-title {
+  margin: 0;
+  color: #26272b;
+  font-family: var(--font-heading);
+  font-size: var(--h3);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: clamp(-0.414px, calc(-0.192px - 0.015vw), -0.252px);
+}
+
+.content-columns .reason-card p,
+.content-columns .content-column p,
+.content-columns .content-column-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(13px, calc(12.629px + 0.095vw), 14px);
+  line-height: 1.68;
+}
+
+/* Service presets share one geometry. The theme dropdown changes only the
+ * surface/divider treatment, not font sizing or layout spacing. */
+.content-columns--service-paper,
+.content-columns--service-white {
+  --content-columns-h2: clamp(26px, calc(23.02857px + 0.761905vw), 34px);
+  --content-columns-h2-track: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+  --content-columns-grid-gap: clamp(24px, calc(12.114285px + 3.047619vw), 56px);
+  --content-columns-card-top: clamp(18px, calc(17.257143px + 0.190476vw), 20px);
+  --content-columns-card-gap: clamp(8px, calc(7.257143px + 0.190476vw), 10px);
+  --content-columns-card-title: clamp(17px, calc(16.628571px + 0.095238vw), 18px);
+}
+
+.content-columns--service-paper {
+  background: var(--paper);
+}
+
+.content-columns--service-white {
+  background: #fff;
+}
+
+.content-columns--service-paper .section-title,
+.content-columns--service-white .section-title {
+  max-width: 900px;
+  font-size: var(--content-columns-h2);
+  line-height: 1.1;
+  letter-spacing: var(--content-columns-h2-track);
+}
+
+.content-columns--service-paper .content-columns-grid,
+.content-columns--service-white .content-columns-grid {
+  gap: var(--content-columns-grid-gap);
+}
+
+.content-columns--service-paper .reason-card,
+.content-columns--service-white .reason-card,
+.content-columns--service-paper .content-column,
+.content-columns--service-white .content-column {
+  min-height: 0;
+  padding-top: var(--content-columns-card-top);
+  gap: var(--content-columns-card-gap);
+}
+
+.content-columns--service-paper .reason-card,
+.content-columns--service-paper .content-column {
+  border-top-color: var(--ink);
+}
+
+.content-columns--service-white .reason-card,
+.content-columns--service-white .content-column {
+  border-top-color: #e2e0db;
+}
+
+.content-columns--service-paper .reason-card h3,
+.content-columns--service-white .reason-card h3,
+.content-columns--service-paper .content-column h3,
+.content-columns--service-white .content-column h3 {
+  color: var(--ink);
+  font-size: var(--content-columns-card-title);
+  line-height: 1.3;
+  letter-spacing: -0.033em;
+}
+
+.content-columns--service-paper .reason-card p,
+.content-columns--service-white .reason-card p,
+.content-columns--service-paper .content-column p,
+.content-columns--service-white .content-column p {
+  color: #5b5955;
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+
+
+/* Service Content Columns intentionally keep the theme's symmetric section-pad.
+ * The Air Freight source uses padding-block on every section independently;
+ * do not collapse or split padding based on neighbouring sections. */
+
+@media (min-width: 960px) {
+  .why-section {
+    background: #fff;
+  }
+
+  .content-columns--service-paper {
+    background: var(--paper);
+  }
+
+  .content-columns--service-white {
+    background: #fff;
+  }
+
+  /* Auto-fit keeps 1–3 columns identical to the reviewed layout, while 4+ items
+   * wrap cleanly instead of forcing unreadably narrow fixed columns. */
+  .content-columns-grid,
+  .content-columns .three-cols {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+    gap: clamp(28px, calc(-10.286px + 3.571vw), 44px);
+  }
+
+  .content-columns .reason-card,
+  .content-columns .content-column {
+    min-height: 138px;
+    padding-top: 18px;
+    gap: 12px;
+    border-top-color: var(--ink);
+  }
+
+  .content-columns--service-paper .content-columns-grid,
+  .content-columns--service-white .content-columns-grid {
+    gap: var(--content-columns-grid-gap);
+  }
+
+  .content-columns--service-paper .reason-card,
+  .content-columns--service-white .reason-card,
+  .content-columns--service-paper .content-column,
+  .content-columns--service-white .content-column {
+    min-height: 0;
+    padding-top: var(--content-columns-card-top);
+    gap: var(--content-columns-card-gap);
+  }
+
+  .content-columns--service-white .reason-card,
+  .content-columns--service-white .content-column {
+    border-top-color: #e2e0db;
+  }
+}
+
+@media (min-width: 1440px) {
+  .content-columns--service-paper .section-title,
+  .content-columns--service-white .section-title {
+    font-size: 34px;
+    letter-spacing: -2.2px;
+  }
+}
+
+/* About Paper preset
+ *
+ * Reuses Content Columns and its repeatable item collection for the supplied
+ * Three Promises composition. Only the source-specific rhythm is specialized.
+ */
+.why-section.content-columns--about-paper {
+  --content-columns-h2: clamp(26px, calc(23.028571px + 0.761905vw), 34px);
+  --content-columns-h2-track: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+  --content-columns-grid-top: clamp(32px, calc(27.542858px + 1.142857vw), 44px);
+  --content-columns-grid-gap: clamp(24px, calc(12.114286px + 3.047619vw), 56px);
+  --content-columns-card-top: clamp(16px, calc(14.514287px + 0.380952vw), 20px);
+  --content-columns-card-gap: clamp(8px, calc(7.257144px + 0.190476vw), 10px);
+  --content-columns-card-title: clamp(17px, calc(16.628572px + 0.095238vw), 18px);
+  --content-columns-card-title-track: clamp(-0.6px, calc(-0.462856px - 0.009524vw), -0.5px);
+  --content-columns-card-title-line: clamp(21.76px, calc(21.150859px + 0.15619vw), 23.4px);
+  --content-columns-card-body: clamp(13px, calc(12.814286px + 0.047619vw), 13.5px);
+  --content-columns-card-body-line: clamp(21.58px, calc(21.321859px + 0.06619vw), 22.275px);
+
+  padding-block: clamp(64px, calc(46.914287px + 4.380952vw), 110px);
+  background: var(--paper);
+}
+
+.content-columns--about-paper .section-title {
+  max-width: 980px;
+  font-size: var(--content-columns-h2);
+  line-height: 1.1;
+  letter-spacing: var(--content-columns-h2-track);
+}
+
+.content-columns--about-paper .content-columns-intro {
+  max-width: 880px;
+}
+
+.content-columns--about-paper .content-columns-grid {
+  gap: var(--content-columns-grid-gap);
+}
+
+.content-columns--about-paper .content-column {
+  min-height: 0;
+  padding-top: var(--content-columns-card-top);
+  gap: var(--content-columns-card-gap);
+  border-top-color: var(--ink);
+}
+
+.content-columns--about-paper .content-column h3 {
+  color: var(--ink);
+  font-size: var(--content-columns-card-title);
+  line-height: var(--content-columns-card-title-line);
+  letter-spacing: var(--content-columns-card-title-track);
+}
+
+.content-columns--about-paper .content-column p {
+  color: #5b5955;
+  font-size: var(--content-columns-card-body);
+  line-height: var(--content-columns-card-body-line);
+}
+
+@media (min-width: 880px) {
+  .content-columns--about-paper .content-columns-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1440px) {
+  .content-columns--about-paper .section-title {
+    font-size: 34px;
+    letter-spacing: -2.2px;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "_comment": "One whole-row link owner. Copy remains native Gutenberg content and contains no nested link state.",
+  "item": {
+    "element": "a",
+    "className": "service-option-row",
+    "parent": "intercargo/service-options",
+    "linkOwner": true
+  },
+  "template": [
+    ["core/group", {"className": "service-option-service", "templateLock": "all", "metadata": {"name": "Service"}}, [
+      ["core/heading", {"level": 3, "className": "service-option-title", "placeholder": "Service name", "content": "Service", "metadata": {"name": "Service name"}}],
+      ["core/paragraph", {"className": "service-option-description", "placeholder": "Service description", "content": "Describe the service briefly.", "metadata": {"name": "Service description"}}]
+    ]],
+    ["core/group", {"className": "service-option-condition", "templateLock": "all", "metadata": {"name": "When to choose it"}}, [
+      ["core/paragraph", {"className": "service-option-condition-label", "content": "CHOOSE THIS WHEN", "metadata": {"name": "Condition label"}}],
+      ["core/paragraph", {"className": "service-option-condition-text", "placeholder": "When this service is the right fit", "content": "Describe when this service is the right fit.", "metadata": {"name": "Condition"}}]
+    ]]
+  ]
+}

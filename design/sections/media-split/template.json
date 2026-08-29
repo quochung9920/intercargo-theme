@@ -1,0 +1,65 @@
+{
+  "_comment": "Generic image + copy split. The default copy matches the Air Freight terminal section, while the media uses the shared low-weight theme placeholder until an editor replaces it.",
+  "section": {
+    "className": "wp-block-intercargo-media-split media-split-section section-pad intercargo-native intercargo-native-media-split",
+    "ariaLabel": "Media and supporting copy",
+    "id": "terminal"
+  },
+  "editorTemplateLock": "all",
+  "mediaControls": [
+    {
+      "label": "Replace section image",
+      "target": "Media Split image"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container media-split-layout",
+        "templateLock": "all",
+        "metadata": {"name": "Media Split content"}
+      },
+      [
+        [
+          "core/image",
+          {
+            "className": "media-split-media",
+            "alt": "",
+            "url": "@theme/placeholders/media-placeholder.webp",
+            "metadata": {"name": "Media Split image"}
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "media-split-copy",
+            "templateLock": "all",
+            "metadata": {"name": "Copy"}
+          },
+          [
+            [
+              "core/heading",
+              {
+                "level": 2,
+                "className": "media-split-title",
+                "placeholder": "Section title",
+                "content": "What actually happens at the terminal.",
+                "metadata": {"name": "Section title"}
+              }
+            ],
+            [
+              "core/paragraph",
+              {
+                "className": "media-split-body",
+                "placeholder": "Supporting copy",
+                "content": "Your freight is screened, weighed and built onto an aircraft unit before it goes anywhere near a plane. Most delays on air freight happen in that building, not in the air, which is why we watch it there rather than waiting for a tracking update.",
+                "metadata": {"name": "Supporting copy"}
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

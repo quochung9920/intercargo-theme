@@ -1,0 +1,340 @@
+{
+  "_comment": "Single source of truth for the Hero composition. The editor template, the frontend composition schema and the contract tests all read this file, so they cannot drift apart. Format is the WordPress block template array: [name, attributes, children].",
+  "section": {
+    "id": "home",
+    "className": "wp-block-intercargo-hero hero intercargo-native intercargo-native-hero",
+    "ariaLabel": "Introduction"
+  },
+  "editorTemplateLock": "all",
+  "mediaControls": [
+    {
+      "label": "Edit background image",
+      "target": "Hero background image"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "hero-media",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Background image"
+        }
+      },
+      [
+        [
+          "core/image",
+          {
+            "alt": "",
+            "metadata": {
+              "name": "Hero background image"
+            },
+            "url": "@theme/6ea7bb3c143f74e411d5b49ab617c6acb1fdbfea.png"
+          }
+        ]
+      ]
+    ],
+    [
+      "core/group",
+      {
+        "className": "hero-content",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Hero content"
+        }
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 1,
+            "className": "hero-title",
+            "placeholder": "Headline",
+            "metadata": {
+              "name": "Hero title"
+            },
+            "content": "Factory to<br>your door,<br>handled properly."
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "hero-fold",
+            "templateLock": "all"
+          },
+          [
+            [
+              "core/group",
+              {
+                "className": "service-index",
+                "templateLock": "all",
+                "metadata": {
+                  "name": "Service index — four fixed rows"
+                }
+              },
+              [
+                [
+                  "core/group",
+                  {
+                    "className": "service-index-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Row 1 — Air Freight"
+                    }
+                  },
+                  [
+                    [
+                      "core/buttons",
+                      {
+                        "className": "service-index-name",
+                        "templateLock": "all"
+                      },
+                      [
+                        [
+                          "core/button",
+                          {
+                            "text": "Air Freight ↗",
+                            "url": "#services",
+                            "metadata": {
+                              "name": "Row 1 — link"
+                            }
+                          }
+                        ]
+                      ]
+                    ],
+                    [
+                      "core/paragraph",
+                      {
+                        "className": "service-index-meta",
+                        "placeholder": "Short description",
+                        "content": "fast and time critical",
+                        "metadata": {
+                          "name": "Row 1 — description"
+                        }
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "service-index-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Row 2 — Customs Clearance"
+                    }
+                  },
+                  [
+                    [
+                      "core/buttons",
+                      {
+                        "className": "service-index-name",
+                        "templateLock": "all"
+                      },
+                      [
+                        [
+                          "core/button",
+                          {
+                            "text": "Customs Clearance ↗",
+                            "url": "#services",
+                            "metadata": {
+                              "name": "Row 2 — link"
+                            }
+                          }
+                        ]
+                      ]
+                    ],
+                    [
+                      "core/paragraph",
+                      {
+                        "className": "service-index-meta",
+                        "placeholder": "Short description",
+                        "content": "cleared before the ship berths",
+                        "metadata": {
+                          "name": "Row 2 — description"
+                        }
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "service-index-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Row 3 — Land Transport"
+                    }
+                  },
+                  [
+                    [
+                      "core/buttons",
+                      {
+                        "className": "service-index-name",
+                        "templateLock": "all"
+                      },
+                      [
+                        [
+                          "core/button",
+                          {
+                            "text": "Land Transport ↗",
+                            "url": "#services",
+                            "metadata": {
+                              "name": "Row 3 — link"
+                            }
+                          }
+                        ]
+                      ]
+                    ],
+                    [
+                      "core/paragraph",
+                      {
+                        "className": "service-index-meta",
+                        "placeholder": "Short description",
+                        "content": "rail, cartage, warehousing, delivery",
+                        "metadata": {
+                          "name": "Row 3 — description"
+                        }
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "service-index-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Row 4 — Sea Freight"
+                    }
+                  },
+                  [
+                    [
+                      "core/buttons",
+                      {
+                        "className": "service-index-name",
+                        "templateLock": "all"
+                      },
+                      [
+                        [
+                          "core/button",
+                          {
+                            "text": "Sea Freight ↗",
+                            "url": "#services",
+                            "metadata": {
+                              "name": "Row 4 — link"
+                            }
+                          }
+                        ]
+                      ]
+                    ],
+                    [
+                      "core/paragraph",
+                      {
+                        "className": "service-index-meta",
+                        "placeholder": "Short description",
+                        "content": "shared containers to weekly programs",
+                        "metadata": {
+                          "name": "Row 4 — description"
+                        }
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "core/group",
+              {
+                "className": "hero-intro",
+                "templateLock": "all"
+              },
+              [
+                [
+                  "core/paragraph",
+                  {
+                    "className": "hero-intro-copy copy-mobile",
+                    "placeholder": "Short intro shown on phones",
+                    "metadata": {
+                      "name": "Intro — short (mobile)"
+                    },
+                    "content": "One team manages every leg: air, sea, customs, cartage and warehousing. We book the ships and aircraft, and <span class=\"accent\">everything on the ground is ours</span>."
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "hero-intro-copy copy-desktop",
+                    "placeholder": "Full intro shown on larger screens",
+                    "metadata": {
+                      "name": "Intro — full (desktop)"
+                    },
+                    "content": "From your supplier's <span class=\"accent\">factory to your door</span>, or straight to your customer's. One team manages every leg: air, sea, customs, cartage and warehousing. We book the ships and aircraft, and <span class=\"accent\">everything on the ground is ours</span>."
+                  }
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "hero-starter",
+                    "templateLock": "all"
+                  },
+                  [
+                    [
+                      "intercargo/form",
+                      {
+                        "metadata": {
+                          "name": "Hero email form"
+                        },
+                        "variant": "hero"
+                      }
+                    ],
+                    [
+                      "core/paragraph",
+                      {
+                        "className": "hero-note",
+                        "placeholder": "Response promise",
+                        "metadata": {
+                          "name": "Response note"
+                        },
+                        "content": "A senior person replies the same business day."
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "core/group",
+          {
+            "className": "hero-baseline",
+            "templateLock": "all",
+            "metadata": {
+              "name": "Location statement"
+            }
+          },
+          [
+            [
+              "core/paragraph",
+              {
+                "placeholder": "Where you operate",
+                "content": "Own facilities in Adelaide, Brisbane, Melbourne, Perth and Sydney"
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "formControl": {
+    "title": "Form",
+    "blockNames": [
+      "intercargo/form",
+      "intercargo/hero-email-form"
+    ],
+    "label": "Hero form",
+    "showAccessibleLabel": true
+  }
+}

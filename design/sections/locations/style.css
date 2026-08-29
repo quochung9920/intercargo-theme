@@ -1,0 +1,316 @@
+/* Presence-scoped styles for locations */
+
+      .locations-section {
+        background: var(--mobile-paper);
+      }
+
+      .locations-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .locations-image {
+        width: 100%;
+        height: var(--location-image-height);
+        min-height: 200px;
+        overflow: hidden;
+        border-radius: clamp(8px, calc(6.514px + 0.381vw), 12px);
+      }
+
+      .locations-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .locations-detail {
+        min-width: 0;
+      }
+
+      .locations-intro {
+        margin: 0 0 20px;
+        color: var(--muted);
+        font-size: clamp(12.5px, calc(11.943px + 0.143vw), 14px);
+        line-height: 1.65;
+      }
+
+      .locations-intro strong {
+        color: var(--ink);
+        font-weight: 400;
+      }
+
+      .location-list {
+        margin-top: 0;
+      }
+
+      .location-row {
+        min-width: 0;
+        padding: 16px 0;
+        border-top: 1px solid var(--mobile-line);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        column-gap: 16px;
+        row-gap: 5px;
+        align-items: center;
+      }
+
+      .location-row h3 {
+        margin: 0;
+        color: #26272b;
+        font-family: var(--font-heading);
+        font-size: var(--h3);
+        font-weight: 600;
+        line-height: 1.3;
+      }
+
+      .location-address,
+.location-port {
+        grid-column: 1 / -1;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(11px, calc(10.257px + 0.19vw), 13px);
+        line-height: 1.45;
+      }
+
+      .location-address strong {
+        color: inherit;
+        font-weight: 400;
+      }
+
+      .address-secondary {
+        display: none;
+      }
+
+      .port-label {
+        color: var(--muted);
+        font-weight: 500;
+        letter-spacing: 0.01em;
+      }
+
+      .location-link {
+        grid-column: 2;
+        grid-row: 1;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: #26272b;
+        font-size: 12px;
+        font-weight: 600;
+        text-decoration: none;
+
+        white-space: nowrap;
+      }
+
+      .location-link img {
+        width: 11px;
+        height: 11px;
+      }
+
+      .locations-close {
+        margin: 0;
+        padding-top: 20px;
+        color: #26272b;
+        font-size: clamp(12.5px, calc(12.129px + 0.095vw), 13.5px);
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      @media (min-width: 960px) {
+
+        .locations-section {
+          background: var(--paper);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .locations-layout {
+          grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+          gap: clamp(36px, calc(-11.143px + 4.762vw), 56px);
+          align-items: start;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .locations-detail {
+          min-height: clamp(500px, calc(350.476px + 14.286vw), 562px);
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .locations-intro {
+          margin-bottom: 12px;
+        }
+      }
+
+      @media (min-width: 960px) {
+
+        .locations-close {
+          padding-top: 22px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .location-row {
+          min-height: 82px;
+          padding: 20px 4px;
+          /* The link column was `auto`, so its width tracked each row's own
+             label ("Melbourne" vs "Perth"), which shifted how much space
+             was left for the two 1fr tracks and threw the SERVES column
+             out of alignment row to row. A fixed track keeps every row's
+             1fr columns identical, so SERVES lines up perfectly down the
+             list. 96px comfortably fits the widest label ("Melbourne ->"). */
+          grid-template-columns: 132px minmax(0, 1fr) minmax(0, 1fr) 96px;
+          gap: 24px;
+          border-top-color: var(--line);
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .location-row.location-row--tall {
+          min-height: 110px;
+          padding-block: 28px 20px;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .location-row h3,
+.location-address,
+.location-port,
+.location-link {
+          grid-row: auto;
+          grid-column: auto;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .location-address,
+.location-port {
+          font-size: 13px;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .location-address strong {
+          color: var(--ink);
+          font-weight: 500;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .address-secondary {
+          display: block;
+          margin-top: 2px;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .port-label {
+          display: block;
+          margin-bottom: 3px;
+          color: var(--muted-light);
+          font-size: 9.5px;
+          font-weight: 600;
+          letter-spacing: 0.05em;
+        }
+      }
+      @media (min-width: 1200px) {
+
+        .location-link {
+          color: var(--ink);
+          font-size: 13px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .locations-layout {
+          /* Image column stays capped (it's a photo, not body content);
+             the detail column keeps flexing so the section doesn't freeze
+             at the 1440px anchor width and bunch to the left on wider
+             screens. */
+          min-height: 562px;
+          grid-template-columns: minmax(300px, 430px) minmax(0, 1fr);
+          gap: 56px;
+        }
+      }
+
+      @media (min-width: 1440px) {
+
+        .locations-image {
+          height: 556px;
+        }
+      }
+
+      /* Native Locations composition (ADR D10 tier 2, named child block) */
+
+      .intercargo-native-locations .locations-image figure,
+.intercargo-native-locations .locations-image .wp-block-image { height: 100%; }
+
+      .intercargo-native-locations .locations-layout,
+.intercargo-native-locations .locations-detail,
+.intercargo-native-locations .location-list { min-width: 0; }
+
+      .intercargo-native-locations .locations-detail > *,
+.intercargo-native-locations .location-row > *,
+.intercargo-native-locations .location-address-group > * { margin-block: 0; }
+
+      /*
+ * The address is one street line plus one locality line. The reference markup carried
+ * the locality twice — once for desktop and once, comma-prefixed, for mobile — which
+ * a client editing the row would have had to keep in sync by hand. Here both
+ * presentations come from the same two fields, and the comma is CSS.
+ */
+
+      .intercargo-native-locations .location-address-group { grid-column: 1 / -1; min-width: 0; }
+
+      .intercargo-native-locations .location-address,
+.intercargo-native-locations .address-secondary { display: inline; }
+
+      .intercargo-native-locations .location-address { color: inherit; font-weight: 400; }
+
+      .intercargo-native-locations .address-secondary::before { content: ", "; }
+
+      /* SERVES is a fixed design element, not content the client edits. */
+
+      .intercargo-native-locations .location-port::before {
+  content: "SERVES ";
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+      .intercargo-native-locations .location-link { grid-column: 2; grid-row: 1; margin: 0; }
+
+      .intercargo-native-locations .location-link .wp-block-button__link {
+  min-height: 0;
+  padding: 0;
+  gap: 7px;
+  color: #26272b;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+      @media (min-width: 1200px) {
+  .intercargo-native-locations .location-address-group { grid-column: auto; grid-row: auto; }
+  .intercargo-native-locations .location-address,
+  .intercargo-native-locations .address-secondary { display: block; }
+  .intercargo-native-locations .location-address { color: var(--ink); font-weight: 500; }
+  .intercargo-native-locations .address-secondary { margin-top: 2px; }
+  .intercargo-native-locations .address-secondary::before { content: none; }
+  .intercargo-native-locations .location-port::before {
+    display: block;
+    margin-bottom: 3px;
+    color: var(--muted-light);
+    font-size: 9.5px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+  .intercargo-native-locations .location-link { grid-column: auto; grid-row: auto; }
+  .intercargo-native-locations .location-link .wp-block-button__link { color: var(--ink); font-size: 13px; }
+}

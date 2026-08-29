@@ -1,0 +1,36 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/media-tile",
+  "title": "Media Tile",
+  "description": "One repeatable image-and-caption tile inside Media Mosaic.",
+  "category": "intercargo-section-items",
+  "icon": "format-image",
+  "keywords": ["intercargo", "media", "image", "tile", "caption"],
+  "textdomain": "intercargo-vite",
+  "editorScript": ["intercargo-package-editor", "file:./editor.js"],
+  "editorStyle": "intercargo-editor",
+  "attributes": {
+    "spanMobile": {"type": "integer", "default": 12},
+    "spanTablet": {"type": "integer", "default": 4},
+    "spanDesktop": {"type": "integer", "default": 3}
+  },
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "media-tile"
+  },
+  "ancestor": ["intercargo/media-mosaic"]
+}

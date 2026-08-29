@@ -1,0 +1,84 @@
+{
+  "_comment": "Reusable ownership flow. The section owns heading, introduction, rail and summary; repeatable Service Flow Step items keep an image slot for compatibility but the ownership variant intentionally hides empty visuals.",
+  "section": {
+    "className": "wp-block-intercargo-service-flow service-flow-section service-flow--ownership section-pad intercargo-native intercargo-native-service-flow",
+    "ariaLabel": "End-to-end service ownership",
+    "id": "service-flow"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "service-flow-panel",
+      "allows": "intercargo/service-flow-step",
+      "label": "Flow steps — add, duplicate, delete or reorder"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container service-flow-content",
+        "templateLock": "all",
+        "metadata": {"name": "Service Flow content"}
+      },
+      [
+        ["core/heading", {"level": 2, "className": "service-flow-heading", "placeholder": "Section title", "content": "What we do, end to end.", "metadata": {"name": "Section title"}}],
+        ["core/paragraph", {"className": "service-flow-intro", "placeholder": "Section introduction", "content": "Most importers use three or four companies to get a container from a supplier to a shelf. We are all of them.", "metadata": {"name": "Section introduction"}}],
+        [
+          "core/group",
+          {
+            "className": "service-flow-panel service-flow-ownership-rail",
+            "templateLock": false,
+            "allowedBlocks": ["intercargo/service-flow-step"],
+            "metadata": {"name": "Flow steps — add, duplicate, delete or reorder"}
+          },
+          [
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 1 — Your supplier"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Your supplier", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "theirs", "metadata": {"name": "Ownership status"}}]
+            ]],
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 2 — Origin consolidation"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Origin consolidation", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "ours", "metadata": {"name": "Ownership status"}}]
+            ]],
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 3 — Sea or air"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Sea or air", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "ours", "metadata": {"name": "Ownership status"}}]
+            ]],
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 4 — Customs cleared"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Customs cleared", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "ours", "metadata": {"name": "Ownership status"}}]
+            ]],
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 5 — Wharf and road"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Wharf and road", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "ours", "metadata": {"name": "Ownership status"}}]
+            ]],
+            ["intercargo/service-flow-step", {"metadata": {"name": "Step 6 — Your door"}}, [
+              ["core/image", {"className": "service-flow-step-visual", "alt": "", "sizeSlug": "full", "linkDestination": "none", "metadata": {"name": "Optional step visual"}}],
+              ["core/heading", {"level": 3, "className": "service-flow-step-title", "content": "Your door", "metadata": {"name": "Step title"}}],
+              ["core/paragraph", {"className": "service-flow-step-copy", "content": "ours", "metadata": {"name": "Ownership status"}}]
+            ]]
+          ]
+        ],
+        [
+          "core/group",
+          {
+            "className": "service-flow-ownership-summary",
+            "templateLock": "all",
+            "metadata": {"name": "Ownership summary"}
+          },
+          [
+            ["core/paragraph", {"className": "service-flow-ownership-label", "content": "Every leg from here is ours", "metadata": {"name": "Ownership label"}}],
+            ["core/paragraph", {"className": "service-flow-ownership-foot service-flow-ownership-foot--wide", "content": "One invoice, one team, and nothing handed to another company at any point in the chain.", "metadata": {"name": "Desktop summary"}}],
+            ["core/paragraph", {"className": "service-flow-ownership-foot service-flow-ownership-foot--narrow", "content": "From the moment your goods leave the supplier to the moment they reach your door, every leg is ours. One invoice, one team, nothing handed to another company.", "metadata": {"name": "Mobile summary"}}]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

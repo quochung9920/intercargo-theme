@@ -1,0 +1,122 @@
+/*
+ * Editor canvas corrections.
+ *
+ * Loaded only inside the block editor, via the `editorStyle` handle declared in
+ * every block.json. Deliberately narrow: the frontend stylesheets are the visual
+ * authority, and this file exists only for geometry that cannot apply inside the
+ * canvas, plus affordances that make a content-only locked section legible.
+ *
+ * It is NOT a place to restyle sections. Anything that changes how a section
+ * looks belongs in sections/<slug>/style.css so the editor and the frontend cannot
+ * drift apart.
+ */
+
+/* Full-bleed sections must not be squeezed by the editor's content width. */
+.editor-styles-wrapper .wp-block-intercargo-hero,
+.editor-styles-wrapper .wp-block-intercargo-statement,
+.editor-styles-wrapper .wp-block-intercargo-enquiry,
+.editor-styles-wrapper .wp-block-acf-intercargo-hero,
+.editor-styles-wrapper .wp-block-acf-intercargo-statement,
+.editor-styles-wrapper .wp-block-acf-intercargo-enquiry {
+  max-width: none;
+}
+
+/*
+ * Gutenberg adds `position: relative` to every `.block-editor-block-list__block`.
+ * The native Hero puts that class on its real media/content nodes, so the core rule
+ * otherwise wins over the low-specificity frontend selectors: the image collapses
+ * to the empty Image placeholder's 161px flow height and the headline is pushed far
+ * below it. Preserve the exact frontend stacking geometry inside the iframe.
+ */
+.editor-styles-wrapper .intercargo-native-hero > .hero-media {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+}
+
+.editor-styles-wrapper .intercargo-native-hero > .hero-content {
+  position: absolute;
+  margin: 0;
+}
+
+/*
+ * Gutenberg's iframe remains 1624px wide while an open Inspector constrains the
+ * actual section to 1184px. Viewport media queries therefore select the 1440px
+ * typography and spacing for a much narrower Hero. Query the section itself and
+ * recompute the fluid authority from its inline size.
+ */
+.editor-styles-wrapper .intercargo-native-hero {
+  container-type: inline-size;
+}
+
+@container (min-width: 960px) and (max-width: 1439.98px) {
+  .editor-styles-wrapper .intercargo-native-hero .hero-content {
+    top: clamp(98px, calc(21.486px + 19.619cqw), 304px);
+    width: calc(100% - (clamp(20px, calc(-20.114px + 10.286cqw), 128px) * 2));
+    gap: clamp(34px, calc(7.886px + 2.857cqw), 48px);
+  }
+
+  .editor-styles-wrapper .intercargo-native-hero .hero-title {
+    font-size: clamp(40px, calc(15.114px + 6.381cqw), 107px);
+    line-height: 0.98;
+    letter-spacing: clamp(-3.745px, calc(-0.364px - 0.235cqw), -1.28px);
+  }
+
+  .editor-styles-wrapper .intercargo-native-hero .hero-fold {
+    min-height: 0;
+    gap: clamp(48px, 8cqw, 96px);
+  }
+
+  .editor-styles-wrapper .intercargo-native-hero .service-index-name,
+  .editor-styles-wrapper .intercargo-native-hero .service-index-row .wp-block-button__link {
+    font-size: clamp(17px, calc(8.571px + 0.794cqw), 20px);
+  }
+
+  .editor-styles-wrapper .intercargo-native-hero .hero-intro-copy {
+    font-size: clamp(13.5px, calc(12.757px + 0.19cqw), 15.5px);
+    line-height: 1.65;
+  }
+}
+
+/*
+ * Core's constrained-layout rule caps nested content blocks at the global content
+ * width. At the 1185px canvas left by an open Inspector this narrows the H1 enough
+ * to create an unintended third line, even though the Hero content shell still has
+ * room for the two-line desktop authority. Restore the shell width; this also keeps
+ * the fold, CTA, response note and baseline above the clipping edge.
+ */
+.editor-styles-wrapper .intercargo-native-hero .hero-title {
+  max-width: none;
+  width: 100%;
+}
+
+/*
+ * Make the boundaries of locked structural wrappers visible on hover.
+ *
+ * Under templateLock: contentOnly the wrappers are not selectable, so without a
+ * hint an editor cannot tell why part of a section refuses to respond. Shown on
+ * hover only, so the resting canvas still matches the frontend.
+ */
+.editor-styles-wrapper [data-type^='acf/intercargo-'] .wp-block-group:hover {
+  outline: 1px dashed rgba(81, 112, 255, 0.45);
+  outline-offset: 2px;
+}
+
+/*
+ * Placeholder text for emptied content roles. Native paragraphs render their
+ * placeholder attribute; this only tones it to the dark Hero background so the
+ * hint stays readable there.
+ */
+.editor-styles-wrapper .hero .block-editor-rich-text__editable[data-is-placeholder-visible='true'] {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/*
+ * Empty core/image renders a large diagonal placeholder. The card already shows the
+ * exact packaged service icon in that state, while the Service Card toolbar owns the
+ * native Media Library action. Removing only the empty canvas shell prevents the
+ * duplicate grey box at the right without storing a fake attachment.
+ */
+.editor-styles-wrapper .intercargo-native-services .service-icon-row:not(:has(img)) .wp-block-image {
+  display: none;
+}

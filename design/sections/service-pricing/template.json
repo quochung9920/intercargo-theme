@@ -1,0 +1,182 @@
+{
+  "_comment": "Explains pricing using a worked example on the left and list of stacked charges on the right. Reuse existing native blocks wherever possible and add only one repeatable calc-row item type.",
+  "section": {
+    "className": "wp-block-intercargo-service-pricing service-pricing-section section-pad intercargo-native intercargo-native-service-pricing",
+    "ariaLabel": "Service pricing",
+    "id": "priced"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "service-pricing-calc",
+      "allows": "intercargo/pricing-row",
+      "label": "Worked example rows"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container service-pricing-content",
+        "templateLock": "all",
+        "metadata": {"name": "Service pricing content"}
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "service-pricing-heading",
+            "placeholder": "Section title",
+            "content": "How air freight is priced.",
+            "metadata": {"name": "Section title"}
+          }
+        ],
+        [
+          "core/paragraph",
+          {
+            "className": "service-pricing-intro",
+            "placeholder": "Section introduction",
+            "content": "Two numbers decide your rate, and the second one is the one that catches people out.",
+            "metadata": {"name": "Section introduction"}
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "service-pricing-grid",
+            "templateLock": "all",
+            "metadata": {"name": "Pricing columns"}
+          },
+          [
+            [
+              "core/group",
+              {
+                "className": "service-pricing-column service-pricing-column--calc",
+                "templateLock": "all",
+                "metadata": {"name": "Worked example"}
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-pricing-column-title",
+                    "placeholder": "Column title",
+                    "content": "Chargeable weight",
+                    "metadata": {"name": "Column title"}
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-pricing-column-body",
+                    "placeholder": "Column description",
+                    "content": "You are charged on whichever is greater: the actual weight, or the space the shipment takes up.",
+                    "metadata": {"name": "Column description"}
+                  }
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "service-pricing-calc",
+                    "templateLock": false,
+                    "metadata": {"name": "Worked example rows — add, duplicate, delete or reorder"}
+                  },
+                  [
+                    [
+                      "intercargo/pricing-row",
+                      {"metadata": {"name": "Row 1 — Dimensions"}},
+                      [
+                        ["core/paragraph", {"className": "service-pricing-calc-label", "content": "One carton, 80 x 50 x 50 cm", "placeholder": "Label", "metadata": {"name": "Row label"}}],
+                        ["core/paragraph", {"className": "service-pricing-calc-value", "content": "200,000 cubic cm", "placeholder": "Value", "metadata": {"name": "Row value"}}]
+                      ]
+                    ],
+                    [
+                      "intercargo/pricing-row",
+                      {"metadata": {"name": "Row 2 — Divisor"}},
+                      [
+                        ["core/paragraph", {"className": "service-pricing-calc-label", "content": "Divided by 6,000", "placeholder": "Label", "metadata": {"name": "Row label"}}],
+                        ["core/paragraph", {"className": "service-pricing-calc-value", "content": "33.3 kg volumetric", "placeholder": "Value", "metadata": {"name": "Row value"}}]
+                      ]
+                    ],
+                    [
+                      "intercargo/pricing-row",
+                      {"metadata": {"name": "Row 3 — Actual weight"}},
+                      [
+                        ["core/paragraph", {"className": "service-pricing-calc-label", "content": "Actual weight on the scales", "placeholder": "Label", "metadata": {"name": "Row label"}}],
+                        ["core/paragraph", {"className": "service-pricing-calc-value", "content": "10.0 kg", "placeholder": "Value", "metadata": {"name": "Row value"}}]
+                      ]
+                    ],
+                    [
+                      "intercargo/pricing-row",
+                      {"metadata": {"name": "Total — Charged on"}},
+                      [
+                        ["core/paragraph", {"className": "service-pricing-calc-label", "content": "You are charged on", "placeholder": "Label", "metadata": {"name": "Row label"}}],
+                        ["core/paragraph", {"className": "service-pricing-calc-value", "content": "33.3 kg", "placeholder": "Value", "metadata": {"name": "Row value"}}]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-pricing-note",
+                    "placeholder": "Optional note",
+                    "content": "Same ratio said the other way: about 167 kg per cubic metre. Couriers divide by 5,000 instead, which is why their quote for the same carton looks different.",
+                    "metadata": {"name": "Worked example note"}
+                  }
+                ]
+              ]
+            ],
+            [
+              "core/group",
+              {
+                "className": "service-pricing-column service-pricing-column--list",
+                "templateLock": "all",
+                "metadata": {"name": "Charge stack"}
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-pricing-column-title",
+                    "placeholder": "Column title",
+                    "content": "What sits on top",
+                    "metadata": {"name": "Column title"}
+                  }
+                ],
+                [
+                  "core/list",
+                  {
+                    "className": "service-pricing-list",
+                    "templateLock": false,
+                    "metadata": {"name": "Charge list — add or remove freely"}
+                  },
+                  [
+                    ["core/list-item", {"content": "Airline uplift"}],
+                    ["core/list-item", {"content": "Fuel and security surcharges"}],
+                    ["core/list-item", {"content": "Terminal handling at both ends"}],
+                    ["core/list-item", {"content": "Customs clearance"}],
+                    ["core/list-item", {"content": "Duty and GST"}],
+                    ["core/list-item", {"content": "Delivery to your door"}]
+                  ]
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-pricing-note",
+                    "placeholder": "Optional note",
+                    "content": "All of it in the quote you approve, not a base rate with a fee stack behind it.",
+                    "metadata": {"name": "Charge stack note"}
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

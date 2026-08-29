@@ -1,0 +1,33 @@
+{
+  "_comment": "One structured Content Column. It is an item, not a top-level section.",
+  "item": {
+    "element": "article",
+    "className": "reason-card content-column",
+    "parent": "intercargo/reasons"
+  },
+  "template": [
+    [
+      "core/heading",
+      {
+        "level": 3,
+        "className": "content-column-title",
+        "placeholder": "Column title",
+        "content": "Column title",
+        "metadata": {
+          "name": "Column title"
+        }
+      }
+    ],
+    [
+      "core/paragraph",
+      {
+        "className": "content-column-copy",
+        "placeholder": "Column description",
+        "content": "Describe this point.",
+        "metadata": {
+          "name": "Column description"
+        }
+      }
+    ]
+  ]
+}

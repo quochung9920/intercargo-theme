@@ -1,0 +1,265 @@
+{
+  "_comment": "FAQ composition. Questions and all action groups are open collections so editors can add, delete, duplicate or reorder items without changing the section shell.",
+  "section": {
+    "id": "faq",
+    "className": "wp-block-intercargo-faq faq-section section-pad intercargo-native intercargo-native-faq",
+    "ariaLabel": "Questions importers ask us"
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container faq-layout"
+      },
+      [
+        [
+          "core/group",
+          {
+            "className": "faq-intro",
+            "templateLock": "all"
+          },
+          [
+            [
+              "core/heading",
+              {
+                "level": 2,
+                "className": "section-title",
+                "placeholder": "Section title",
+                "metadata": {
+                  "name": "FAQ title"
+                },
+                "content": "Questions importers ask us."
+              }
+            ],
+            [
+              "core/paragraph",
+              {
+                "className": "faq-copy",
+                "placeholder": "Short introduction",
+                "metadata": {
+                  "name": "FAQ introduction"
+                },
+                "content": "If yours is not here, ask a person. A senior team member replies the same business day."
+              }
+            ],
+            [
+              "core/buttons",
+              {
+                "className": "faq-cta-desktop button--dark",
+                "templateLock": false,
+                "allowedBlocks": [
+                  "core/button"
+                ],
+                "metadata": {
+                  "name": "Primary FAQ actions — add, remove or reorder"
+                }
+              },
+              [
+                [
+                  "core/button",
+                  {
+                    "text": "Talk to our team",
+                    "url": "#enquiry",
+                    "metadata": {
+                      "name": "Desktop call to action"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "core/buttons",
+              {
+                "className": "faq-more",
+                "templateLock": false,
+                "allowedBlocks": [
+                  "core/button"
+                ],
+                "metadata": {
+                  "name": "Secondary FAQ actions — add, remove or reorder"
+                }
+              },
+              [
+                [
+                  "core/button",
+                  {
+                    "text": "Read all importing questions ↗",
+                    "url": "#faq",
+                    "metadata": {
+                      "name": "Read-all link"
+                    }
+                  }
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "core/accordion",
+          {
+            "className": "faq-list",
+            "autoclose": true,
+            "headingLevel": 3,
+            "metadata": {
+              "name": "Questions — add or remove freely"
+            },
+            "templateLock": false
+          },
+          [
+            [
+              "core/accordion-item",
+              {},
+              [
+                [
+                  "core/accordion-heading",
+                  {
+                    "content": "What is freight forwarding?"
+                  }
+                ],
+                [
+                  "core/accordion-panel",
+                  {
+                    "templateLock": false
+                  },
+                  [
+                    [
+                      "core/paragraph",
+                      {
+                        "content": "Freight forwarding means arranging pickup, transport, customs and delivery for international cargo."
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "core/accordion-item",
+              {},
+              [
+                [
+                  "core/accordion-heading",
+                  {
+                    "content": "How long does customs clearance take?"
+                  }
+                ],
+                [
+                  "core/accordion-panel",
+                  {
+                    "templateLock": false
+                  },
+                  [
+                    [
+                      "core/paragraph",
+                      {
+                        "content": "Depends on commodity and port volume, often 1-3 days for standard documents and 6-8 hours for pre-clearance updates."
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "core/accordion-item",
+              {},
+              [
+                [
+                  "core/accordion-heading",
+                  {
+                    "content": "Does my Incoterm include customs clearance?"
+                  }
+                ],
+                [
+                  "core/accordion-panel",
+                  {
+                    "templateLock": false
+                  },
+                  [
+                    [
+                      "core/paragraph",
+                      {
+                        "content": "Not always. We specify exact incoterms in your quote and include customs line-items transparently."
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "core/accordion-item",
+              {},
+              [
+                [
+                  "core/accordion-heading",
+                  {
+                    "content": "How do freight forwarders make money?"
+                  }
+                ],
+                [
+                  "core/accordion-panel",
+                  {
+                    "templateLock": false
+                  },
+                  [
+                    [
+                      "core/paragraph",
+                      {
+                        "content": "We earn by service margin, never hidden surcharges. We show every fee before you commit."
+                      }
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "core/buttons",
+          {
+            "className": "faq-cta-mobile button--dark",
+            "templateLock": false,
+            "allowedBlocks": [
+              "core/button"
+            ],
+            "metadata": {
+              "name": "Mobile FAQ actions — add, remove or reorder"
+            }
+          },
+          [
+            [
+              "core/button",
+              {
+                "text": "Talk to our team",
+                "url": "#enquiry",
+                "metadata": {
+                  "name": "Mobile call to action"
+                }
+              }
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "openCollections": [
+    {
+      "className": "faq-list",
+      "allows": "core/accordion-item",
+      "label": "Questions — add, remove or reorder"
+    },
+    {
+      "className": "faq-cta-desktop",
+      "allows": "core/button",
+      "label": "Primary FAQ actions — add, remove or reorder"
+    },
+    {
+      "className": "faq-more",
+      "allows": "core/button",
+      "label": "Secondary FAQ actions — add, remove or reorder"
+    },
+    {
+      "className": "faq-cta-mobile",
+      "allows": "core/button",
+      "label": "Mobile FAQ actions — add, remove or reorder"
+    }
+  ]
+}

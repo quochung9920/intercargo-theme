@@ -1,0 +1,28 @@
+{
+  "_comment": "One structured Metric item. It is not a top-level section.",
+  "item": {
+    "element": "div",
+    "className": "metric-item",
+    "parent": "intercargo/metrics-band"
+  },
+  "template": [
+    [
+      "core/paragraph",
+      {
+        "className": "metric-value",
+        "placeholder": "Metric value",
+        "content": "5",
+        "metadata": {"name": "Metric value"}
+      }
+    ],
+    [
+      "core/paragraph",
+      {
+        "className": "metric-label",
+        "placeholder": "Metric description",
+        "content": "cities, every facility our own",
+        "metadata": {"name": "Metric description"}
+      }
+    ]
+  ]
+}

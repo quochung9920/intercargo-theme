@@ -1,0 +1,518 @@
+{
+  "_comment": "Single source of truth for the Locations composition. The row is a named child block, intercargo/location, whose own template.json declares its fields.",
+  "section": {
+    "id": "locations",
+    "className": "wp-block-intercargo-locations locations-section section-pad intercargo-native intercargo-native-locations",
+    "ariaLabel": "Our facilities"
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container section-head-gap",
+        "templateLock": "all"
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "section-title",
+            "placeholder": "Section title",
+            "metadata": {
+              "name": "Section title"
+            },
+            "content": "Our own facilities, five cities."
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "locations-layout"
+          },
+          [
+            [
+              "core/group",
+              {
+                "className": "locations-image",
+                "templateLock": "all",
+                "metadata": {
+                  "name": "Facility photograph"
+                }
+              },
+              [
+                [
+                  "core/image",
+                  {
+                    "alt": "Intercargo warehouse facility",
+                    "url": "@theme/01fe034c8270ad81b014007611c673e085a9effd.png"
+                  }
+                ]
+              ]
+            ],
+            [
+              "core/group",
+              {
+                "className": "locations-detail"
+              },
+              [
+                [
+                  "core/paragraph",
+                  {
+                    "className": "locations-intro",
+                    "placeholder": "Introduction",
+                    "metadata": {
+                      "name": "Introduction"
+                    },
+                    "content": "<strong>Warehousing, wharf cartage and customs clearance at every</strong> site, each one placed for the port it serves."
+                  }
+                ],
+                [
+                  "core/group",
+                  {
+                    "className": "location-list",
+                    "templateLock": false,
+                    "metadata": {
+                      "name": "Locations — duplicate, delete, reorder or add"
+                    }
+                  },
+                  [
+                    [
+                      "intercargo/location",
+                      {
+                        "metadata": {
+                          "name": "Adelaide"
+                        }
+                      },
+                      [
+                        [
+                          "core/heading",
+                          {
+                            "level": 3,
+                            "placeholder": "City",
+                            "metadata": {
+                              "name": "City"
+                            },
+                            "content": "Adelaide"
+                          }
+                        ],
+                        [
+                          "core/group",
+                          {
+                            "className": "location-address-group",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "location-address",
+                                "placeholder": "Street address",
+                                "metadata": {
+                                  "name": "Street"
+                                },
+                                "content": "4 Birralee Road, Regency Park SA 5010"
+                              }
+                            ],
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "address-secondary",
+                                "placeholder": "Suburb, state and postcode",
+                                "metadata": {
+                                  "name": "Locality"
+                                },
+                                "content": "Adelaide SA"
+                              }
+                            ]
+                          ]
+                        ],
+                        [
+                          "core/paragraph",
+                          {
+                            "className": "location-port",
+                            "placeholder": "Port served",
+                            "metadata": {
+                              "name": "Port served"
+                            },
+                            "content": "Port Adelaide"
+                          }
+                        ],
+                        [
+                          "core/buttons",
+                          {
+                            "className": "location-link",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/button",
+                              {
+                                "text": "Adelaide ↗",
+                                "url": "#enquiry",
+                                "metadata": {
+                                  "name": "Enquiry link"
+                                }
+                              }
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "intercargo/location",
+                      {
+                        "metadata": {
+                          "name": "Brisbane"
+                        }
+                      },
+                      [
+                        [
+                          "core/heading",
+                          {
+                            "level": 3,
+                            "placeholder": "City",
+                            "metadata": {
+                              "name": "City"
+                            },
+                            "content": "Brisbane"
+                          }
+                        ],
+                        [
+                          "core/group",
+                          {
+                            "className": "location-address-group",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "location-address",
+                                "placeholder": "Street address",
+                                "metadata": {
+                                  "name": "Street"
+                                },
+                                "content": "9 Jutland Street"
+                              }
+                            ],
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "address-secondary",
+                                "placeholder": "Suburb, state and postcode",
+                                "metadata": {
+                                  "name": "Locality"
+                                },
+                                "content": "Loganlea QLD 4131"
+                              }
+                            ]
+                          ]
+                        ],
+                        [
+                          "core/paragraph",
+                          {
+                            "className": "location-port",
+                            "placeholder": "Port served",
+                            "metadata": {
+                              "name": "Port served"
+                            },
+                            "content": "Port of Brisbane"
+                          }
+                        ],
+                        [
+                          "core/buttons",
+                          {
+                            "className": "location-link",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/button",
+                              {
+                                "text": "Brisbane ↗",
+                                "url": "#enquiry",
+                                "metadata": {
+                                  "name": "Enquiry link"
+                                }
+                              }
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "intercargo/location",
+                      {
+                        "metadata": {
+                          "name": "Melbourne"
+                        }
+                      },
+                      [
+                        [
+                          "core/heading",
+                          {
+                            "level": 3,
+                            "placeholder": "City",
+                            "metadata": {
+                              "name": "City"
+                            },
+                            "content": "Melbourne"
+                          }
+                        ],
+                        [
+                          "core/group",
+                          {
+                            "className": "location-address-group",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "location-address",
+                                "placeholder": "Street address",
+                                "metadata": {
+                                  "name": "Street"
+                                },
+                                "content": "10 Abbotts Road"
+                              }
+                            ],
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "address-secondary",
+                                "placeholder": "Suburb, state and postcode",
+                                "metadata": {
+                                  "name": "Locality"
+                                },
+                                "content": "Dandenong South VIC 3175"
+                              }
+                            ]
+                          ]
+                        ],
+                        [
+                          "core/paragraph",
+                          {
+                            "className": "location-port",
+                            "placeholder": "Port served",
+                            "metadata": {
+                              "name": "Port served"
+                            },
+                            "content": "Port of Melbourne"
+                          }
+                        ],
+                        [
+                          "core/buttons",
+                          {
+                            "className": "location-link",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/button",
+                              {
+                                "text": "Melbourne ↗",
+                                "url": "#enquiry",
+                                "metadata": {
+                                  "name": "Enquiry link"
+                                }
+                              }
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "intercargo/location",
+                      {
+                        "metadata": {
+                          "name": "Perth"
+                        }
+                      },
+                      [
+                        [
+                          "core/heading",
+                          {
+                            "level": 3,
+                            "placeholder": "City",
+                            "metadata": {
+                              "name": "City"
+                            },
+                            "content": "Perth"
+                          }
+                        ],
+                        [
+                          "core/group",
+                          {
+                            "className": "location-address-group",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "location-address",
+                                "placeholder": "Street address",
+                                "metadata": {
+                                  "name": "Street"
+                                },
+                                "content": "11-15 Fargo Way, Welshpool WA 6106"
+                              }
+                            ],
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "address-secondary",
+                                "placeholder": "Suburb, state and postcode",
+                                "metadata": {
+                                  "name": "Locality"
+                                },
+                                "content": "Perth WA"
+                              }
+                            ]
+                          ]
+                        ],
+                        [
+                          "core/paragraph",
+                          {
+                            "className": "location-port",
+                            "placeholder": "Port served",
+                            "metadata": {
+                              "name": "Port served"
+                            },
+                            "content": "Port of Fremantle"
+                          }
+                        ],
+                        [
+                          "core/buttons",
+                          {
+                            "className": "location-link",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/button",
+                              {
+                                "text": "Perth ↗",
+                                "url": "#enquiry",
+                                "metadata": {
+                                  "name": "Enquiry link"
+                                }
+                              }
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "intercargo/location",
+                      {
+                        "metadata": {
+                          "name": "Sydney"
+                        }
+                      },
+                      [
+                        [
+                          "core/heading",
+                          {
+                            "level": 3,
+                            "placeholder": "City",
+                            "metadata": {
+                              "name": "City"
+                            },
+                            "content": "Sydney"
+                          }
+                        ],
+                        [
+                          "core/group",
+                          {
+                            "className": "location-address-group",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "location-address",
+                                "placeholder": "Street address",
+                                "metadata": {
+                                  "name": "Street"
+                                },
+                                "content": "31 Heathcote Road"
+                              }
+                            ],
+                            [
+                              "core/paragraph",
+                              {
+                                "className": "address-secondary",
+                                "placeholder": "Suburb, state and postcode",
+                                "metadata": {
+                                  "name": "Locality"
+                                },
+                                "content": "Moorebank NSW 2170"
+                              }
+                            ]
+                          ]
+                        ],
+                        [
+                          "core/paragraph",
+                          {
+                            "className": "location-port",
+                            "placeholder": "Port served",
+                            "metadata": {
+                              "name": "Port served"
+                            },
+                            "content": "Port Botany"
+                          }
+                        ],
+                        [
+                          "core/buttons",
+                          {
+                            "className": "location-link",
+                            "templateLock": "all"
+                          },
+                          [
+                            [
+                              "core/button",
+                              {
+                                "text": "Sydney ↗",
+                                "url": "#enquiry",
+                                "metadata": {
+                                  "name": "Enquiry link"
+                                }
+                              }
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "locations-close",
+                    "placeholder": "Closing line",
+                    "metadata": {
+                      "name": "Closing line"
+                    },
+                    "content": "Every facility is ours, not a partner's: your goods stay in our hands from wharf to door."
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "openCollections": [
+    {
+      "className": "location-list",
+      "allows": "intercargo/location",
+      "label": "Locations"
+    }
+  ],
+  "editorTemplateLock": "all"
+}
