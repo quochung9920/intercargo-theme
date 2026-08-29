@@ -1,0 +1,23 @@
+{
+  "id": "intercargo",
+  "name": "Intercargo Connect",
+  "schemaVersion": "1.0.0",
+  "designCoreVersion": "0.1.0",
+  "wordpressAdapterVersion": "0.1.0",
+  "migration": {
+    "phase": 1,
+    "legacyVisualAuthority": "../../design"
+  },
+  "targetSourceRoots": {
+    "tokens": "tokens",
+    "global": "global",
+    "components": "components",
+    "sections": "sections",
+    "patterns": "patterns",
+    "shell": "shell",
+    "assets": "assets"
+  },
+  "output": {
+    "wordpressTheme": "../../themes/intercargo"
+  }
+}

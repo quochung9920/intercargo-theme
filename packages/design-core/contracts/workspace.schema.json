@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://design-platform.local/schemas/workspace.schema.json",
+  "title": "Design Platform Workspace",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["architectureVersion", "migrationPhase", "packages", "projects", "rules"],
+  "properties": {
+    "architectureVersion": { "type": "string", "minLength": 1 },
+    "migrationPhase": { "type": "integer", "minimum": 1 },
+    "packages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["designCore", "wordpressAdapter"],
+      "properties": {
+        "designCore": { "type": "string", "minLength": 1 },
+        "wordpressAdapter": { "type": "string", "minLength": 1 }
+      }
+    },
+    "projects": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source", "themeOutput"],
+        "properties": {
+          "source": { "type": "string", "minLength": 1 },
+          "legacyDesignSource": { "type": "string", "minLength": 1 },
+          "themeOutput": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["themeRuntimeStandalone", "themeMayImportPackagesAtRuntime", "themeMayImportProjectsAtRuntime", "canonicalBlockIdsAreStable"],
+      "properties": {
+        "themeRuntimeStandalone": { "const": true },
+        "themeMayImportPackagesAtRuntime": { "const": false },
+        "themeMayImportProjectsAtRuntime": { "const": false },
+        "canonicalBlockIdsAreStable": { "const": true }
+      }
+    }
+  }
+}

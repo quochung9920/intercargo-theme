@@ -1,0 +1,22 @@
+{
+  "$schema": "./packages/design-core/contracts/workspace.schema.json",
+  "architectureVersion": "1.0.0",
+  "migrationPhase": 1,
+  "packages": {
+    "designCore": "packages/design-core",
+    "wordpressAdapter": "packages/wordpress-adapter"
+  },
+  "projects": {
+    "intercargo": {
+      "source": "projects/intercargo",
+      "legacyDesignSource": "design",
+      "themeOutput": "themes/intercargo"
+    }
+  },
+  "rules": {
+    "themeRuntimeStandalone": true,
+    "themeMayImportPackagesAtRuntime": false,
+    "themeMayImportProjectsAtRuntime": false,
+    "canonicalBlockIdsAreStable": true
+  }
+}

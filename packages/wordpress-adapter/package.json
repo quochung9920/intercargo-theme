@@ -1,0 +1,7 @@
+{
+  "name": "@design-platform/wordpress-adapter",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "WordPress/Gutenberg adapter for compiled design projects."
+}
