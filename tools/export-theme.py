@@ -52,6 +52,7 @@ def main() -> None:
     shell_root = project_root / paths["theme"]
     design_root = project_root / paths["design"]
     assets_root = project_root / paths["assets"]
+    src_root = project_root / paths["src"]
     qa_root = project_root / paths["qa"]
     runtime_root = adapter_root / "runtime"
 
@@ -67,6 +68,7 @@ def main() -> None:
     copy_dir(shell_root, output_root)
     copy_dir(design_root, output_root / "design")
     copy_dir(assets_root, output_root / "assets")
+    copy_dir(src_root, output_root / "src")
     copy_dir(runtime_root, output_root / "inc")
 
     qa_tests = qa_root / "tests"
