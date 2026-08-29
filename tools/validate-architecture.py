@@ -9,11 +9,11 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-errors: list[str] = []
+ERRORS: list[str] = []
 
 
 def fail(message: str) -> None:
-    errors.append(message)
+    ERRORS.append(message)
 
 
 def rel(path: Path) -> str:
@@ -35,45 +35,48 @@ def read_json(path: Path) -> dict:
     return value
 
 
-def file_digest(path: Path) -> str:
-    digest = hashlib.sha256()
+def digest(path: Path) -> str:
+    value = hashlib.sha256()
     with path.open("rb") as stream:
         for chunk in iter(lambda: stream.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
+            value.update(chunk)
+    return value.hexdigest()
 
 
-def file_map(root: Path) -> dict[str, str]:
+def tree_map(root: Path) -> dict[str, str]:
     if not root.is_dir():
         return {}
     return {
-        path.relative_to(root).as_posix(): file_digest(path)
+        path.relative_to(root).as_posix(): digest(path)
         for path in root.rglob("*")
         if path.is_file()
     }
 
 
-def require_equal_tree(source: Path, output: Path, label: str) -> None:
+def require_same_tree(source: Path, output: Path, label: str) -> None:
     if not source.is_dir():
-        fail(f"{label}: source missing: {rel(source)}")
+        fail(f"{label}: source directory missing: {rel(source)}")
         return
     if not output.is_dir():
-        fail(f"{label}: output missing: {rel(output)}")
+        fail(f"{label}: generated directory missing: {rel(output)}")
         return
-    left = file_map(source)
-    right = file_map(output)
-    if left != right:
-        missing = sorted(set(left) - set(right))[:8]
-        extra = sorted(set(right) - set(left))[:8]
-        changed = sorted(path for path in set(left) & set(right) if left[path] != right[path])[:8]
-        details: list[str] = []
-        if missing:
-            details.append("missing=" + ", ".join(missing))
-        if extra:
-            details.append("extra=" + ", ".join(extra))
-        if changed:
-            details.append("changed=" + ", ".join(changed))
-        fail(f"{label}: generated output is stale ({'; '.join(details)})")
+    expected = tree_map(source)
+    actual = tree_map(output)
+    if expected == actual:
+        return
+    missing = sorted(set(expected) - set(actual))[:8]
+    extra = sorted(set(actual) - set(expected))[:8]
+    changed = sorted(
+        name for name in set(expected) & set(actual) if expected[name] != actual[name]
+    )[:8]
+    parts: list[str] = []
+    if missing:
+        parts.append("missing=" + ", ".join(missing))
+    if extra:
+        parts.append("extra=" + ", ".join(extra))
+    if changed:
+        parts.append("changed=" + ", ".join(changed))
+    fail(f"{label}: generated output is stale ({'; '.join(parts)})")
 
 
 workspace_path = ROOT / "workspace.json"
@@ -106,20 +109,22 @@ if not core_root.is_dir():
 if not (adapter_root / "runtime").is_dir():
     fail("WordPress adapter runtime is missing")
 
-# The portable core is intentionally platform- and project-neutral. Documentation
-# may describe the boundary, so executable/schema files are the enforcement target.
+# Core contracts are portable. Documentation can describe boundaries, but executable
+# files and schemas must not acquire WordPress APIs or project-specific symbols.
 forbidden_core = re.compile(
     r"\b(?:ABSPATH|WP_Block|register_block_type|wp_enqueue_|wp_insert_post|register_rest_route|intercargo)\b",
     re.IGNORECASE,
 )
 if core_root.is_dir():
     for path in core_root.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in {".php", ".js", ".mjs", ".ts", ".tsx", ".py", ".json"}:
+        if not path.is_file() or path.suffix.lower() not in {
+            ".php", ".js", ".mjs", ".ts", ".tsx", ".py", ".json"
+        }:
             continue
         if forbidden_core.search(path.read_text(encoding="utf-8", errors="ignore")):
             fail(f"{rel(path)}: Design Core contains project/platform-specific language")
 
-# Old root-theme layout must be gone once the workspace migration is complete.
+# The repository root is a workspace, never a second WordPress theme copy.
 legacy_root_paths = [
     "design", "inc", "src", "assets", "dist", "patterns", "tests",
     "archive.php", "footer.php", "front-page.php", "functions.php", "header.php",
@@ -133,79 +138,113 @@ for value in legacy_root_paths:
 if not isinstance(projects, dict) or not projects:
     fail("workspace must define at least one project")
 else:
+    core_package = read_json(core_root / "package.json") if (core_root / "package.json").is_file() else {}
+    adapter_package = read_json(adapter_root / "package.json") if (adapter_root / "package.json").is_file() else {}
+
     for project_id, entry in projects.items():
         if not isinstance(entry, dict):
             fail(f"project {project_id}: invalid workspace entry")
             continue
+
         source_root = ROOT / str(entry.get("source", ""))
         output_root = ROOT / str(entry.get("themeOutput", ""))
-        project_json = source_root / "project.json"
-        project = read_json(project_json) if project_json.is_file() else {}
+        project_file = source_root / "project.json"
+        project = read_json(project_file) if project_file.is_file() else {}
         if not project:
             fail(f"project {project_id}: project.json is missing or invalid")
             continue
 
         paths = project.get("paths", {})
+        if not isinstance(paths, dict):
+            fail(f"project {project_id}: paths must be an object")
+            continue
+
         for key in ("design", "assets", "theme", "src", "qa"):
-            value = paths.get(key) if isinstance(paths, dict) else None
+            value = paths.get(key)
             if not isinstance(value, str) or not (source_root / value).is_dir():
                 fail(f"project {project_id}: missing source path {key}")
 
         required_theme = [
             "style.css", "functions.php", "index.php", "page.php", "header.php",
-            "footer.php", "theme.json", "design", "inc", "assets", "dist",
+            "footer.php", "theme.json", "design", "inc", "assets", "src", "dist",
+            "BUILD-MANIFEST.json",
         ]
         for value in required_theme:
             if not (output_root / value).exists():
                 fail(f"project {project_id}: generated theme missing {value}")
 
         if output_root.is_dir():
-            # Generated runtime must not depend on the workspace that created it.
-            escape = re.compile(r"(?:\.\./)+(?:packages|projects)/|(?:^|[\"'(/])(?:packages|projects)/")
+            # Nothing in the standalone theme may reach back into workspace source.
+            escape = re.compile(
+                r"(?:\.\./)+(?:packages|projects)/|(?:^|[\"'(/])(?:packages|projects)/"
+            )
             for path in output_root.rglob("*"):
-                if not path.is_file() or path.suffix.lower() not in {".php", ".js", ".mjs", ".css", ".json"}:
+                if not path.is_file() or path.suffix.lower() not in {
+                    ".php", ".js", ".mjs", ".css", ".json"
+                }:
                     continue
                 if escape.search(path.read_text(encoding="utf-8", errors="ignore")):
                     fail(f"{rel(path)}: standalone theme references workspace source")
 
-            for forbidden in ("src", "vite.config.js", "package.json", "package-lock.json"):
+            for forbidden in ("vite.config.js", "package.json", "package-lock.json"):
                 if (output_root / forbidden).exists():
                     fail(f"project {project_id}: generated runtime contains build-only path {forbidden}")
 
-        if isinstance(paths, dict):
-            require_equal_tree(source_root / str(paths.get("design", "")), output_root / "design", f"project {project_id} design")
-            require_equal_tree(source_root / str(paths.get("assets", "")), output_root / "assets", f"project {project_id} assets")
-            require_equal_tree(adapter_root / "runtime", output_root / "inc", f"project {project_id} adapter runtime")
-            require_equal_tree(source_root / str(paths.get("theme", "")) / "patterns", output_root / "patterns", f"project {project_id} patterns")
-            require_equal_tree(source_root / str(paths.get("qa", "")) / "tests", output_root / "tests", f"project {project_id} tests")
-            require_equal_tree(source_root / str(paths.get("qa", "")) / "tools", output_root / "tools", f"project {project_id} QA tools")
+        shell_root = source_root / str(paths.get("theme", ""))
+        qa_root = source_root / str(paths.get("qa", ""))
+        require_same_tree(source_root / str(paths.get("design", "")), output_root / "design", f"project {project_id} design")
+        require_same_tree(source_root / str(paths.get("assets", "")), output_root / "assets", f"project {project_id} assets")
+        require_same_tree(source_root / str(paths.get("src", "")), output_root / "src", f"project {project_id} source bridges")
+        require_same_tree(adapter_root / "runtime", output_root / "inc", f"project {project_id} adapter runtime")
+        require_same_tree(shell_root / "patterns", output_root / "patterns", f"project {project_id} patterns")
+        require_same_tree(qa_root / "tests", output_root / "tests", f"project {project_id} tests")
+        require_same_tree(qa_root / "tools", output_root / "tools", f"project {project_id} QA tools")
 
-            shell_root = source_root / str(paths.get("theme", ""))
+        if shell_root.is_dir():
             for shell_file in shell_root.rglob("*"):
-                if not shell_file.is_file() or shell_file.relative_to(shell_root).parts[0] == "patterns":
+                if not shell_file.is_file():
                     continue
-                destination = output_root / shell_file.relative_to(shell_root)
-                if not destination.is_file() or file_digest(shell_file) != file_digest(destination):
-                    fail(f"project {project_id}: generated shell is stale: {shell_file.relative_to(shell_root).as_posix()}")
+                relative = shell_file.relative_to(shell_root)
+                if relative.parts and relative.parts[0] == "patterns":
+                    continue
+                destination = output_root / relative
+                if not destination.is_file() or digest(shell_file) != digest(destination):
+                    fail(f"project {project_id}: generated shell is stale: {relative.as_posix()}")
 
-        # Canonical block IDs must survive generation byte-for-byte.
+        # Canonical Gutenberg identities are independent from filesystem moves.
         source_names: set[str] = set()
         output_names: set[str] = set()
-        design_path = source_root / str(paths.get("design", "")) if isinstance(paths, dict) else source_root / "design"
-        for block_json in design_path.rglob("block.json") if design_path.is_dir() else []:
+        design_root = source_root / str(paths.get("design", ""))
+        for block_json in design_root.rglob("block.json") if design_root.is_dir() else []:
             data = read_json(block_json)
             if isinstance(data.get("name"), str):
                 source_names.add(data["name"])
-        for block_json in (output_root / "design").rglob("block.json") if (output_root / "design").is_dir() else []:
+        generated_design = output_root / "design"
+        for block_json in generated_design.rglob("block.json") if generated_design.is_dir() else []:
             data = read_json(block_json)
             if isinstance(data.get("name"), str):
                 output_names.add(data["name"])
         if source_names != output_names:
             fail(f"project {project_id}: canonical block ID set changed during generation")
 
-if errors:
+        manifest_path = output_root / "BUILD-MANIFEST.json"
+        manifest = read_json(manifest_path) if manifest_path.is_file() else {}
+        expected_manifest = {
+            "project": project.get("id"),
+            "themeDirectory": project.get("themeDirectory"),
+            "themeVersion": project.get("version"),
+            "designCoreVersion": core_package.get("version"),
+            "wordpressAdapterVersion": adapter_package.get("version"),
+            "architectureVersion": workspace.get("architectureVersion"),
+            "generated": True,
+            "runtimeStandalone": True,
+        }
+        if manifest != expected_manifest:
+            fail(f"project {project_id}: BUILD-MANIFEST.json is stale or inconsistent")
+
+if ERRORS:
     print("Architecture validation failed:")
-    for error in errors:
+    for error in ERRORS:
         print(f"- {error}")
     sys.exit(1)
 
