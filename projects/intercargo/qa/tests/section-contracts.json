@@ -1,0 +1,164 @@
+{
+  "topLevelSections": {
+    "intercargo/hero": {
+      "editor": "composition",
+      "compositionSlug": "hero",
+      "syncable": true,
+      "packagePath": "design/sections/hero",
+      "multiple": true
+    },
+    "intercargo/service-hero": {
+      "editor": "composition",
+      "compositionSlug": "service-hero",
+      "syncable": true,
+      "packagePath": "design/sections/service-hero",
+      "multiple": true
+    },
+    "intercargo/service-navigation": {
+      "editor": "custom",
+      "syncable": false,
+      "packagePath": "design/sections/service-navigation",
+      "multiple": true
+    },
+    "intercargo/service-options": {
+      "editor": "composition",
+      "compositionSlug": "service-options",
+      "syncable": true,
+      "packagePath": "design/sections/service-options",
+      "multiple": true
+    },
+    "intercargo/service-pricing": {
+      "editor": "composition",
+      "compositionSlug": "service-pricing",
+      "syncable": true,
+      "packagePath": "design/sections/service-pricing",
+      "multiple": true
+    },
+    "intercargo/service-cta": {
+      "editor": "composition",
+      "compositionSlug": "service-cta",
+      "syncable": true,
+      "packagePath": "design/sections/service-cta",
+      "multiple": true
+    },
+    "intercargo/media-split": {
+      "editor": "composition",
+      "compositionSlug": "media-split",
+      "syncable": true,
+      "packagePath": "design/sections/media-split",
+      "multiple": true
+    },
+    "intercargo/services": {
+      "editor": "composition",
+      "compositionSlug": "services",
+      "syncable": true,
+      "packagePath": "design/sections/services",
+      "multiple": true
+    },
+    "intercargo/reasons": {
+      "editor": "custom",
+      "legacyNames": [
+        "acf/intercargo-reasons"
+      ],
+      "syncable": true,
+      "packagePath": "design/sections/reasons",
+      "multiple": true,
+      "editorTitle": "Content Columns"
+    },
+    "intercargo/statement": {
+      "editor": "custom",
+      "legacyNames": [
+        "acf/intercargo-statement"
+      ],
+      "syncable": true,
+      "packagePath": "design/sections/statement",
+      "multiple": true
+    },
+    "intercargo/process": {
+      "editor": "custom",
+      "legacyNames": [
+        "acf/intercargo-process"
+      ],
+      "syncable": true,
+      "packagePath": "design/sections/process",
+      "multiple": true
+    },
+    "intercargo/locations": {
+      "editor": "composition",
+      "compositionSlug": "locations",
+      "syncable": true,
+      "packagePath": "design/sections/locations",
+      "multiple": true
+    },
+    "intercargo/guide": {
+      "editor": "composition",
+      "compositionSlug": "guide",
+      "syncable": true,
+      "packagePath": "design/sections/guide",
+      "multiple": true
+    },
+    "intercargo/faq": {
+      "editor": "composition",
+      "compositionSlug": "faq",
+      "syncable": true,
+      "packagePath": "design/sections/faq",
+      "multiple": true
+    },
+    "intercargo/enquiry": {
+      "editor": "custom",
+      "legacyNames": [
+        "acf/intercargo-enquiry"
+      ],
+      "syncable": true,
+      "packagePath": "design/sections/enquiry",
+      "multiple": true
+    }
+  },
+  "compositionItems": {
+    "intercargo/service-card": {
+      "compositionSlug": "service-card",
+      "packagePath": "design/sections/services/blocks/service-card",
+      "ancestor": "intercargo/services",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/service-option": {
+      "compositionSlug": "service-option",
+      "packagePath": "design/sections/service-options/blocks/service-option",
+      "ancestor": "intercargo/service-options",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/content-column": {
+      "compositionSlug": "content-column",
+      "packagePath": "design/sections/reasons/blocks/content-column",
+      "ancestor": "intercargo/reasons",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/location": {
+      "compositionSlug": "location",
+      "packagePath": "design/sections/locations/blocks/location",
+      "ancestor": "intercargo/locations",
+      "category": "intercargo-section-items",
+      "inserter": true
+    },
+    "intercargo/pricing-row": {
+      "compositionSlug": "pricing-row",
+      "packagePath": "design/sections/service-pricing/blocks/pricing-row",
+      "ancestor": "intercargo/service-pricing",
+      "category": "intercargo-section-items",
+      "inserter": true
+    }
+  },
+  "nonReusableComponents": [
+    "intercargo/form",
+    "intercargo/hero-email-form",
+    "intercargo/guide-email-form",
+    "intercargo/service-card",
+    "intercargo/location",
+    "intercargo/service-option",
+    "intercargo/content-column",
+    "intercargo/pricing-row"
+  ]
+}

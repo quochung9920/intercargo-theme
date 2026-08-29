@@ -1,0 +1,170 @@
+{
+  "_comment": "Service Hero composition. Breadcrumb is generated from the real WordPress page parent hierarchy on the front end; Air Freight source defines hero geometry and theme globals remain authoritative.",
+  "section": {
+    "id": "service-hero",
+    "className": "wp-block-intercargo-service-hero service-hero intercargo-native intercargo-native-service-hero",
+    "ariaLabel": "Service introduction"
+  },
+  "editorTemplateLock": "all",
+  "mediaControls": [
+    {
+      "label": "Replace service hero image",
+      "target": "Service hero image"
+    }
+  ],
+  "formControl": {
+    "title": "Service hero form",
+    "blockNames": [
+      "intercargo/form"
+    ],
+    "label": "Service hero form",
+    "showAccessibleLabel": true
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "service-hero-media",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Service hero media"
+        }
+      },
+      [
+        [
+          "core/image",
+          {
+            "alt": "",
+            "metadata": {
+              "name": "Service hero image"
+            },
+            "url": "@theme/placeholders/media-placeholder.webp"
+          }
+        ]
+      ]
+    ],
+    [
+      "core/group",
+      {
+        "className": "service-hero-breadcrumb-wrap container",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Breadcrumb"
+        }
+      },
+      [
+        [
+          "core/paragraph",
+          {
+            "className": "service-hero-breadcrumb",
+            "placeholder": "Breadcrumb follows the WordPress page hierarchy automatically.",
+            "metadata": {
+              "name": "Dynamic breadcrumb preview"
+            },
+            "content": "Breadcrumb follows the WordPress page hierarchy automatically."
+          }
+        ]
+      ]
+    ],
+    [
+      "core/group",
+      {
+        "className": "service-hero-card container",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Service hero card"
+        }
+      },
+      [
+        [
+          "core/group",
+          {
+            "className": "service-hero-grid",
+            "templateLock": "all"
+          },
+          [
+            [
+              "core/group",
+              {
+                "className": "service-hero-copy",
+                "templateLock": "all"
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 1,
+                    "className": "service-hero-title",
+                    "placeholder": "Service headline",
+                    "metadata": {
+                      "name": "Service headline"
+                    },
+                    "content": "Air freight into Australia."
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-hero-lead",
+                    "placeholder": "Short service introduction",
+                    "metadata": {
+                      "name": "Service introduction"
+                    },
+                    "content": "Consolidation, time critical and oversize, uplifted on the lanes you actually use. One written all-in price, customs included."
+                  }
+                ]
+              ]
+            ],
+            [
+              "core/group",
+              {
+                "className": "service-hero-starter",
+                "templateLock": "all",
+                "metadata": {
+                  "name": "Service enquiry starter"
+                }
+              },
+              [
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-hero-starter-title",
+                    "placeholder": "Form prompt",
+                    "metadata": {
+                      "name": "Form prompt"
+                    },
+                    "content": "What are you importing?"
+                  }
+                ],
+                [
+                  "intercargo/form",
+                  {
+                    "provider": "",
+                    "formId": "",
+                    "variant": "default",
+                    "label": "Service hero enquiry",
+                    "note": "",
+                    "metadata": {
+                      "name": "Service hero form"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-hero-starter-note",
+                    "placeholder": "Response note",
+                    "metadata": {
+                      "name": "Response note"
+                    },
+                    "content": "One field to start. A senior person replies the same business day."
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

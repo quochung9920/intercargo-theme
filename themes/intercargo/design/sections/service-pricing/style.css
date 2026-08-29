@@ -1,0 +1,203 @@
+/**
+ * Service Pricing
+ *
+ * Mirrors the Air Freight “How air freight is priced.” section while keeping
+ * the theme's global container and section rhythm. Only section-specific
+ * geometry is defined here.
+ */
+
+.service-pricing-section {
+  --service-pricing-heading: clamp(26px, calc(23.02857px + 0.761905vw), 34px);
+  --service-pricing-heading-track: clamp(-2.2px, calc(-1.377142px - 0.057143vw), -1.6px);
+  --service-pricing-intro: clamp(14.5px, calc(13.942857px + 0.142857vw), 16px);
+  --service-pricing-intro-gap: clamp(14px, calc(13.257143px + 0.190476vw), 16px);
+  --service-pricing-grid-top: clamp(32px, calc(27.542857px + 1.142857vw), 44px);
+  --service-pricing-grid-gap: clamp(24px, calc(12.114285px + 3.047619vw), 56px);
+  --service-pricing-grid-gap-desktop: clamp(32px, calc(17.143px + 3.81vw), 72px);
+  --service-pricing-col-top: clamp(18px, calc(17.257143px + 0.190476vw), 20px);
+  --service-pricing-col-gap: clamp(8px, calc(7.257143px + 0.190476vw), 10px);
+  --service-pricing-title: clamp(17px, calc(16.628571px + 0.095238vw), 18px);
+  background: var(--paper);
+}
+
+.service-pricing-content,
+.service-pricing-grid,
+.service-pricing-column,
+.service-pricing-calc {
+  min-width: 0;
+}
+
+.service-pricing-content > *,
+.service-pricing-grid > *,
+.service-pricing-column > *,
+.service-pricing-calc > *,
+.service-pricing-row > * {
+  margin-block: 0;
+}
+
+.service-pricing-heading {
+  margin: 0;
+  max-width: 900px;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-pricing-heading);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: var(--service-pricing-heading-track);
+}
+
+.service-pricing-intro {
+  margin: var(--service-pricing-intro-gap) 0 0;
+  max-width: 760px;
+  color: var(--muted);
+  font-size: var(--service-pricing-intro);
+  line-height: 1.72;
+}
+
+.service-pricing-grid {
+  margin-top: var(--service-pricing-grid-top);
+  display: flex;
+  flex-direction: column;
+  gap: var(--service-pricing-grid-gap);
+}
+
+.service-pricing-column {
+  flex: 1 1 0;
+  min-width: 0;
+  padding-top: var(--service-pricing-col-top);
+  border-top: 2px solid var(--ink);
+  display: flex;
+  flex-direction: column;
+  gap: var(--service-pricing-col-gap);
+}
+
+.service-pricing-column-title {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: var(--service-pricing-title);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.033em;
+}
+
+.service-pricing-column-body,
+.service-pricing-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.65;
+}
+
+.service-pricing-calc {
+  margin-top: 8px;
+}
+
+.service-pricing-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.service-pricing-row:first-child {
+  margin-top: 10px;
+}
+
+.service-pricing-calc-label,
+.service-pricing-calc-value {
+  margin: 0;
+}
+
+.service-pricing-calc-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.service-pricing-calc-value {
+  flex: 0 0 auto;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-align: right;
+}
+
+.service-pricing-calc .service-pricing-row:last-child {
+  border-top: 2px solid var(--ink);
+}
+
+.service-pricing-calc .service-pricing-row:last-child .service-pricing-calc-label {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.service-pricing-calc .service-pricing-row:last-child .service-pricing-calc-label::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 11px;
+  height: 11px;
+  border-radius: 3px;
+  background: var(--yellow);
+}
+
+.service-pricing-calc .service-pricing-row:last-child .service-pricing-calc-value {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+}
+
+.service-pricing-list {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-pricing-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.service-pricing-list li + li {
+  margin-top: 10px;
+}
+
+.service-pricing-list li::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--yellow);
+}
+
+@media (min-width: 960px) {
+  .service-pricing-grid {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--service-pricing-grid-gap-desktop);
+  }
+}
+
+@media (max-width: 479px) {
+  .service-pricing-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .service-pricing-calc-value {
+    text-align: left;
+  }
+}

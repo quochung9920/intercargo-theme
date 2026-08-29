@@ -1,0 +1,167 @@
+{
+  "_comment": "Content Columns is the single column-content section. Heading/intro are fixed structure; Content Column items are the only open collection.",
+  "section": {
+    "className": "wp-block-acf-intercargo-reasons why-section content-columns section-pad intercargo-native intercargo-native-content-columns",
+    "ariaLabel": "Content columns",
+    "id": "about"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "content-columns-grid",
+      "allows": "intercargo/content-column",
+      "label": "Columns — add, duplicate, delete or reorder"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container content-columns-content content-columns-layout",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Content Columns content"
+        }
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "section-title",
+            "placeholder": "Section title",
+            "content": "Why importers switch.",
+            "metadata": {
+              "name": "Section title"
+            }
+          }
+        ],
+        [
+          "core/paragraph",
+          {
+            "className": "content-columns-intro",
+            "placeholder": "Optional introduction…",
+            "content": "",
+            "metadata": {
+              "name": "Section introduction (optional)"
+            }
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "three-cols content-columns-grid",
+            "templateLock": false,
+            "allowedBlocks": [
+              "intercargo/content-column"
+            ],
+            "metadata": {
+              "name": "Columns — add, duplicate, delete or reorder"
+            }
+          },
+          [
+            [
+              "intercargo/content-column",
+              {
+                "metadata": {
+                  "name": "Column 1 — The bill matches the quote."
+                }
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "content-column-title",
+                    "placeholder": "Column title",
+                    "content": "The bill matches the quote.",
+                    "metadata": {
+                      "name": "Column title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "content-column-copy",
+                    "placeholder": "Column description",
+                    "content": "This industry's worst habit is the fee stack: cartage fee, dehire fee, invoice after invoice. We price all-in and put it in writing before your freight moves.",
+                    "metadata": {
+                      "name": "Column description"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "intercargo/content-column",
+              {
+                "metadata": {
+                  "name": "Column 2 — You never chase us."
+                }
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "content-column-title",
+                    "placeholder": "Column title",
+                    "content": "You never chase us.",
+                    "metadata": {
+                      "name": "Column title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "content-column-copy",
+                    "placeholder": "Column description",
+                    "content": "You hear from us before you have to ask. Milestone updates on every shipment, and a person who picks up the phone.",
+                    "metadata": {
+                      "name": "Column description"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "intercargo/content-column",
+              {
+                "metadata": {
+                  "name": "Column 3 — One team owns it."
+                }
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "content-column-title",
+                    "placeholder": "Column title",
+                    "content": "One team owns it.",
+                    "metadata": {
+                      "name": "Column title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "content-column-copy",
+                    "placeholder": "Column description",
+                    "content": "Forwarding, customs, cartage and warehousing under one roof. Nothing gets handballed to a third party you have never met.",
+                    "metadata": {
+                      "name": "Column description"
+                    }
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ]
+}

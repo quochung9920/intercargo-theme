@@ -1,37 +1,35 @@
 # Agent Contract
 
-This repository is being separated into a portable Design Core, project-specific design source and a standalone WordPress theme output. Read `workspace.json` and `docs/DESIGN-CORE-SEPARATION.md` before architectural work.
+This repository is a design-platform workspace.
 
-## Current migration phase
+## Source of truth
 
-`workspace.json` is authoritative for the migration phase. In **phase 1**, the existing `/design` directory remains the visual authority and the existing root WordPress theme remains the runnable baseline. Phase 1 architecture work must not change frontend markup, CSS or JavaScript behavior.
+For Intercargo design/content-presentation work, edit only `projects/intercargo/` unless the task explicitly changes platform architecture.
 
-## Target boundaries
+- Visual code: `projects/intercargo/design/`
+- Stable project assets: `projects/intercargo/assets/`
+- WordPress shell: `projects/intercargo/theme/`
+- Global Vite bridge/source: `projects/intercargo/src/`
+- Project QA/contracts: `projects/intercargo/qa/`
 
-- `packages/design-core/` — portable, brand- and CMS-independent contracts/build tooling. No WordPress runtime APIs and no project-specific design.
-- `packages/wordpress-adapter/` — generic WordPress/Gutenberg integration. No project branding or project-specific styling.
-- `projects/intercargo/` — future Intercargo visual source of truth: tokens, global presentation, components, sections, patterns, shell and assets.
-- `themes/intercargo/` — generated/deployable standalone theme output. Do not hand-edit generated runtime/design files here.
+## Platform code
 
-## Legacy phase-1 boundaries
+- Portable contracts: `packages/design-core/`
+- WordPress/Gutenberg runtime: `packages/wordpress-adapter/`
+- Workspace build/release tooling: `tools/`
 
-For normal site/design tasks while migration phase is 1, continue working in `/design` only:
+Do not put Intercargo branding, sections, assets or WordPress APIs in `packages/design-core/`.
 
-- `/design/header`
-- `/design/footer`
-- `/design/global`
-- `/design/sections/<target>`
-- `/design/components/<target>`
-- `/design/patterns`
+## Generated theme
 
-Treat `/inc`, `/tests`, `/tools`, root WordPress template proxies, `/src`, `functions.php`, `theme.json` and `vite.config.js` as framework/core unless the task explicitly requires architecture changes.
+`themes/intercargo/` is generated output. Do not hand-edit it. Run `npm run sync` or `npm run build` instead.
 
-## Stability rules
+The generated theme must remain standalone: no runtime import/require/reference may point to `packages/` or `projects/`.
 
-- Canonical Gutenberg block IDs such as `intercargo/hero` and `intercargo/service-flow` must remain stable across filesystem moves.
-- Never rebuild already-saved page content from `template.json` merely because a package moved.
-- Never add a new section to a PHP/JS slug registry; package discovery remains metadata/filesystem driven.
-- Shared content continues to use WordPress Core `wp_block` records; never hard-code shared numeric IDs.
-- A released theme must not require or import files from `packages/` or `projects/` at runtime.
+## Compatibility
 
-Run `npm run validate` before release.
+Never rename canonical saved Gutenberg block IDs such as `intercargo/hero` or rebuild saved block trees from default templates merely because filesystem paths move.
+
+## Quality gate
+
+Run `npm run build` and `npm run validate` before release. Use `npm run release` for a production ZIP.

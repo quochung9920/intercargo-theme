@@ -1,0 +1,71 @@
+:root {
+  --ic-motion-fast: 180ms;
+  --ic-motion-base: 280ms;
+  --ic-motion-slow: 520ms;
+  --ic-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ic-ease-standard: cubic-bezier(.2, .7, .2, 1);
+  --ic-shadow-hover: 0 12px 30px rgba(18, 24, 38, .12);
+}
+
+
+/* Gutenberg variation classes live on the core/buttons wrapper. The wrapper is
+   layout-only: the actual clickable link owns background, radius, shadow and motion. */
+.intercargo-native .wp-block-buttons.button--dark,
+.intercargo-native .wp-block-buttons.button--yellow {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.intercargo-native .wp-block-buttons.button--dark > .wp-block-button,
+.intercargo-native .wp-block-buttons.button--yellow > .wp-block-button {
+  background: transparent;
+  border-radius: 0;
+}
+.intercargo-native .wp-block-button__link,
+.ic-button {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition:
+    transform var(--ic-motion-base) var(--ic-ease-out),
+    box-shadow var(--ic-motion-base) var(--ic-ease-out),
+    background-color var(--ic-motion-fast) ease,
+    color var(--ic-motion-fast) ease,
+    border-color var(--ic-motion-fast) ease,
+    filter var(--ic-motion-fast) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-native .wp-block-button__link:hover,
+  .ic-button:hover {
+    transform: translateY(-2px);
+    filter: none;
+  }
+  .intercargo-native .button--dark .wp-block-button__link:hover,
+  .wp-block-button.is-style-intercargo-dark .wp-block-button__link:hover,
+  .ic-button--dark:hover {
+    background: #17181b;
+    box-shadow: 0 10px 24px rgba(20, 22, 27, .22);
+  }
+  .intercargo-native .button--yellow .wp-block-button__link:hover,
+  .wp-block-button.is-style-intercargo-yellow .wp-block-button__link:hover,
+  .ic-button--yellow:hover {
+    background: #ffd134;
+    box-shadow: 0 10px 24px rgba(255, 196, 32, .2);
+  }
+}
+
+.intercargo-native .wp-block-button__link:active,
+.ic-button:active { transform: translateY(0) scale(.985); }
+
+.wp-block-button.is-style-intercargo-dark .wp-block-button__link { color: #fff; background: #26272b; }
+.wp-block-button.is-style-intercargo-yellow .wp-block-button__link { color: var(--ink); background: var(--yellow); }
+.wp-block-button.is-style-intercargo-ghost .wp-block-button__link {
+  color: var(--ink); background: transparent; border: 1px solid var(--line);
+}
+.wp-block-button.is-style-intercargo-text .wp-block-button__link {
+  min-height: 0; padding: 0; color: var(--ink); background: transparent; box-shadow: none;
+}

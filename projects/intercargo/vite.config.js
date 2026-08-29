@@ -5,11 +5,10 @@ export default defineConfig({
   base: './',
   build: {
     manifest: true,
-    outDir: 'dist',
+    outDir: resolve(import.meta.dirname, '../../themes/intercargo/dist'),
     emptyOutDir: true,
     rollupOptions: {
-      // Section/component assets are package-local and declared by block.json.
-      // Vite owns global theme assets only, so adding a section never edits this file.
+      // Design/package assets remain project-local. Vite bundles global assets only.
       input: [
         resolve(import.meta.dirname, 'src/css/global.css'),
         resolve(import.meta.dirname, 'src/css/editor.css'),

@@ -1,0 +1,19 @@
+{
+  "_comment": "One facility row. A named child block rather than a bare core/group: it appears in the inserter as \"Location\" with its own icon and inserts a complete, correctly ordered row. A group would appear as \"Group\" and guarantee nothing about which fields are present.",
+  "item": {
+    "element": "article",
+    "className": "location-row",
+    "parent": "intercargo/locations"
+  },
+  "template": [
+    ["core/heading", { "level": 3, "placeholder": "City", "metadata": { "name": "City" }, "content": "Adelaide" }],
+    ["core/group", { "className": "location-address-group", "templateLock": "all" }, [
+      ["core/paragraph", { "className": "location-address", "placeholder": "Street address", "metadata": { "name": "Street" }, "content": "4 Birralee Road" }],
+      ["core/paragraph", { "className": "address-secondary", "placeholder": "Suburb, state and postcode", "metadata": { "name": "Locality" }, "content": "Regency Park SA 5010" }]
+    ]],
+    ["core/paragraph", { "className": "location-port", "placeholder": "Port served", "metadata": { "name": "Port served" }, "content": "Port Adelaide" }],
+    ["core/buttons", { "className": "location-link", "templateLock": "all" }, [
+      ["core/button", { "text": "Adelaide ↗", "url": "#enquiry", "metadata": { "name": "Enquiry link" } }]
+    ]]
+  ]
+}

@@ -7,7 +7,7 @@
   "required": ["architectureVersion", "migrationPhase", "packages", "projects", "rules"],
   "properties": {
     "architectureVersion": { "type": "string", "minLength": 1 },
-    "migrationPhase": { "type": "integer", "minimum": 1 },
+    "migrationPhase": { "type": "integer", "minimum": 4 },
     "packages": {
       "type": "object",
       "additionalProperties": false,
@@ -26,7 +26,6 @@
         "required": ["source", "themeOutput"],
         "properties": {
           "source": { "type": "string", "minLength": 1 },
-          "legacyDesignSource": { "type": "string", "minLength": 1 },
           "themeOutput": { "type": "string", "minLength": 1 }
         }
       }

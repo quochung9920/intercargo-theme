@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/form",
+  "title": "Form",
+  "description": "Provider-neutral form selector supporting Contact Form 7 and Gravity Forms.",
+  "category": "intercargo-sections",
+  "icon": "feedback",
+  "textdomain": "intercargo-vite",
+  "attributes": {
+    "provider": {
+      "type": "string",
+      "default": ""
+    },
+    "formId": {
+      "type": "string",
+      "default": ""
+    },
+    "variant": {
+      "type": "string",
+      "default": "default"
+    },
+    "label": {
+      "type": "string",
+      "default": ""
+    },
+    "note": {
+      "type": "string",
+      "default": ""
+    },
+    "legacyShortcode": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "editorScript": "intercargo-form-editor",
+  "render": "file:./render.php",
+  "supports": {
+    "html": false,
+    "reusable": false
+  },
+  "style": "intercargo-form-adapter",
+  "editorStyle": "intercargo-form-editor-preview"
+}

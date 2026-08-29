@@ -1,0 +1,31 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/service-flow-step",
+  "title": "Service Flow Step",
+  "description": "One illustrated title-and-description step inside Service Flow.",
+  "category": "intercargo-section-items",
+  "icon": "arrow-right-alt2",
+  "keywords": ["intercargo", "flow", "step", "diagram"],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "service-flow-step"
+  },
+  "ancestor": ["intercargo/service-flow"]
+}

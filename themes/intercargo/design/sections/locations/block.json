@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/locations",
+  "title": "Locations",
+  "description": "The facilities section. Locations can be added and removed freely; the layout is fixed by the design system.",
+  "category": "intercargo-sections",
+  "icon": "location",
+  "keywords": [
+    "intercargo",
+    "section",
+    "locations"
+  ],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "style": "file:./style.css",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  },
+  "render": "file:./render.php",
+  "example": {
+    "attributes": {}
+  },
+  "intercargo": {
+    "packageType": "section",
+    "compositionSlug": "locations",
+    "sectionPackage": true,
+    "syncable": true
+  }
+}

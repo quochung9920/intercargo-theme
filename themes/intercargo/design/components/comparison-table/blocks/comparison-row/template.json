@@ -1,0 +1,14 @@
+{
+  "_comment": "One comparison row. Highlighting is generic block-style configuration, never inferred from row order or content.",
+  "item": {
+    "element": "div",
+    "className": "comparison-row",
+    "parent": "intercargo/comparison-table"
+  },
+  "template": [
+    ["core/heading", {"level": 3, "className": "comparison-row-name", "placeholder": "Option or service name", "content": "Option", "metadata": {"name": "Option name"}}],
+    ["core/paragraph", {"className": "comparison-row-cost", "placeholder": "Cost or first comparison value", "content": "First value", "metadata": {"name": "Column 1 value"}}],
+    ["core/paragraph", {"className": "comparison-row-speed", "placeholder": "Timing or second comparison value", "content": "Second value", "metadata": {"name": "Column 2 value"}}],
+    ["core/paragraph", {"className": "comparison-row-best", "placeholder": "Best use or third comparison value", "content": "Third value", "metadata": {"name": "Column 3 value"}}]
+  ]
+}

@@ -1,0 +1,374 @@
+{
+  "_comment": "Single source of truth for Services. Four semantic Service Card blocks own one URL each; inner icon and text fields own no links.",
+  "section": {
+    "className": "wp-block-intercargo-services services-section section-pad--loose intercargo-native intercargo-native-services",
+    "ariaLabel": "Services",
+    "id": "services"
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container section-head-gap",
+        "templateLock": "all",
+        "metadata": {
+          "name": "Services content"
+        }
+      },
+      [
+        [
+          "core/heading",
+          {
+            "level": 2,
+            "className": "section-title",
+            "placeholder": "Section title",
+            "content": "Every leg of the journey, one team.",
+            "metadata": {
+              "name": "Services title"
+            }
+          }
+        ],
+        [
+          "core/group",
+          {
+            "className": "services-panel",
+            "templateLock": false,
+            "metadata": {
+              "name": "Service cards — duplicate, delete, reorder or add"
+            }
+          },
+          [
+            [
+              "intercargo/service-card",
+              {
+                "url": "#enquiry",
+                "target": "_self",
+                "metadata": {
+                  "name": "Card 1 — Air Freight"
+                }
+              },
+              [
+                [
+                  "core/group",
+                  {
+                    "className": "service-icon-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Card 1 — media"
+                    }
+                  },
+                  [
+                    [
+                      "core/image",
+                      {
+                        "className": "service-icon",
+                        "alt": "",
+                        "metadata": {
+                          "name": "Card 1 — icon"
+                        },
+                        "url": "@theme/60734c8e3da1caaba156c13d722261ad6f47b462.svg"
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-name",
+                    "placeholder": "Service name",
+                    "content": "Air Freight",
+                    "metadata": {
+                      "name": "Card 1 — title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-mobile",
+                    "placeholder": "Short description shown on phones",
+                    "content": "Consolidation, time critical and oversize.",
+                    "metadata": {
+                      "name": "Card 1 — short description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-desktop",
+                    "placeholder": "Full description shown on larger screens",
+                    "content": "Consolidation, time critical and oversize, uplifted on the lanes you actually use.",
+                    "metadata": {
+                      "name": "Card 1 — full description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-link",
+                    "placeholder": "Card call to action",
+                    "content": "See air freight",
+                    "metadata": {
+                      "name": "Card 1 — call to action text"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "intercargo/service-card",
+              {
+                "url": "#enquiry",
+                "target": "_self",
+                "metadata": {
+                  "name": "Card 2 — Customs Clearance"
+                }
+              },
+              [
+                [
+                  "core/group",
+                  {
+                    "className": "service-icon-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Card 2 — media"
+                    }
+                  },
+                  [
+                    [
+                      "core/image",
+                      {
+                        "className": "service-icon",
+                        "alt": "",
+                        "metadata": {
+                          "name": "Card 2 — icon"
+                        },
+                        "url": "@theme/38cd3250fd155a1f1365e5314a334bd62d58ae7b.svg"
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-name",
+                    "placeholder": "Service name",
+                    "content": "Customs Clearance",
+                    "metadata": {
+                      "name": "Card 2 — title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-mobile",
+                    "placeholder": "Short description shown on phones",
+                    "content": "Declarations lodged before your ship berths.",
+                    "metadata": {
+                      "name": "Card 2 — short description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-desktop",
+                    "placeholder": "Full description shown on larger screens",
+                    "content": "Declarations lodged before your ship berths, so goods clear instead of collecting storage fees on the wharf.",
+                    "metadata": {
+                      "name": "Card 2 — full description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-link",
+                    "placeholder": "Card call to action",
+                    "content": "See customs clearance",
+                    "metadata": {
+                      "name": "Card 2 — call to action text"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "intercargo/service-card",
+              {
+                "url": "#enquiry",
+                "target": "_self",
+                "metadata": {
+                  "name": "Card 3 — Land Transport"
+                }
+              },
+              [
+                [
+                  "core/group",
+                  {
+                    "className": "service-icon-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Card 3 — media"
+                    }
+                  },
+                  [
+                    [
+                      "core/image",
+                      {
+                        "className": "service-icon",
+                        "alt": "",
+                        "metadata": {
+                          "name": "Card 3 — icon"
+                        },
+                        "url": "@theme/ed2573d6ba2465ae48d29bce1fa842dfd663b976.svg"
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-name",
+                    "placeholder": "Service name",
+                    "content": "Land Transport",
+                    "metadata": {
+                      "name": "Card 3 — title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-mobile",
+                    "placeholder": "Short description shown on phones",
+                    "content": "3PL warehousing, wharf cartage and delivery from our own facilities.",
+                    "metadata": {
+                      "name": "Card 3 — short description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-desktop",
+                    "placeholder": "Full description shown on larger screens",
+                    "content": "Rail, wharf cartage, 3PL warehousing and door to door delivery from our own facilities in five cities.",
+                    "metadata": {
+                      "name": "Card 3 — full description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-link",
+                    "placeholder": "Card call to action",
+                    "content": "See land transport",
+                    "metadata": {
+                      "name": "Card 3 — call to action text"
+                    }
+                  }
+                ]
+              ]
+            ],
+            [
+              "intercargo/service-card",
+              {
+                "url": "#enquiry",
+                "target": "_self",
+                "metadata": {
+                  "name": "Card 4 — Sea Freight"
+                }
+              },
+              [
+                [
+                  "core/group",
+                  {
+                    "className": "service-icon-row",
+                    "templateLock": "all",
+                    "metadata": {
+                      "name": "Card 4 — media"
+                    }
+                  },
+                  [
+                    [
+                      "core/image",
+                      {
+                        "className": "service-icon",
+                        "alt": "",
+                        "metadata": {
+                          "name": "Card 4 — icon"
+                        },
+                        "url": "@theme/6f1aaea1d242868c2537bc6dc29c9d57719d2afa.svg"
+                      }
+                    ]
+                  ]
+                ],
+                [
+                  "core/heading",
+                  {
+                    "level": 3,
+                    "className": "service-name",
+                    "placeholder": "Service name",
+                    "content": "Sea Freight",
+                    "metadata": {
+                      "name": "Card 4 — title"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-mobile",
+                    "placeholder": "Short description shown on phones",
+                    "content": "Shared containers to weekly full-container programs.",
+                    "metadata": {
+                      "name": "Card 4 — short description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-description copy-desktop",
+                    "placeholder": "Full description shown on larger screens",
+                    "content": "Shared containers to weekly full-container programs, refrigerated and break bulk, into every major Australian port.",
+                    "metadata": {
+                      "name": "Card 4 — full description"
+                    }
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "service-link",
+                    "placeholder": "Card call to action",
+                    "content": "See sea freight",
+                    "metadata": {
+                      "name": "Card 4 — call to action text"
+                    }
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "services-panel",
+      "allows": "intercargo/service-card",
+      "label": "Service cards"
+    }
+  ]
+}

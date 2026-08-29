@@ -1,0 +1,15 @@
+/* Editor-only geometry/affordances. Frontend visual authority stays in style.css. */
+.editor-styles-wrapper .wp-block-acf-intercargo-statement {
+  max-width: none;
+}
+
+.editor-styles-wrapper .wp-block-acf-intercargo-statement .statement-line-editor {
+  display: inline;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+}
+
+.editor-styles-wrapper .wp-block-acf-intercargo-statement .statement-line-editor:focus {
+  outline: none;
+}

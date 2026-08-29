@@ -1,0 +1,45 @@
+{
+  "_comment": "Metrics Band is a reusable dark value-and-label collection. Metric items are the only open collection.",
+  "section": {
+    "id": "by-the-numbers",
+    "className": "wp-block-intercargo-metrics-band metrics-band-section intercargo-native intercargo-native-metrics-band",
+    "ariaLabel": "By the numbers"
+  },
+  "editorTemplateLock": "all",
+  "openCollections": [
+    {
+      "className": "metrics-band-grid",
+      "allows": "intercargo/metric",
+      "label": "Metrics — add, duplicate, delete or reorder"
+    }
+  ],
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container metrics-band-grid",
+        "templateLock": false,
+        "allowedBlocks": ["intercargo/metric"],
+        "metadata": {"name": "Metrics — add, duplicate, delete or reorder"}
+      },
+      [
+        ["intercargo/metric", {"metadata": {"name": "Metric 1 — 5"}}, [
+          ["core/paragraph", {"className": "metric-value", "placeholder": "Metric value", "content": "5", "metadata": {"name": "Metric value"}}],
+          ["core/paragraph", {"className": "metric-label", "placeholder": "Metric description", "content": "cities, every facility our own", "metadata": {"name": "Metric description"}}]
+        ]],
+        ["intercargo/metric", {"metadata": {"name": "Metric 2 — 13"}}, [
+          ["core/paragraph", {"className": "metric-value", "placeholder": "Metric value", "content": "13", "metadata": {"name": "Metric value"}}],
+          ["core/paragraph", {"className": "metric-label", "placeholder": "Metric description", "content": "services under one roof", "metadata": {"name": "Metric description"}}]
+        ]],
+        ["intercargo/metric", {"metadata": {"name": "Metric 3 — 1"}}, [
+          ["core/paragraph", {"className": "metric-value", "placeholder": "Metric value", "content": "1", "metadata": {"name": "Metric value"}}],
+          ["core/paragraph", {"className": "metric-label", "placeholder": "Metric description", "content": "invoice, with every fee in it", "metadata": {"name": "Metric description"}}]
+        ]],
+        ["intercargo/metric", {"metadata": {"name": "Metric 4 — Same day"}}, [
+          ["core/paragraph", {"className": "metric-value", "placeholder": "Metric value", "content": "Same day", "metadata": {"name": "Metric value"}}],
+          ["core/paragraph", {"className": "metric-label", "placeholder": "Metric description", "content": "a senior person replies", "metadata": {"name": "Metric description"}}]
+        ]]
+      ]
+    ]
+  ]
+}

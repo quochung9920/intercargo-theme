@@ -1,0 +1,135 @@
+{
+  "_comment": "Single source of truth for the Import Guide composition.",
+  "section": {
+    "className": "wp-block-intercargo-guide guide-section section-pad--loose intercargo-native intercargo-native-guide",
+    "ariaLabel": "First shipment guide",
+    "id": "guide"
+  },
+  "template": [
+    [
+      "core/group",
+      {
+        "className": "container"
+      },
+      [
+        [
+          "core/group",
+          {
+            "className": "guide-card"
+          },
+          [
+            [
+              "core/group",
+              {
+                "className": "guide-left",
+                "templateLock": "all"
+              },
+              [
+                [
+                  "core/heading",
+                  {
+                    "level": 2,
+                    "className": "section-title",
+                    "placeholder": "Section title",
+                    "metadata": {
+                      "name": "Guide title"
+                    },
+                    "content": "First shipment?"
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "guide-copy",
+                    "placeholder": "Short introduction",
+                    "metadata": {
+                      "name": "Guide introduction"
+                    },
+                    "content": "Importing is simpler than it looks when someone walks you through it. The guide covers it in plain English."
+                  }
+                ],
+                [
+                  "intercargo/form",
+                  {
+                    "metadata": {
+                      "name": "Guide email form"
+                    },
+                    "variant": "guide"
+                  }
+                ],
+                [
+                  "core/paragraph",
+                  {
+                    "className": "guide-note",
+                    "placeholder": "Reassurance note",
+                    "metadata": {
+                      "name": "Guide note"
+                    },
+                    "content": "One email field, nothing else. We send the guide and occasional useful notes."
+                  }
+                ]
+              ]
+            ],
+            [
+              "core/list",
+              {
+                "className": "guide-list",
+                "templateLock": false,
+                "metadata": {
+                  "name": "Guide contents — add or remove freely"
+                }
+              },
+              [
+                [
+                  "core/list-item",
+                  {
+                    "content": "<strong>The five ways to ship</strong> and how to pick between them"
+                  }
+                ],
+                [
+                  "core/list-item",
+                  {
+                    "content": "<strong>Duty and GST</strong>, what you will actually pay and when"
+                  }
+                ],
+                [
+                  "core/list-item",
+                  {
+                    "content": "<strong>The fee list</strong>, every destination charge decoded"
+                  }
+                ],
+                [
+                  "core/list-item",
+                  {
+                    "content": "<strong>FOB versus CIF</strong>, the supplier-quote trap"
+                  }
+                ],
+                [
+                  "core/list-item",
+                  {
+                    "content": "<strong>A pre-shipment checklist</strong> you can run in ten minutes"
+                  }
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "openCollections": [
+    {
+      "className": "guide-list",
+      "allows": "core/list-item"
+    }
+  ],
+  "formControl": {
+    "title": "Form",
+    "blockNames": [
+      "intercargo/form",
+      "intercargo/guide-email-form"
+    ],
+    "label": "Guide form",
+    "showAccessibleLabel": true
+  }
+}

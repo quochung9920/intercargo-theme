@@ -1,0 +1,16 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/definition-row",
+  "title": "Definition Row",
+  "description": "One editable term and definition inside a Definition List.",
+  "category": "intercargo-section-items",
+  "icon": "editor-ol",
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "render": "file:./render.php",
+  "supports": {"align": false, "anchor": false, "className": false, "customClassName": false, "color": false, "spacing": false, "typography": false, "html": false, "reusable": false, "inserter": true},
+  "intercargo": {"packageType": "item", "compositionSlug": "definition-row"},
+  "ancestor": ["intercargo/definition-list"]
+}

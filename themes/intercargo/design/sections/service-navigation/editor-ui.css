@@ -1,0 +1,107 @@
+/* Compact Service Navigation manager. Editor UI only, never front-end. */
+.intercargo-service-nav-manager__help,
+.intercargo-service-nav-manager__empty {
+  margin: 0 0 12px;
+  color: #50575e;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.intercargo-service-nav-manager {
+  display: grid;
+  gap: 4px;
+}
+
+.intercargo-service-nav-manager__row {
+  min-width: 0;
+  border-radius: 3px;
+  transition: background-color 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.intercargo-service-nav-manager__row.is-hidden {
+  opacity: .55;
+}
+
+.intercargo-service-nav-manager__row.is-drop-target {
+  background: #f0f6fc;
+  box-shadow: inset 3px 0 0 #3858e9;
+}
+
+.intercargo-service-nav-manager__line {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr) 28px;
+  gap: 6px;
+  align-items: center;
+  padding: 3px 0;
+}
+
+.intercargo-service-nav-manager__drag {
+  width: 24px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #646970;
+  cursor: grab;
+  font-size: 15px;
+  line-height: 1;
+  user-select: none;
+}
+
+.intercargo-service-nav-manager__drag:active {
+  cursor: grabbing;
+}
+
+.intercargo-service-nav-manager__drag:focus-visible {
+  outline: 2px solid #3858e9;
+  outline-offset: 1px;
+}
+
+.intercargo-service-nav-manager__title-input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  height: 32px;
+  margin: 0;
+  padding: 4px 7px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #1e1e1e;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.intercargo-service-nav-manager__title-input:hover:not(:disabled) {
+  border-color: #949494;
+  background: #fff;
+}
+
+.intercargo-service-nav-manager__title-input:focus {
+  border-color: #3858e9;
+  background: #fff;
+  box-shadow: 0 0 0 1px #3858e9;
+  outline: 0;
+}
+
+.intercargo-service-nav-manager__title-input:disabled {
+  opacity: 1;
+  color: #646970;
+  cursor: default;
+}
+
+.intercargo-service-nav-manager__checkbox {
+  width: 28px;
+  min-height: 28px;
+  margin: 0 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.intercargo-service-nav-manager__checkbox input {
+  margin: 0;
+}

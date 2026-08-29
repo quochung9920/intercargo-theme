@@ -1,0 +1,62 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/process",
+  "title": "Process Steps",
+  "description": "Process Steps with direct on-canvas editing. Layout remains locked to the approved Intercargo design.",
+  "category": "intercargo-sections",
+  "icon": "screenoptions",
+  "keywords": [
+    "intercargo",
+    "section",
+    "process"
+  ],
+  "textdomain": "intercargo-vite",
+  "intercargo": {
+    "sectionPackage": true,
+    "syncable": true,
+    "legacyNames": [
+      "acf/intercargo-process"
+    ],
+    "defaultAnchor": "process"
+  },
+  "attributes": {
+    "data": {
+      "type": "object"
+    },
+    "mode": {
+      "type": "string"
+    },
+    "heading": {
+      "type": "string"
+    },
+    "steps": {
+      "type": "array"
+    },
+    "sectionAnchor": {
+      "type": "string"
+    },
+    "backgroundImageId": {
+      "type": "number"
+    },
+    "backgroundImageUrl": {
+      "type": "string"
+    }
+  },
+  "editorScript": "file:./editor.js",
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css",
+  "render": "file:./render.php",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "multiple": true,
+    "reusable": true
+  }
+}

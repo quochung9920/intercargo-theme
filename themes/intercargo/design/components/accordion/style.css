@@ -1,0 +1,24 @@
+.intercargo-native-faq .wp-block-accordion-heading__toggle {
+  transition: background-color var(--ic-motion-base) ease, color var(--ic-motion-fast) ease;
+}
+.intercargo-native-faq .wp-block-accordion-heading__toggle-title {
+  transition: color var(--ic-motion-fast) ease, transform var(--ic-motion-base) var(--ic-ease-out);
+}
+.intercargo-native-faq .wp-block-accordion-heading__toggle::before,
+.intercargo-native-faq .wp-block-accordion-heading__toggle::after {
+  transition: transform var(--ic-motion-base) var(--ic-ease-out), opacity var(--ic-motion-fast) ease, background-color var(--ic-motion-fast) ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .intercargo-native-faq .wp-block-accordion-heading__toggle:hover {
+    background: color-mix(in srgb, var(--blue) 2.5%, transparent);
+  }
+  .intercargo-native-faq .wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title {
+    color: var(--blue);
+    transform: translateX(4px);
+  }
+  .intercargo-native-faq .wp-block-accordion-heading__toggle:hover::before,
+  .intercargo-native-faq .wp-block-accordion-heading__toggle:hover::after {
+    background: var(--blue);
+  }
+}

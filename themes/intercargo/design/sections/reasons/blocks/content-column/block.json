@@ -1,0 +1,38 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "intercargo/content-column",
+  "title": "Content Column",
+  "description": "One repeatable title-and-description column inside Content Columns.",
+  "category": "intercargo-section-items",
+  "icon": "columns",
+  "keywords": [
+    "intercargo",
+    "column",
+    "item",
+    "content"
+  ],
+  "textdomain": "intercargo-vite",
+  "editorScript": "intercargo-package-editor",
+  "editorStyle": "intercargo-editor",
+  "supports": {
+    "align": false,
+    "anchor": false,
+    "className": false,
+    "customClassName": false,
+    "color": false,
+    "spacing": false,
+    "typography": false,
+    "html": false,
+    "reusable": false,
+    "inserter": true
+  },
+  "render": "file:./render.php",
+  "intercargo": {
+    "packageType": "item",
+    "compositionSlug": "content-column"
+  },
+  "ancestor": [
+    "intercargo/reasons"
+  ]
+}

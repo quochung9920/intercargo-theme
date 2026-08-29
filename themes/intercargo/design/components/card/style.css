@@ -1,0 +1,91 @@
+.ic-card,
+.wp-block-group.is-style-intercargo-card,
+.intercargo-native .service-card,
+.intercargo-native .reason-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.intercargo-native .service-card {
+  outline: none;
+  transition:
+    background-color var(--ic-motion-base) var(--ic-ease-out),
+    box-shadow var(--ic-motion-base) var(--ic-ease-out),
+    color var(--ic-motion-fast) ease;
+}
+.intercargo-native .service-card .service-name,
+.intercargo-native .service-card .service-description,
+.intercargo-native .service-card .service-icon-row,
+.intercargo-native .service-card .service-link {
+  transition:
+    transform var(--ic-motion-base) var(--ic-ease-out),
+    color var(--ic-motion-fast) ease,
+    opacity var(--ic-motion-fast) ease;
+}
+.intercargo-native .service-card .service-icon-row .wp-block-image,
+.intercargo-native .service-card .service-icon-row::before,
+.intercargo-native .service-card .service-icon-row::after,
+.intercargo-native .service-card .service-link::after {
+  transition:
+    transform var(--ic-motion-base) var(--ic-ease-out),
+    filter var(--ic-motion-fast) ease,
+    opacity var(--ic-motion-fast) ease;
+  transform-origin: 50% 50%;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* One cohesive state: the entire card changes tone. This avoids the previous
+   * isolated blue title, which looked like an accidental text-link hover. */
+  .intercargo-native .service-card:hover,
+  .intercargo-native .service-card:focus-visible {
+    background: #242528;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.07);
+  }
+  .intercargo-native .service-card:hover .service-name,
+  .intercargo-native .service-card:focus-visible .service-name {
+    color: #fff;
+    transform: translateY(-2px);
+  }
+  .intercargo-native .service-card:hover .service-description,
+  .intercargo-native .service-card:focus-visible .service-description {
+    color: rgba(255,255,255,.70);
+    transform: translateY(-1px);
+  }
+  .intercargo-native .service-card:hover .service-link,
+  .intercargo-native .service-card:focus-visible .service-link {
+    color: #fff;
+  }
+  .intercargo-native .service-card:hover .service-icon-row .wp-block-image,
+  .intercargo-native .service-card:focus-visible .service-icon-row .wp-block-image,
+  .intercargo-native .service-card:hover .service-icon-row::before,
+  .intercargo-native .service-card:focus-visible .service-icon-row::before {
+    transform: translateY(-3px) rotate(-3deg);
+    filter: brightness(0) invert(1);
+  }
+  .intercargo-native .service-card:hover .service-icon-row::after,
+  .intercargo-native .service-card:focus-visible .service-icon-row::after,
+  .intercargo-native .service-card:hover .service-link::after,
+  .intercargo-native .service-card:focus-visible .service-link::after {
+    filter: brightness(0) invert(1);
+  }
+  .wp-block-group.is-style-intercargo-card:hover,
+  .ic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--ic-shadow-hover);
+  }
+}
+
+.intercargo-native .service-card:focus-visible {
+  outline: 2px solid var(--yellow);
+  outline-offset: -4px;
+}
+.intercargo-native .service-card:active {
+  background: #1e1f22;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intercargo-native .service-card,
+  .intercargo-native .service-card * {
+    transition-duration: 1ms !important;
+  }
+}

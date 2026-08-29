@@ -1,0 +1,59 @@
+.editor-styles-wrapper .wp-block-acf-intercargo-enquiry { max-width:none; }
+.editor-styles-wrapper .wp-block-acf-intercargo-enquiry [contenteditable="true"]:focus { outline:none; }
+.intercargo-editor-row-actions { margin-top:10px; display:flex; gap:8px; }
+
+/* 4.14.1 — compact inline repeater controls for Enquiry steps. */
+.editor-styles-wrapper .intercargo-enquiry-step-editor {
+  position: relative;
+}
+
+.editor-styles-wrapper .intercargo-enquiry-step-actions {
+  min-height: 28px;
+  margin: -7px 0 6px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  opacity: .45;
+  transition: opacity 160ms ease;
+}
+
+.editor-styles-wrapper .intercargo-enquiry-step-editor:hover .intercargo-enquiry-step-actions,
+.editor-styles-wrapper .intercargo-enquiry-step-editor:focus-within .intercargo-enquiry-step-actions {
+  opacity: 1;
+}
+
+.editor-styles-wrapper .intercargo-enquiry-step-drag {
+  width: 28px;
+  height: 28px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  color: #50575e;
+  background: transparent;
+  font: inherit;
+  cursor: grab;
+}
+
+.editor-styles-wrapper .intercargo-enquiry-step-drag:hover,
+.editor-styles-wrapper .intercargo-enquiry-step-drag:focus-visible {
+  color: #1e1e1e;
+  background: #f0f0f0;
+  outline: none;
+}
+
+.editor-styles-wrapper .intercargo-enquiry-step-drag:active { cursor: grabbing; }
+.editor-styles-wrapper .intercargo-enquiry-step-editor.is-dragging { opacity: .55; }
+
+.editor-styles-wrapper .intercargo-enquiry-add-step {
+  align-self: flex-start;
+  margin-top: 12px;
+}
+
+/* Keep repeatable steps editable even when the editor canvas is narrower than the
+   frontend desktop breakpoint. This is an editor affordance only. */
+.editor-styles-wrapper .intercargo-enquiry-steps-editor {
+  display: flex !important;
+  flex-direction: column;
+}

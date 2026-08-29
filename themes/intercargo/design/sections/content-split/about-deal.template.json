@@ -1,0 +1,13 @@
+{
+  "_comment": "About Us deferred-profile variant. Reuses Content Split and its established dashed note contract.",
+  "template": [
+    [
+      "core/group",
+      {"className": "container content-split-layout content-split-layout--about-deal", "templateLock": "all", "metadata": {"name": "Who you will deal with"}},
+      [
+        ["core/heading", {"level": 2, "className": "content-split-heading", "content": "Who you will deal with.", "metadata": {"name": "Section title"}}],
+        ["core/group", {"className": "content-split-copy", "templateLock": "all"}, [["core/paragraph", {"className": "content-split-lead", "content": "In every review we read across this category, the praise named a person rather than a company. Ours will too.", "metadata": {"name": "Section introduction"}}], ["core/paragraph", {"className": "content-split-body", "content": "", "metadata": {"name": "Optional body"}}], ["core/paragraph", {"className": "content-split-emphasis", "content": "", "metadata": {"name": "Optional emphasis"}}], ["core/group", {"className": "content-split-note", "templateLock": "all"}, [["core/paragraph", {"className": "content-split-note-label", "content": "NAMED PROFILES — DEFERRED AT YOUR REQUEST", "metadata": {"name": "Note label"}}], ["core/paragraph", {"className": "content-split-note-body", "content": "Photograph, name, role and industry history for the senior operators who own accounts, plus the licensed broker. This is the single highest-value addition left on this page: importers choose a person, not a firm. The layout takes them without anything else needing to move.", "metadata": {"name": "Note body"}}]]]]]
+      ]
+    ]
+  ]
+}

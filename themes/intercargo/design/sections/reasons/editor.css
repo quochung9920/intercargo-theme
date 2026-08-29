@@ -1,0 +1,9 @@
+.editor-styles-wrapper .wp-block-acf-intercargo-reasons { max-width:none; }
+.editor-styles-wrapper .wp-block-acf-intercargo-reasons [contenteditable="true"]:focus { outline:none; }
+
+/* Child items belong to a repeatable collection. Keep the collection visually
+ * discoverable in the editor without changing frontend geometry. */
+.editor-styles-wrapper .content-columns-grid.block-editor-block-list__layout,
+.editor-styles-wrapper .content-columns-grid .block-editor-block-list__layout {
+  min-width: 0;
+}

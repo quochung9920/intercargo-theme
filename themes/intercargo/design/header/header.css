@@ -1,0 +1,117 @@
+/* Page-shell header variants. The existing transparent homepage treatment remains
+   the base design; inner pages opt into this light/normal-flow variant by default. */
+.site-header--light .site-nav,
+.site-nav--light {
+    position: static;
+    inset: auto;
+    top: auto;
+    color: var(--ink);
+    background: #fff;
+    border-bottom: 1px solid var(--line);
+}
+
+.site-nav--light .nav-link,
+.site-nav--light .nav-links > li > a {
+    color: #5b5955;
+}
+
+.site-nav--light .nav-link:hover,
+.site-nav--light .nav-links > li > a:hover,
+.site-nav--light .nav-links > li > a:focus-visible {
+    color: var(--ink);
+    background: transparent;
+}
+
+.site-nav--light .menu-toggle {
+    border-color: rgba(19, 20, 23, 0.22);
+    color: var(--ink);
+    background: rgba(19, 20, 23, 0.05);
+}
+
+.site-nav--light .menu-toggle:hover {
+    background: rgba(19, 20, 23, 0.09);
+}
+
+/* Light-header dropdowns use a true white surface. The transparent homepage keeps
+   the global dark dropdown treatment from global.css. */
+.site-nav--light .nav-links .sub-menu {
+    border: 1px solid var(--line);
+    background: #fff;
+    box-shadow: 0 18px 45px rgba(19, 20, 23, 0.12);
+}
+
+.site-nav--light .nav-links .sub-menu a {
+    border-radius: 6px;
+    color: #5b5955;
+}
+
+.site-nav--light .nav-links .sub-menu a:hover,
+.site-nav--light .nav-links .sub-menu a:focus-visible {
+    color: var(--ink);
+    background: var(--paper);
+}
+
+/* 4.7.1 hotfix: the light header must own a stacking context above page sections.
+   Keeping the nav in normal flow (position: relative) preserves layout while allowing
+   its absolutely-positioned dropdowns to paint above Hero/section stacking contexts. */
+.site-header--light {
+    position: relative;
+    z-index: 1000;
+    overflow: visible;
+}
+
+.site-header--light .site-nav--light {
+    position: relative;
+    z-index: 1001;
+    overflow: visible;
+}
+
+.site-nav--light .nav-links,
+.site-nav--light .nav-links > li,
+.site-nav--light .nav-links .sub-menu {
+    z-index: 1010;
+}
+
+/* Mobile drawer follows the page header variant. Transparent headers retain the
+   existing dark drawer from global.css; light headers use a white mobile surface. */
+.site-header--light .mobile-menu {
+    color: var(--ink);
+    background: #fff;
+}
+
+.site-header--light .mobile-menu-topbar {
+    border-bottom-color: var(--line);
+}
+
+.site-header--light .mobile-menu-close {
+    border-color: rgba(19, 20, 23, 0.18);
+    color: var(--ink);
+    background: var(--paper);
+}
+
+.site-header--light .mobile-menu-close:hover,
+.site-header--light .mobile-menu-close:focus-visible {
+    background: #eceae5;
+}
+
+.site-header--light .mobile-menu-links a {
+    color: #5b5955;
+}
+
+.site-header--light .mobile-menu-links a:hover,
+.site-header--light .mobile-menu-links a:focus-visible {
+    color: var(--ink);
+}
+
+.site-header--light .mobile-menu-links .sub-menu {
+    border-left-color: var(--line);
+}
+
+.site-header--light .mobile-menu-cta {
+    border-top-color: var(--line);
+    background: #fff;
+}
+
+.site-header--light .mobile-menu-cta span {
+    color: var(--ink);
+}

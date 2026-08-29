@@ -1,7 +1,7 @@
 {
   "$schema": "./packages/design-core/contracts/workspace.schema.json",
-  "architectureVersion": "1.0.0",
-  "migrationPhase": 1,
+  "architectureVersion": "2.0.0",
+  "migrationPhase": 4,
   "packages": {
     "designCore": "packages/design-core",
     "wordpressAdapter": "packages/wordpress-adapter"
@@ -9,7 +9,6 @@
   "projects": {
     "intercargo": {
       "source": "projects/intercargo",
-      "legacyDesignSource": "design",
       "themeOutput": "themes/intercargo"
     }
   },
