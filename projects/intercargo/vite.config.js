@@ -2,13 +2,15 @@ import { resolve } from 'node:path';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  root: import.meta.dirname,
   base: './',
   build: {
     manifest: true,
     outDir: resolve(import.meta.dirname, '../../themes/intercargo/dist'),
     emptyOutDir: true,
     rollupOptions: {
-      // Design/package assets remain project-local. Vite bundles global assets only.
+      // Project root is pinned so manifest keys remain src/... for the stable
+      // WordPress runtime even though source moved under projects/intercargo/.
       input: [
         resolve(import.meta.dirname, 'src/css/global.css'),
         resolve(import.meta.dirname, 'src/css/editor.css'),
