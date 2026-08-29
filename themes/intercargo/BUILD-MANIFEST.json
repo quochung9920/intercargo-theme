@@ -2,8 +2,8 @@
   "project": "intercargo",
   "themeDirectory": "intercargo-vite",
   "themeVersion": "4.14.2",
-  "designCoreVersion": "1.0.0",
-  "wordpressAdapterVersion": "1.0.0",
+  "designCoreVersion": "0.1.0",
+  "wordpressAdapterVersion": "0.1.0",
   "architectureVersion": "2.0.0",
   "generated": true,
   "runtimeStandalone": true
