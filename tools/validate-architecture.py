@@ -98,7 +98,8 @@ if core_dir and core_dir.is_dir():
             fail(f"{rel(path)}: portable Design Core contains WordPress runtime API usage")
 
 # Generated theme runtime must never reach back into workspace source packages/projects.
-for project_id, config in projects.items() if isinstance(projects, dict) else []:
+project_items = projects.items() if isinstance(projects, dict) else []
+for project_id, config in project_items:
     if not isinstance(config, dict):
         continue
     output = config.get("themeOutput")
