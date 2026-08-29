@@ -106,14 +106,15 @@ if not core_root.is_dir():
 if not (adapter_root / "runtime").is_dir():
     fail("WordPress adapter runtime is missing")
 
-# The portable core is intentionally platform- and project-neutral.
+# The portable core is intentionally platform- and project-neutral. Documentation
+# may describe the boundary, so executable/schema files are the enforcement target.
 forbidden_core = re.compile(
     r"\b(?:ABSPATH|WP_Block|register_block_type|wp_enqueue_|wp_insert_post|register_rest_route|intercargo)\b",
     re.IGNORECASE,
 )
 if core_root.is_dir():
     for path in core_root.rglob("*"):
-        if not path.is_file() or path.suffix.lower() not in {".php", ".js", ".mjs", ".ts", ".tsx", ".py", ".json", ".md"}:
+        if not path.is_file() or path.suffix.lower() not in {".php", ".js", ".mjs", ".ts", ".tsx", ".py", ".json"}:
             continue
         if forbidden_core.search(path.read_text(encoding="utf-8", errors="ignore")):
             fail(f"{rel(path)}: Design Core contains project/platform-specific language")
